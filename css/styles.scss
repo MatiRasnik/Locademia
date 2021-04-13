@@ -31,7 +31,9 @@ body{
             }
         }
         .info{
-            margin: 0 20px;
+            hyphens: auto;
+            text-align:justify;
+            margin: 0 10px;
             color: white;
         }
         .landing-buttons{
@@ -49,6 +51,11 @@ body{
                 border-radius: 50px;
                 color: white;
                 text-decoration: none;
+
+                background: linear-gradient(to right, #ffffff 50%, transparent 50%);
+                background-size: 200% 100%;
+                background-position: right bottom;
+                transition: all 0.3s ease-out;
             }
             .lan-buttn2{
                 width: 150px;
@@ -58,7 +65,28 @@ body{
                 border-radius: 50px;
                 color: #4874c5;
                 text-decoration: none;
+
+                background: linear-gradient(to right, transparent 50%, #ffffff 50%);
+                background-size: 200% 100%;
+                background-position: right bottom;
+                transition: all 0.3s ease-out;
+            }
+
+            .lan-buttn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0px 6px 25px 0px rgba(0,0,0,.3);
+                background-position: left bottom;
+                color: #4874c5;
+            }
+            .lan-buttn2:hover {
+                transform: translateY(-3px);
+                box-shadow: 0px 6px 25px 0px rgba(0,0,0,.5);
+                background-position: left bottom;
+                color: white;
             }
         }
     }
+}
+.First-Section{
+    height: 100vh;
 }
