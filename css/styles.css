@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Poppins, Arial;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: url("../img/Background.png") no-repeat center center fixed;
+}
+
+.Landing-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+
+.Landing-wrapper .landing-info-wrapper {
+  width: 550px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.Landing-wrapper .landing-info-wrapper .Logo img {
+  width: 500px;
+}
+
+.Landing-wrapper .landing-info-wrapper .info {
+  margin: 0 20px;
+  color: white;
+}
+
+.Landing-wrapper .landing-info-wrapper .landing-buttons {
+  width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.Landing-wrapper .landing-info-wrapper .landing-buttons .lan-buttn {
+  width: 150px;
+  padding: 10px 0;
+  border: 1px solid white;
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+}
+
+.Landing-wrapper .landing-info-wrapper .landing-buttons .lan-buttn2 {
+  width: 150px;
+  padding: 10px 0;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 50px;
+  color: #4874c5;
+  text-decoration: none;
+}
+/*# sourceMappingURL=styles.css.map */
