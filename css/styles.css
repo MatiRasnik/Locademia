@@ -1,10 +1,11 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins");
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -13,7 +14,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #6d9bf0;
+  background: #5f97ff;
 }
 
 body {
@@ -158,11 +159,8 @@ header .links ul li a:hover:after {
 }
 
 .Landing-wrapper .landing-info-wrapper .info {
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
   text-align: justify;
-  margin: 0 10px;
+  margin: 0 20px;
   color: white;
 }
 
@@ -231,7 +229,7 @@ header .links ul li a:hover:after {
 }
 
 .First-Section {
-  height: 100vh;
+  height: 20vh;
   background-color: white;
 }
 
@@ -363,7 +361,7 @@ header .links ul li a:hover:after {
 .register-wrapper .login .inputs form a:visited,
 .register-wrapper .register .inputs form a,
 .register-wrapper .register .inputs form a:visited {
-  color: #4874c5;
+  color: #0099ff;
   text-decoration: none;
 }
 
@@ -416,6 +414,194 @@ header .links ul li a:hover:after {
   font-weight: bold;
 }
 
+.agenda-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.agenda-wrapper #Agenda {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+  min-width: 350px;
+  min-height: 520px;
+}
+
+.agenda-wrapper #Agenda .año {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 50px;
+  font-size: 20px;
+  padding: 5px 0;
+  color: white;
+  background-color: #4874c5;
+  border-radius: 25px 25px 0 0;
+}
+
+.agenda-wrapper #Agenda .mes {
+  color: white;
+  text-align: center;
+  padding: 2px 0;
+}
+
+.agenda-wrapper #Agenda h3 {
+  margin: 5px 0;
+}
+
+.agenda-wrapper #Agenda .botonesCal {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  margin: 0 20px;
+  background-color: white;
+  border-radius: 50%;
+  color: #4874c5;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.agenda-wrapper #Agenda #calendar {
+  -webkit-transition: 1s;
+  transition: 1s;
+  width: 100%;
+}
+
+.agenda-wrapper #Agenda #calendar td {
+  height: 55px;
+  width: 55px;
+  text-align: center;
+}
+
+.agenda-wrapper #Agenda #calendar tr {
+  color: white;
+}
+
+.agenda-wrapper #Agenda #calendar .dias {
+  width: 30px;
+  height: 30px;
+  color: white;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+}
+
+.agenda-wrapper #Agenda #calendar .dias:hover {
+  border: 1px solid white;
+}
+
+.agenda-wrapper #Agenda #calendar .dias:focus {
+  background-color: white;
+  border: 1px solid white;
+  color: #4874c5;
+  font-weight: bold;
+}
+
+.agenda-wrapper #Agenda #calendar .diaActual {
+  background-color: transparent;
+  border: 1px solid white;
+  font-weight: bold;
+}
+
+.agenda-wrapper #Agenda #calendar .diaActual:focus {
+  background-color: white;
+  color: #4874c5;
+}
+
+.agenda-wrapper #Agenda #calendar .diaActual p {
+  width: 20px;
+  height: 20px;
+  color: #4874c5;
+  font-weight: bold;
+  border-radius: 50%;
+  background-color: white;
+  padding: 5px;
+}
+
+footer {
+  margin-top: 20px;
+}
+
+footer .footer-vector {
+  position: relative;
+  z-index: -1;
+  height: 140px;
+  overflow-x: hidden;
+}
+
+footer .footer-vector img {
+  min-width: 1000px;
+}
+
+footer .footer-wrapper {
+  padding: 40px 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+}
+
+footer .footer-wrapper p {
+  font-size: 13px;
+}
+
+footer .footer-wrapper img {
+  width: 400px;
+}
+
+footer .footer-wrapper .info {
+  text-align: center;
+}
+
+footer .footer-wrapper .info .direccion {
+  text-align: left;
+}
+
+footer .footer-wrapper .info .direccion ul {
+  list-style: none;
+}
+
+footer .footer-wrapper .info .direccion ul a {
+  cursor: context-menu;
+  color: black;
+  text-decoration: none;
+}
+
+footer .footer-wrapper .info .direccion ul a:visited {
+  color: black;
+}
+
 @media screen and (max-width: 750px) {
   header {
     height: 125px;
@@ -426,8 +612,8 @@ header .links ul li a:hover:after {
   header .links {
     display: none;
   }
-  header .logo {
-    display: none;
+  header .logo img {
+    width: 300px;
   }
 }
 

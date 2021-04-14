@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <link
       rel="shortcut icon"
-      href="img/Locademia-Icon.png"
+      href="../img/Locademia-Icon.png"
       type="image/x-icon"
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/1e193e3a23.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/styles.css" />
     <script src="../js/functions-external.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,9 +27,9 @@
           <form action="" method="post">
             <h1>Login</h1>
             <p>Usuario:</p>
-            <input type="text" name="usuario" />
+            <input type="text" name="usuario" required />
             <p>Contraseña:</p>
-            <input type="password" name="constraseña" />
+            <input type="password" name="constraseña" required />
             <p>
               Si no tienes cuenta, haz click <a href="Register.html">aquí</a>.
             </p>
@@ -39,5 +40,7 @@
         </div>
       </div>
     </section>
+
+    <div id="footer"></div>
   </body>
 </html>

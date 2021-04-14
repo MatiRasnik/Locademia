@@ -3,14 +3,14 @@
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.3); 
+  background-color: rgba(255, 255, 255, 0.5);
 }
 ::-webkit-scrollbar-thumb {
   background: #4874c5; 
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #5f97ff; 
 }
 
 body {
@@ -129,9 +129,8 @@ header {
       }
     }
     .info {
-      hyphens: auto;
       text-align: justify;
-      margin: 0 10px;
+      margin: 0 20px;
       color: white;
     }
     .landing-buttons {
@@ -186,7 +185,7 @@ header {
   }
 }
 .First-Section {
-  height: 100vh;
+  height: 20vh;
   background-color: white;
 
   .first-wrapper{
@@ -247,7 +246,7 @@ header {
         }
         a,
         a:visited {
-          color: #4874c5;
+          color: #0099ff;
           text-decoration: none;
         }
 
@@ -285,6 +284,151 @@ header {
     }
   }
 }
+.agenda-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  #Agenda{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    min-width: 350px;
+    min-height: 520px;
+
+    .año{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      height: 50px;
+      font-size: 20px;
+      padding: 5px 0;
+      color: white;
+      background-color: #4874c5;
+      border-radius: 25px 25px 0 0;
+
+    }
+    .mes{
+      color: white;
+      text-align: center;
+      padding: 2px 0;
+    }
+    h3{
+      margin: 5px 0;
+    }
+    .botonesCal{
+      width: 30px;
+      height: 30px;
+      font-size: 20px;
+      margin: 0 20px;
+      background-color: white;
+      border-radius: 50%;
+      color: #4874c5;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      transition: 0.5s;
+    }
+    #calendar{
+      transition: 1s;
+      width: 100%;
+
+      td{
+        height: 55px;
+        width: 55px;
+        text-align: center;
+      }
+      tr{
+        color: white;
+      }
+      .dias{
+        width: 30px;
+        height: 30px;
+        color: white;
+        text-align: center;
+        background-color: transparent;
+        border: none;
+        border-radius: 50%;
+        outline: none;
+      }
+      .dias:hover{
+        border: 1px solid white;
+      }
+      .dias:focus{
+        background-color: white;
+        border: 1px solid white;
+        color: #4874c5;
+        font-weight: bold;
+      }
+      .diaActual{
+        background-color: transparent;
+        border: 1px solid white;
+        font-weight: bold;
+      }
+      .diaActual:focus{
+        background-color: white;
+        color: #4874c5;
+      }
+      .diaActual p{
+        width: 20px;
+        height: 20px;
+        color: #4874c5;
+        font-weight: bold;
+        border-radius: 50%;
+        background-color: white;
+        padding: 5px;
+      }
+    }
+  }
+}
+footer{
+  margin-top: 20px;
+  .footer-vector{
+    position: relative;
+    z-index: -1;
+    height: 140px;
+    overflow-x: hidden;
+
+    img{
+      min-width: 1000px;
+    }
+  }
+  .footer-wrapper{
+    padding: 40px 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+
+    p{
+      font-size: 13px;
+    }
+    img{
+      width: 400px;
+    }
+
+    .info{
+      text-align: center;
+
+      .direccion{
+        text-align: left;
+        ul{
+          list-style: none;
+          a{
+            cursor:context-menu;
+            color: black;
+            text-decoration: none;
+          }
+          a:visited{
+            color: black;
+          }
+        }
+      }
+    }
+    
+  }
+}
 
 @media screen and (max-width: 750px) {
   header {
@@ -294,7 +438,9 @@ header {
       display: none;
     }
     .logo {
-      display: none;
+      img{
+        width: 300px;
+      }
     }
   }
 }
