@@ -1,5 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins");
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4874c5;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6d9bf0;
+}
+
 body {
+  overflow: overlay;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -84,10 +102,18 @@ header .links ul li a:hover:after {
   background-size: cover;
 }
 
-.vector {
-  position: absolute;
-  margin-top: calc(100vh - 150px);
+.vector-wrapper {
+  position: relative;
+  top: 10px;
   width: 100%;
+  overflow-x: hidden;
+}
+
+.vector {
+  width: 100%;
+  min-width: 600px;
+  margin: 0;
+  padding: 0;
 }
 
 .Landing-wrapper {
@@ -111,7 +137,7 @@ header .links ul li a:hover:after {
 }
 
 .Landing-wrapper .landing-info-wrapper {
-  width: 550px;
+  max-width: 550px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -141,7 +167,7 @@ header .links ul li a:hover:after {
 }
 
 .Landing-wrapper .landing-info-wrapper .landing-buttons {
-  width: 400px;
+  max-width: 400px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -206,6 +232,19 @@ header .links ul li a:hover:after {
 
 .First-Section {
   height: 100vh;
+  background-color: white;
+}
+
+.First-Section .first-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .login-wrapper,
@@ -389,6 +428,32 @@ header .links ul li a:hover:after {
   }
   header .logo {
     display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Landing-wrapper .landing-info-wrapper .Logo {
+    text-align: center;
+  }
+  .Landing-wrapper .landing-info-wrapper .Logo img {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .Landing-wrapper .landing-info-wrapper .landing-buttons {
+    width: 100%;
+    -webkit-box-orient: inherit;
+    -webkit-box-direction: inherit;
+        -ms-flex-direction: inherit;
+            flex-direction: inherit;
+    margin: 20px 0;
+  }
+  .Landing-wrapper .landing-info-wrapper .landing-buttons .lan-buttn {
+    width: 300px;
+  }
+  .Landing-wrapper .landing-info-wrapper .landing-buttons .lan-buttn2 {
+    width: 300px;
   }
 }
 /*# sourceMappingURL=styles.css.map */
