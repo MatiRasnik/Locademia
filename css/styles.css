@@ -612,6 +612,8 @@ header .links ul li a:hover:after {
 }
 
 .coche-wrapper .coche-wrapper-grid .coche-card-wrapper .coche-card {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -631,6 +633,7 @@ header .links ul li a:hover:after {
   -webkit-box-shadow: -10px 10px 18px 5px rgba(0, 0, 0, 0.3);
           box-shadow: -10px 10px 18px 5px rgba(0, 0, 0, 0.3);
   background-color: white;
+  border-radius: 25px;
 }
 
 .coche-wrapper .coche-wrapper-grid .coche-card-wrapper .coche-card img {
@@ -686,6 +689,17 @@ header .links ul li a:hover:after {
   text-align: left;
   width: 80%;
   color: #4874c5;
+}
+
+.coche-wrapper .coche-wrapper-grid .coche-card-wrapper .coche-card:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  border: 1px solid #4874c5;
+}
+
+.coche-wrapper .tipocoche {
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .coche-wrapper .tipocoche .tipo-wrapper-grid {
