@@ -17,6 +17,7 @@
     <script src="../js/transiciones.js"></script>
     <script src="../js/agenda.js"></script>
     <script src="../js/functions-external.js"></script>
+    <script src="../js/functions-agenda.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Locademia | Agenda</title>
   </head>
@@ -45,7 +46,7 @@
                 y el maletero está separado de la cabina.
               </p>
               <div class="coche-button">
-                <button>Seleccionar</button>
+                <button onclick="tipo('Sedan')">Seleccionar</button>
               </div>
             </div>
           </div>
@@ -60,7 +61,7 @@
                 integrado, al cual se tiene acceso mediante un portón trasero.
               </p>
               <div class="coche-button">
-                <button>Seleccionar</button>
+                <button onclick="tipo('Hatchback')">Seleccionar</button>
               </div>
             </div>
           </div>
@@ -76,14 +77,14 @@
                 lugar para dos personas.
               </p>
               <div class="coche-button">
-                <button>Seleccionar</button>
+                <button onclick="tipo('Mini')">Seleccionar</button>
               </div>
             </div>
           </div>
         </div>
         <div class="tipocoche">
           <h2>Seleccionar Modelo del Vehiculo:</h2>
-          <p id="modelo">Hatchback</p>
+          <p id="tipocoche"></p>
         </div>
       </div>
     </section>
