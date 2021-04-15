@@ -1,6 +1,6 @@
 <?php
     $tipo = $_POST['tipo'];
-    $modelo = isset($_POST['modelo']) ? $_POST['modelo']: "up" ;
+    $modelo = isset($_POST['modelo']) ? $_POST['modelo']: "Up" ;
     $tipocoche = "  <div class='tipo-wrapper-grid'>
                         <div class='tipo-wrapper'>
                             <h2>Seleccionar Modelo del Vehiculo:</h2>
@@ -16,10 +16,10 @@
             break;
         
         case "Hatchback":
-            $tipocoche .=  "<option value='up'>Volkswagen Up!</option>
-                            <option value='golf'>Volkswagen Golf</option>
+            $tipocoche .=  "<option value='Up'>Volkswagen Up!</option>
+                            <option value='Golf'>Volkswagen Golf</option>
                             <option value='208'>Peugeot 208</option>
-                            <option value='audi'>Ford Focus</option>";
+                            <option value='Focus'>Ford Focus</option>";
             break;
         
         case "Mini":
@@ -37,11 +37,11 @@
                         <div class='foto-vehiculo'>";
 
     switch($modelo){
-        case "up":
+        case "Up":
             $tipocoche .=  "<img src='../img/Up.png' alt='' />";
             break;
         
-        case "golf":
+        case "Golf":
             $tipocoche .=  "<img src='../img/Golf.png' alt='' />";
             break;
         
@@ -49,7 +49,7 @@
             $tipocoche .=  "<img src='../img/208.png' alt='' />";
             break;
 
-        case "Fiesta":
+        case "Focus":
             $tipocoche .=  "<img src='../img/Focus.png' alt='' />";
             break; 
     }
