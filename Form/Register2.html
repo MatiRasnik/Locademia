@@ -11,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/1e193e3a23.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/transiciones.js"></script>
     <script src="../js/functions-external.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Locademia | Register</title>
@@ -18,26 +19,40 @@
   <body>
     <div id="header"></div>
 
+    <div class="transition transition-1 is-active"></div>
+
     <section class="register-wrapper">
       <div class="register">
         <div class="Logo">
           <img src="../img/LogoV1.1 - Transparente.png" alt="" />
         </div>
-        <div class="inputs">
-          <form action="" method="post">
-            <h1>Register</h1>
-            <h4>Paso 2:</h4>
-            <p>Usuario:</p>
-            <input type="text" name="usuario" required />
-            <p>Email:</p>
-            <input type="email" name="email" required />
-            <p>Contraseña:</p>
-            <input type="password" name="contraseña" required />
-            <div class="center-submit">
-              <input type="submit" value="Enviar" required />
-            </div>
-          </form>
-        </div>
+          <div class="inputs">
+            <form action="" method="post">
+              <h1>Register</h1>
+              <h4>Paso 2:</h4>
+              <div class="register-input-wrapper">
+                <div>
+                  <p>Nombre:</p>
+                  <input type="text" name="nombre" required />
+                  <p>Apellido:</p>
+                  <input type="text" name="apellido" required />
+                  <p>Contraseña:</p>
+                  <input type="password" name="password" required />
+                </div>
+                <div>
+                  <p>Email:</p>
+                  <input type="email" name="email" required />
+                  <p>Teléfono:</p>
+                  <input type="text" name="telefono" required />
+                  <p>Dirección:</p>
+                  <input type="text" name="direccion" required />
+                  <div class="center-submit">
+                    <input type="submit" value="Enviar" required />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
       </div>
     </section>
 

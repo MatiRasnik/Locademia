@@ -12,6 +12,22 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #5f97ff; 
 }
+.transition-1{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 101;
+  background-color: rgba(74, 167, 255, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.1s ease-out;
+}
+.transition-1.is-active{
+  opacity: 1;
+  pointer-events: all;
+}
 
 body {
   overflow: overlay;
@@ -205,27 +221,29 @@ header {
 
   width: 100%;
 
-  .login,
-  .register {
+  .login, .register {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 20px;
-    width: 400px;
-    height: 500px;
+    padding: 20px 20px;
 
     .Logo {
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      margin: 20px 0;
 
       img {
         width: 300px;
       }
+    }
+    .register-input-wrapper{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
     }
     .inputs {
       form {
@@ -249,7 +267,11 @@ header {
           color: #0099ff;
           text-decoration: none;
         }
-
+        .input-wrapper{
+          input{
+            width: 100%;
+          }
+        }
         input {
           outline: none;
           text-indent: 10px;
@@ -274,6 +296,7 @@ header {
           }
         }
         input[type="submit"] {
+          margin: 20px 0;
           width: 100px;
           text-indent: 0px;
           background-color: white;

@@ -17,6 +17,25 @@
   background: #5f97ff;
 }
 
+.transition-1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 101;
+  background-color: rgba(74, 167, 255, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: 0.1s ease-out;
+  transition: 0.1s ease-out;
+}
+
+.transition-1.is-active {
+  opacity: 1;
+  pointer-events: all;
+}
+
 body {
   overflow: overlay;
   height: 100%;
@@ -265,8 +284,7 @@ header .links ul li a:hover:after {
   width: 100%;
 }
 
-.login-wrapper .login,
-.login-wrapper .register,
+.login-wrapper .login, .login-wrapper .register,
 .register-wrapper .login,
 .register-wrapper .register {
   display: -webkit-box;
@@ -284,12 +302,10 @@ header .links ul li a:hover:after {
           flex-direction: column;
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 20px;
-  width: 400px;
-  height: 500px;
+  padding: 20px 20px;
 }
 
-.login-wrapper .login .Logo,
-.login-wrapper .register .Logo,
+.login-wrapper .login .Logo, .login-wrapper .register .Logo,
 .register-wrapper .login .Logo,
 .register-wrapper .register .Logo {
   display: -webkit-box;
@@ -305,18 +321,25 @@ header .links ul li a:hover:after {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 20px 0;
 }
 
-.login-wrapper .login .Logo img,
-.login-wrapper .register .Logo img,
+.login-wrapper .login .Logo img, .login-wrapper .register .Logo img,
 .register-wrapper .login .Logo img,
 .register-wrapper .register .Logo img {
   width: 300px;
 }
 
-.login-wrapper .login .inputs form,
-.login-wrapper .register .inputs form,
+.login-wrapper .login .register-input-wrapper, .login-wrapper .register .register-input-wrapper,
+.register-wrapper .login .register-input-wrapper,
+.register-wrapper .register .register-input-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.login-wrapper .login .inputs form, .login-wrapper .register .inputs form,
 .register-wrapper .login .inputs form,
 .register-wrapper .register .inputs form {
   color: white;
@@ -332,30 +355,26 @@ header .links ul li a:hover:after {
   margin: 0 50px;
 }
 
-.login-wrapper .login .inputs form h1,
-.login-wrapper .register .inputs form h1,
+.login-wrapper .login .inputs form h1, .login-wrapper .register .inputs form h1,
 .register-wrapper .login .inputs form h1,
 .register-wrapper .register .inputs form h1 {
   margin: 5px 0;
 }
 
-.login-wrapper .login .inputs form h4,
-.login-wrapper .register .inputs form h4,
+.login-wrapper .login .inputs form h4, .login-wrapper .register .inputs form h4,
 .register-wrapper .login .inputs form h4,
 .register-wrapper .register .inputs form h4 {
   margin: 0;
 }
 
-.login-wrapper .login .inputs form p,
-.login-wrapper .register .inputs form p,
+.login-wrapper .login .inputs form p, .login-wrapper .register .inputs form p,
 .register-wrapper .login .inputs form p,
 .register-wrapper .register .inputs form p {
   margin: 0;
 }
 
 .login-wrapper .login .inputs form a,
-.login-wrapper .login .inputs form a:visited,
-.login-wrapper .register .inputs form a,
+.login-wrapper .login .inputs form a:visited, .login-wrapper .register .inputs form a,
 .login-wrapper .register .inputs form a:visited,
 .register-wrapper .login .inputs form a,
 .register-wrapper .login .inputs form a:visited,
@@ -365,8 +384,13 @@ header .links ul li a:hover:after {
   text-decoration: none;
 }
 
-.login-wrapper .login .inputs form input,
-.login-wrapper .register .inputs form input,
+.login-wrapper .login .inputs form .input-wrapper input, .login-wrapper .register .inputs form .input-wrapper input,
+.register-wrapper .login .inputs form .input-wrapper input,
+.register-wrapper .register .inputs form .input-wrapper input {
+  width: 100%;
+}
+
+.login-wrapper .login .inputs form input, .login-wrapper .register .inputs form input,
 .register-wrapper .login .inputs form input,
 .register-wrapper .register .inputs form input {
   outline: none;
@@ -380,33 +404,30 @@ header .links ul li a:hover:after {
   height: 40px;
 }
 
-.login-wrapper .login .inputs form .center-submit,
-.login-wrapper .register .inputs form .center-submit,
+.login-wrapper .login .inputs form .center-submit, .login-wrapper .register .inputs form .center-submit,
 .register-wrapper .login .inputs form .center-submit,
 .register-wrapper .register .inputs form .center-submit {
   width: 100%;
   text-align: right;
 }
 
-.login-wrapper .login .inputs form .center-submit-register,
-.login-wrapper .register .inputs form .center-submit-register,
+.login-wrapper .login .inputs form .center-submit-register, .login-wrapper .register .inputs form .center-submit-register,
 .register-wrapper .login .inputs form .center-submit-register,
 .register-wrapper .register .inputs form .center-submit-register {
   width: 100%;
   text-align: right;
 }
 
-.login-wrapper .login .inputs form .center-submit-register input[type="submit"],
-.login-wrapper .register .inputs form .center-submit-register input[type="submit"],
+.login-wrapper .login .inputs form .center-submit-register input[type="submit"], .login-wrapper .register .inputs form .center-submit-register input[type="submit"],
 .register-wrapper .login .inputs form .center-submit-register input[type="submit"],
 .register-wrapper .register .inputs form .center-submit-register input[type="submit"] {
   width: 100%;
 }
 
-.login-wrapper .login .inputs form input[type="submit"],
-.login-wrapper .register .inputs form input[type="submit"],
+.login-wrapper .login .inputs form input[type="submit"], .login-wrapper .register .inputs form input[type="submit"],
 .register-wrapper .login .inputs form input[type="submit"],
 .register-wrapper .register .inputs form input[type="submit"] {
+  margin: 20px 0;
   width: 100px;
   text-indent: 0px;
   background-color: white;
