@@ -5,7 +5,7 @@
                         <div class='tipo-wrapper'>
                             <h2>Seleccionar Modelo del Vehiculo:</h2>
                             <p>$tipo</p>
-                            <select name='autos' id='autos'>";
+                            <select name='autos' id='autos' onChange=tipo('$tipo','this.selectedIndex');>";
     
     switch($tipo){
         case "Sedan":
