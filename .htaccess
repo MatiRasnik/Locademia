@@ -1,0 +1,4 @@
+ErrorDocument 404 /locademia/error/404.html
+ErrorDocument 403 /locademia/error/403.html
+Options All -Indexes
+
