@@ -112,6 +112,11 @@ header {
   width: 100%;
   overflow-x: hidden;
 }
+.vector-wrapper-rotate{
+  img{
+    transform: rotate(180deg);
+  }
+}
 .vector {
   width: 100%;
   min-width: 600px;
@@ -315,7 +320,7 @@ header {
     border-radius: 25px;
     min-width: 350px;
     min-height: 520px;
-
+    margin: 20px 20px;
     .año{
       display: flex;
       align-items: center;
@@ -367,6 +372,7 @@ header {
         height: 30px;
         color: white;
         text-align: center;
+        align-items: center;
         background-color: transparent;
         border: none;
         border-radius: 50%;
@@ -438,16 +444,23 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
         flex-direction: column;
         width: 350px;
         height: 650px;
         box-shadow: -10px 10px 18px 5px rgba(0, 0, 0, 0.3);
+        background-color: white;
 
         img{
           width: 60%;
         }
         h1{
           color: #4874c5;
+          margin: 0;
+          padding: 0;
+        }
+        .categoria{
+          width: auto;
         }
         hr{
           border: 1px solid #4874c5;
@@ -482,6 +495,57 @@ header {
       }
     }
   }
+  .tipocoche{
+    .tipo-wrapper-grid{
+      min-height: 500px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      .tipo-wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h2{
+          margin: 0;
+        }
+
+        button{
+          background-color: #4874c5;
+          color: white;
+          width: 300px;
+          height: 50px;
+          border: none;
+          border-radius: 50px;
+          outline: none;
+          cursor: pointer;
+        }
+      }
+      .foto-vehiculo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        img{
+          width: 100%;
+        }
+      }
+    }
+    select{
+      width: 300px;
+      height: 50px;
+
+      margin: 20px 0;
+
+      border: 2px solid #4874c5;
+      border-radius: 25px;
+      background-color: transparent;
+      outline: none;
+      color: #4874c5;
+    }
+  }
 }
 footer{
   margin-top: 20px;
@@ -506,8 +570,12 @@ footer{
     p{
       font-size: 13px;
     }
+    .footer-logo{
+      margin: 0 10px;
+      max-width: 400px;
+    }
     img{
-      width: 400px;
+      width: 100%;
     }
 
     .info{
@@ -532,6 +600,33 @@ footer{
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .coche-wrapper{
+    .Coche{
+      .coche-wrapper-grid{
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
+@media screen and (max-width: 900px) {
+  .coche-wrapper{
+    .Coche{
+      .tipocoche{
+        .tipo-wrapper-grid{
+          grid-template-columns: 1fr;
+
+          .foto-vehiculo{
+            img{
+              width: 80%;
+              margin: 40px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 750px) {
   header {
     height: 125px;
@@ -571,6 +666,17 @@ footer{
         }
         .lan-buttn2{
           width: 300px;
+        }
+      }
+    }
+  }
+  .coche-wrapper{
+    .Coche{
+      .coche-wrapper-grid{
+        .coche-card-wrapper{
+          .coche-card{
+            width: 260px;
+          }
         }
       }
     }

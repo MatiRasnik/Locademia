@@ -3,26 +3,26 @@
     date_default_timezone_set("America/Los_Angeles");
     $mes = isset($_POST['mes']) ? $_POST['mes']: date("n");
     $mesActual = date("m");
-    $aÃ±o = isset($_POST['aÃ±o']) ? $_POST['aÃ±o']: date("Y");
-    $aÃ±oActual = date("Y");
+    $año = isset($_POST['año']) ? $_POST['año']: date("Y");
+    $añoActual = date("Y");
     $dia = date("d");
     if($mes > 12){
     $mes = 1;
-    $aÃ±o++;
+    $año++;
     }
     if($mes < 1){
     $mes = 12;
-    $aÃ±o--;
+    $año--;
     }
-    $diasMes = cal_days_in_month(CAL_GREGORIAN, $mes, $aÃ±o);
-    $diaSemana=date("N",mktime(0,0,0,$mes,1,$aÃ±o));
+    $diasMes = cal_days_in_month(CAL_GREGORIAN, $mes, $año);
+    $diaSemana=date("N",mktime(0,0,0,$mes,1,$año));
     $primerDia = $diaSemana - 1;
     $meses = array(1=>"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre");
 
     $calendario = "<div class='año'>
-                        <button class='botonesCal' onclick='mesAnterior($mes, $aÃ±o)'> < </button>
-                        <h2>$aÃ±o</h2>
-                        <button class='botonesCal' onclick='mesSiguiente($mes, $aÃ±o)'> > </button>
+                        <button class='botonesCal' onclick='mesAnterior($mes, $año)'> < </button>
+                        <h2>$año</h2>
+                        <button class='botonesCal' onclick='mesSiguiente($mes, $año)'> > </button>
                     </div>
                     <div class='mes'><h3>$meses[$mes]</h3></div><hr>";
     $calendario .= "<table id='calendar'>
@@ -48,11 +48,11 @@
             $semana += $primerDia;
         }
         for($i = 1; $i <= $diasMes; $i++){
-            if($i == $dia && $mes == $mesActual && $aÃ±o == $aÃ±oActual){
-                $calendario .= "<td><button class='dias diaActual' id='$i$mes$aÃ±o' >" . $i . "</button></td>";
+            if($i == $dia && $mes == $mesActual && $año == $añoActual){
+                $calendario .= "<td><button class='dias diaActual' id='$i$mes$año' >" . $i . "</button></td>";
             }
             else{
-                $calendario .= "<td><button class='dias' id='$i$mes$aÃ±o' >" . $i . "</button></td>";
+                $calendario .= "<td><button class='dias' id='$i$mes$año' >" . $i . "</button></td>";
             }
             $semana++;
             if($semana % 7 == 0){
