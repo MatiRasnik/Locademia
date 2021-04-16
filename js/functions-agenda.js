@@ -4,22 +4,40 @@ $( document ).ready(function(){
 
     $('#autos').on('click', function(){
         alert($(this).text());
-    });
-    
+    });    
 });
 
-function tipo(tipo, modelo){ 
-    alert(tipo);
-    alert(modelo);
+function tipo(tipo){ 
     $.ajax({
         url: "TipoCoche.php",
         type: "post",
-        data: { tipo: tipo, modelo: modelo },
+        data: { tipo: tipo },
         success: function (html) {
           document.getElementById("phpcoche").innerHTML = html;
         },
         complete: function (html) {
             $(".tipocoche").show();
+            
+        }
+    });
+}
+
+function tipoAuto(tipo){
+    
+    var select = document.getElementById("autos");
+
+    modelo = select.value;
+
+    $.ajax({
+        url: "TipoCoche.php",
+        type: "post",
+        data: { modelo: modelo, tipo: tipo },
+        success: function (html) {
+          document.getElementById("phpcoche").innerHTML = html;
+        },
+        complete: function (html) {
+            select.value = tipo;
+            document.getElementById("autos").value = modelo;
         }
     });
 }
