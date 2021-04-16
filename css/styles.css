@@ -706,8 +706,8 @@ header .links ul li a:hover:after {
   min-height: 500px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 40% 1fr;
+      grid-template-columns: 40% 1fr;
 }
 
 .coche-wrapper .tipocoche .tipo-wrapper-grid .tipo-wrapper {

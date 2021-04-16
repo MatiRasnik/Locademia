@@ -5,7 +5,7 @@
     }else if($_POST['tipo'] == "Hatchback"){
         $modelo = isset($_POST['modelo']) ? $_POST['modelo']: "Up" ;
     }else if($_POST['tipo'] == "Mini"){
-        $modelo = isset($_POST['modelo']) ? $_POST['modelo']: "Up" ;
+        $modelo = isset($_POST['modelo']) ? $_POST['modelo']: "Fiat" ;
     }
     $tipocoche = "  <div class='tipo-wrapper-grid'>
                         <div class='tipo-wrapper'>
@@ -29,10 +29,10 @@
             break;
         
         case "Mini":
-            $tipocoche .=  "<option value='volvo'>Volvo</option>
-                            <option value='saab'>Saab</option>
-                            <option value='opel'>Opel</option>
-                            <option value='audi'>Audi</option>";
+            $tipocoche .=  "<option value='Fiat'>Fiat 500</option>
+                            <option value='Beetle'>Volkswagen Beetle</option>
+                            <option value='ae86'>Toyota ae86</option>
+                            <option value='Smart'>Smart ForTwo</option>";
             break;
                         
     }
@@ -78,7 +78,25 @@
 
         case "Focus":
             $tipocoche .=  "<img src='../img/Focus.png' alt='' />";
-            break; 
+            break;
+
+        //MINI
+
+        case "Fiat":
+            $tipocoche .=  "<img src='../img/Fiat500.png' alt='' />";
+            break;
+        
+        case "Beetle":
+            $tipocoche .=  "<img src='../img/Beetle.png' alt='' />";
+            break;
+        
+        case "ae86":
+            $tipocoche .=  "<img src='../img/ae86.png' alt='' />";
+            break;
+
+        case "Smart":
+            $tipocoche .=  "<img src='../img/Smart.png' alt='' />";
+            break;  
     }
 
     $tipocoche .= "</div>
