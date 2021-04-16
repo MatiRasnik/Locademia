@@ -19,9 +19,15 @@
     $primerDia = $diaSemana - 1;
     $meses = array(1=>"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre");
 
-    $calendario = "<div class='año'>
-                        <button class='botonesCal' onclick='mesAnterior($mes, $año)'> < </button>
-                        <h2>$año</h2>
+    $calendario = "<div class='año'>";
+
+    if($mes == $mesActual && $año == $añoActual){
+
+    }else{
+        $calendario .= "<button class='botonesCal' onclick='mesAnterior($mes, $año)'> < </button>";
+    }    
+
+    $calendario .= "    <h2>$año</h2>
                         <button class='botonesCal' onclick='mesSiguiente($mes, $año)'> > </button>
                     </div>
                     <div class='mes'><h3>$meses[$mes]</h3></div><hr>";

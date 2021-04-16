@@ -9,7 +9,7 @@
     }
     $tipocoche = "  <div class='tipo-wrapper-grid'>
                         <div class='tipo-wrapper'>
-                            <h2>Seleccionar Modelo del Vehiculo:</h2>
+                            <h2>Seleccione el Modelo del Vehiculo:</h2>
                             <p>$tipo</p>
                             <select name='autos' id='autos' onChange=tipoAuto('$tipo');>";
     
@@ -38,7 +38,7 @@
     }
 
     $tipocoche .= "         </select>
-                            <button>Seleccionar</button>
+                            <button onclick='agenda()'>Seleccionar</button>
                         </div>
                         <div class='foto-vehiculo'>";
 

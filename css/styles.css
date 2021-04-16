@@ -17,6 +17,10 @@
   background: #5f97ff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .transition-1 {
   position: fixed;
   top: 0;
@@ -161,6 +165,21 @@ header .links ul li a:hover:after {
   height: 100vh;
 }
 
+.Landing-wrapper .error {
+  color: white;
+  text-align: center;
+}
+
+.Landing-wrapper .error h1 {
+  font-size: 50px;
+  margin: 0;
+}
+
+.Landing-wrapper .error p {
+  font-size: 20px;
+  margin: 0;
+}
+
 .Landing-wrapper .landing-info-wrapper {
   max-width: 550px;
   display: -webkit-box;
@@ -176,6 +195,10 @@ header .links ul li a:hover:after {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.Landing-wrapper .landing-info-wrapper .imagen-error {
+  width: 300px;
 }
 
 .Landing-wrapper .landing-info-wrapper .Logo img {
@@ -454,12 +477,37 @@ header .links ul li a:hover:after {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: white;
+}
+
+.agenda-wrapper .agenda-bg {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.agenda-wrapper .agenda-bg .agenda-wrapper2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .agenda-wrapper #Agenda {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 25px;
-  min-width: 350px;
+  max-width: 400px;
   min-height: 520px;
   margin: 20px 20px;
 }
@@ -477,9 +525,14 @@ header .links ul li a:hover:after {
   height: 50px;
   font-size: 20px;
   padding: 5px 0;
-  color: white;
+  color: white !important;
   background-color: #4874c5;
   border-radius: 25px 25px 0 0;
+}
+
+.agenda-wrapper #Agenda .año h2 {
+  color: white;
+  margin: 0 20px;
 }
 
 .agenda-wrapper #Agenda .mes {
@@ -902,7 +955,3 @@ footer .footer-wrapper .info .direccion ul a:visited {
   }
 }
 /*# sourceMappingURL=styles.css.map */
-.error{
-  font-size: 60px;
-  color: white;
-}

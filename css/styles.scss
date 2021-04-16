@@ -12,6 +12,9 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #5f97ff; 
 }
+html {
+  scroll-behavior: smooth;
+}
 .transition-1{
   position: fixed;
   top: 0;
@@ -135,6 +138,20 @@ header {
   width: 100%;
   height: 100vh;
 
+  .error{
+    color: white;
+    text-align: center;
+
+    h1{
+      font-size: 50px;
+      margin: 0;
+    }
+    p{
+      font-size: 20px;
+      margin: 0;
+    }
+  }
+
   .landing-info-wrapper {
     max-width: 550px;
     display: flex;
@@ -142,6 +159,9 @@ header {
     align-items: center;
     flex-direction: column;
 
+    .imagen-error{
+      width: 300px;
+    }
     .Logo {
       img {
         width: 500px;
@@ -315,10 +335,24 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: white;
+  .agenda-bg{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .agenda-wrapper2{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+
   #Agenda{
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 25px;
-    min-width: 350px;
+    max-width: 400px;
     min-height: 520px;
     margin: 20px 20px;
     .año{
@@ -329,9 +363,14 @@ header {
       height: 50px;
       font-size: 20px;
       padding: 5px 0;
-      color: white;
+      color: white !important;
       background-color: #4874c5;
       border-radius: 25px 25px 0 0;
+
+      h2{
+        color: white;
+        margin: 0 20px;
+      }
 
     }
     .mes{
