@@ -116,6 +116,11 @@ header {
   overflow-x: hidden;
 }
 .vector-wrapper-rotate{
+  position: relative;
+  top: -5px;
+  width: 100%;
+  overflow-x: hidden;
+
   img{
     transform: rotate(180deg);
   }
@@ -223,6 +228,38 @@ header {
     }
   }
 }
+.Info-wrapper{
+  background-color: white;
+  .info-grid{
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    color: #4874c5;
+
+    .img-info{
+      img{
+        margin: 20px;
+        width: 80%;
+        border-radius: 20px;
+      }
+    }
+    .info-info{
+      display: flex;
+      margin: 5px 20px;
+      justify-content: center;
+      flex-direction: column;
+
+      h1{
+        margin: 0;
+        font-size: 30px;
+      }
+      hr{
+        width: 100%;
+        border: 1px solid #4874c5;
+      }
+    }
+  }
+}
+
 .First-Section {
   height: 20vh;
   background-color: white;
@@ -458,6 +495,7 @@ header {
     color: #4874c5;
     text-align: center;
     background-color: white;
+    padding: 20px;
 
     .Title{
       font-weight: bold;

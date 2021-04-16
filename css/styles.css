@@ -133,6 +133,13 @@ header .links ul li a:hover:after {
   overflow-x: hidden;
 }
 
+.vector-wrapper-rotate {
+  position: relative;
+  top: -5px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .vector-wrapper-rotate img {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
@@ -273,6 +280,48 @@ header .links ul li a:hover:after {
           box-shadow: 0px 6px 25px 0px rgba(0, 0, 0, 0.5);
   background-position: left bottom;
   color: white;
+}
+
+.Info-wrapper {
+  background-color: white;
+}
+
+.Info-wrapper .info-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40% 1fr;
+      grid-template-columns: 40% 1fr;
+  color: #4874c5;
+}
+
+.Info-wrapper .info-grid .img-info img {
+  margin: 20px;
+  width: 80%;
+  border-radius: 20px;
+}
+
+.Info-wrapper .info-grid .info-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 5px 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.Info-wrapper .info-grid .info-info h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.Info-wrapper .info-grid .info-info hr {
+  width: 100%;
+  border: 1px solid #4874c5;
 }
 
 .First-Section {
@@ -631,6 +680,7 @@ header .links ul li a:hover:after {
   color: #4874c5;
   text-align: center;
   background-color: white;
+  padding: 20px;
 }
 
 .coche-wrapper .Coche .Title {
