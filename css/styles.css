@@ -282,11 +282,11 @@ header .links ul li a:hover:after {
   color: white;
 }
 
-.Info-wrapper {
+.Info-wrapper, .Agendar-wrapper {
   background-color: white;
 }
 
-.Info-wrapper .info-grid {
+.Info-wrapper .info-grid, .Info-wrapper .Agendar-grid, .Agendar-wrapper .info-grid, .Agendar-wrapper .Agendar-grid {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 40% 1fr;
@@ -294,13 +294,29 @@ header .links ul li a:hover:after {
   color: #4874c5;
 }
 
-.Info-wrapper .info-grid .img-info img {
+.Info-wrapper .info-grid .icon-Agendar, .Info-wrapper .Agendar-grid .icon-Agendar, .Agendar-wrapper .info-grid .icon-Agendar, .Agendar-wrapper .Agendar-grid .icon-Agendar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Info-wrapper .info-grid .icon-Agendar i, .Info-wrapper .Agendar-grid .icon-Agendar i, .Agendar-wrapper .info-grid .icon-Agendar i, .Agendar-wrapper .Agendar-grid .icon-Agendar i {
+  font-size: 200px;
+}
+
+.Info-wrapper .info-grid .img-info img, .Info-wrapper .Agendar-grid .img-info img, .Agendar-wrapper .info-grid .img-info img, .Agendar-wrapper .Agendar-grid .img-info img {
   margin: 20px;
   width: 80%;
   border-radius: 20px;
 }
 
-.Info-wrapper .info-grid .info-info {
+.Info-wrapper .info-grid .info-info, .Info-wrapper .info-grid .info-Agendar, .Info-wrapper .Agendar-grid .info-info, .Info-wrapper .Agendar-grid .info-Agendar, .Agendar-wrapper .info-grid .info-info, .Agendar-wrapper .info-grid .info-Agendar, .Agendar-wrapper .Agendar-grid .info-info, .Agendar-wrapper .Agendar-grid .info-Agendar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -314,14 +330,37 @@ header .links ul li a:hover:after {
           flex-direction: column;
 }
 
-.Info-wrapper .info-grid .info-info h1 {
+.Info-wrapper .info-grid .info-info h1, .Info-wrapper .info-grid .info-Agendar h1, .Info-wrapper .Agendar-grid .info-info h1, .Info-wrapper .Agendar-grid .info-Agendar h1, .Agendar-wrapper .info-grid .info-info h1, .Agendar-wrapper .info-grid .info-Agendar h1, .Agendar-wrapper .Agendar-grid .info-info h1, .Agendar-wrapper .Agendar-grid .info-Agendar h1 {
   margin: 0;
   font-size: 30px;
 }
 
-.Info-wrapper .info-grid .info-info hr {
+.Info-wrapper .info-grid .info-info hr, .Info-wrapper .info-grid .info-Agendar hr, .Info-wrapper .Agendar-grid .info-info hr, .Info-wrapper .Agendar-grid .info-Agendar hr, .Agendar-wrapper .info-grid .info-info hr, .Agendar-wrapper .info-grid .info-Agendar hr, .Agendar-wrapper .Agendar-grid .info-info hr, .Agendar-wrapper .Agendar-grid .info-Agendar hr {
   width: 100%;
   border: 1px solid #4874c5;
+}
+
+.Info-wrapper .info-grid .info-info a, .Info-wrapper .info-grid .info-Agendar a, .Info-wrapper .Agendar-grid .info-info a, .Info-wrapper .Agendar-grid .info-Agendar a, .Agendar-wrapper .info-grid .info-info a, .Agendar-wrapper .info-grid .info-Agendar a, .Agendar-wrapper .Agendar-grid .info-info a, .Agendar-wrapper .Agendar-grid .info-Agendar a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  width: 200px;
+  height: 50px;
+  background-color: #4874c5;
+  text-align: center;
+}
+
+.Info-wrapper .info-grid .info-info a:hover, .Info-wrapper .info-grid .info-Agendar a:hover, .Info-wrapper .Agendar-grid .info-info a:hover, .Info-wrapper .Agendar-grid .info-Agendar a:hover, .Agendar-wrapper .info-grid .info-info a:hover, .Agendar-wrapper .info-grid .info-Agendar a:hover, .Agendar-wrapper .Agendar-grid .info-info a:hover, .Agendar-wrapper .Agendar-grid .info-Agendar a:hover {
+  background-color: #5f97ff;
 }
 
 .First-Section {

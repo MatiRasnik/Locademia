@@ -228,12 +228,21 @@ header {
     }
   }
 }
-.Info-wrapper{
+.Info-wrapper,.Agendar-wrapper{
   background-color: white;
-  .info-grid{
+  .info-grid, .Agendar-grid{
     display: grid;
     grid-template-columns: 40% 1fr;
     color: #4874c5;
+
+    .icon-Agendar{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      i{
+        font-size: 200px;
+      }
+    }
 
     .img-info{
       img{
@@ -242,7 +251,7 @@ header {
         border-radius: 20px;
       }
     }
-    .info-info{
+    .info-info, .info-Agendar{
       display: flex;
       margin: 5px 20px;
       justify-content: center;
@@ -255,6 +264,21 @@ header {
       hr{
         width: 100%;
         border: 1px solid #4874c5;
+      }
+      a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+        border-radius: 10px;
+        width: 200px;
+        height: 50px;
+        background-color: #4874c5;
+        text-align: center;
+      }
+      a:hover{
+        background-color: #5f97ff;
       }
     }
   }
