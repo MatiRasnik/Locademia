@@ -902,3 +902,7 @@ footer .footer-wrapper .info .direccion ul a:visited {
   }
 }
 /*# sourceMappingURL=styles.css.map */
+.error{
+  font-size: 60px;
+  color: white;
+}
