@@ -6,15 +6,15 @@
         if (isset($ss['ci'])) {
             echo "<script>correcto($_POST['ci']);</script>";
         } else {*/
-            echo "<script>incorrecto();</script>";
+           $asd=   " Su cedula es invalidada";
         /*}
     }else{*/
-        if(isset($_POST['CI']),isset($_POST['Usename']),isset($_POST['Password'])){
+        if(isset($_POST['CI']) && isset($_POST['Usename']) && isset($_POST['Password'])){
             $sql = "SELECT * FROM usuario WHERE Username = '" . $_POST['Usename'] . "'";
             $result = $mysqli->query($sql);
             $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
             if (isset($ss['Usuario'])) {
-                echo "<script>incorrecto2();</script>";
+                $asd= "ya se a registrado este usuario";
             } else {
                 $usuario = '"' . $mysqli->real_escape_string($_POST['Usename']) . '"';
                 $contra = '"' . $mysqli->real_escape_string($_POST['Password']) . '"';
@@ -23,7 +23,9 @@
                 echo "<script>correcto2();</script>";
             }
         }else{
-            echo "<script>incorrecto2();</script>";
+            $asd= "ya se a registrado este usuario";
         }
     //}
+    echo $asd;
+    return $asd;
 ?>
