@@ -11,25 +11,15 @@ function Register1(){
             switch(asd){
                 case '1':
                     Cedula = ci;
-                    $.ajax({
-                        url: "Register2.html",
-                        type: "post",
-                        success: function() {
-                            alert("Su cedula a sido validada");
-                        },
-                    });
+                    alert("Su cedula a sido validada");
+                    window.location.assign("Register2.html")
                 break;
                 case '2':
                     alert("Su cedula es invalidada");
                 break;
                 case '3':
-                    $.ajax({
-                        url: "Login.html",
-                        type: "post",
-                        success: function() {
-                            alert("se guardaron sus datos");
-                        },
-                    });
+                    alert("se guardaron sus datos");
+                    window.location.assign("Login.html")
                 break;
                 case '4':
                     alert("este usuario ya existe");
