@@ -1,6 +1,6 @@
 <?php
 include 'conexion.php';
-
+echo 'hola';
 if(isset($_POST['usuario']) && $_POST['constraseña']){
         $sql = "CALL login( ".$_POST['usuario'].",". $_POST['constraseña']." );";
         $result = $mysqli -> query($sql);
