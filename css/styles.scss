@@ -116,6 +116,11 @@ header {
   overflow-x: hidden;
 }
 .vector-wrapper-rotate{
+  position: relative;
+  top: -5px;
+  width: 100%;
+  overflow-x: hidden;
+
   img{
     transform: rotate(180deg);
   }
@@ -223,6 +228,62 @@ header {
     }
   }
 }
+.Info-wrapper,.Agendar-wrapper{
+  background-color: white;
+  .info-grid, .Agendar-grid{
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    color: #4874c5;
+
+    .icon-Agendar{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      i{
+        font-size: 200px;
+      }
+    }
+
+    .img-info{
+      img{
+        margin: 20px;
+        width: 80%;
+        border-radius: 20px;
+      }
+    }
+    .info-info, .info-Agendar{
+      display: flex;
+      margin: 5px 20px;
+      justify-content: center;
+      flex-direction: column;
+
+      h1{
+        margin: 0;
+        font-size: 30px;
+      }
+      hr{
+        width: 100%;
+        border: 1px solid #4874c5;
+      }
+      a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+        border-radius: 10px;
+        width: 200px;
+        height: 50px;
+        background-color: #4874c5;
+        text-align: center;
+      }
+      a:hover{
+        background-color: #5f97ff;
+      }
+    }
+  }
+}
+
 .First-Section {
   height: 20vh;
   background-color: white;
@@ -458,6 +519,7 @@ header {
     color: #4874c5;
     text-align: center;
     background-color: white;
+    padding: 20px;
 
     .Title{
       font-weight: bold;

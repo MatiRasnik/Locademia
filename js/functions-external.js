@@ -1,4 +1,4 @@
 $( document ).ready(function() {
-    $("#header").load('../HF-External/header.html');
-    $("#footer").load('../HF-External/footer.html');
+    $("#header").load('/locademia/HF-External/header.html');
+    $("#footer").load('/locademia/HF-External/footer.html');
 });
