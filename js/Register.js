@@ -2,13 +2,38 @@ var Cedula;
 
 function Register1(){
     var ci = $('#CI').val();
-    alert(ci);
     $.ajax({
         url: "Register.php",
         type: "post",
         data: { ci: ci },
         success: function(asd) {
-            alert(asd);
+            switch(asd){
+                case 1:
+                    Cedula = ci;
+                    $.ajax({
+                        url: "Register2.html",
+                        type: "post",
+                        success: function() {
+                            alert("Su cedula a sido validada");
+                        },
+                    });
+                break;
+                case 2:
+                    alert("Su cedula es validada");
+                break;
+                case 3:
+                    $.ajax({
+                        url: "Login.html",
+                        type: "post",
+                        success: function() {
+                            alert("se guardaron sus datos");
+                        },
+                    });
+                break;
+                case 4:
+                    alert("este usuario ya existe");
+                break;
+            }
         },
     });
 }
@@ -33,24 +58,4 @@ function Register2(){
             },
         });
     }
-}
-function correcto(CI){
-     Cedula = CI;
-    $.ajax({
-        url: "Register2.html",
-        type: "post",
-        success: function() {
-            alert("Su cedula a sido validada");
-        },
-    });
-}
-function correcto2(){
-    alert('tomas manco');
-    $.ajax({
-        url: "Login.html",
-        type: "post",
-        success: function() {
-            alert("se guardaron sus datos");
-        },
-    });
 }
