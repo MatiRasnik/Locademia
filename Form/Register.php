@@ -4,7 +4,7 @@ include 'conexion.php';
         $sql = "SELECT * FROM cliente WHERE CI = '" . $_POST['ci'] . "'";
         $result = $mysqli->query($sql);
         $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
-        if (isset($ss['ci'])) {
+        if (isset($ss['CI'])) {
             $asd = "1";
         } else {
         $asd = "2";
