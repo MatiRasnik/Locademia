@@ -7,7 +7,10 @@
     }else if($_POST['tipo'] == "Mini"){
         $modelo = isset($_POST['modelo']) ? $_POST['modelo']: "Fiat" ;
     }
-    $tipocoche = "  <div class='tipo-wrapper-grid'>
+        $tipocoche = "  <div class='vector-wrapper'>
+                            <img class='vector' src='../img/Main-Vector.svg' alt='' />
+                        </div>
+                        <div class='tipo-wrapper-grid'>
                         <div class='tipo-wrapper'>
                             <h2>Seleccione el Modelo del Vehiculo:</h2>
                             <p>$tipo</p>
@@ -100,7 +103,10 @@
     }
 
     $tipocoche .= "</div>
-            </div>";
+            </div>
+            <div class='vector-wrapper-rotate'>
+                <img class='vector' src='../img/Main-Vector.svg' alt='' />
+            </div> ";
 
     echo $tipocoche;
     return $tipocoche;

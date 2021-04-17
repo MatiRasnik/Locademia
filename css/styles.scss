@@ -228,12 +228,21 @@ header {
     }
   }
 }
-.Info-wrapper{
+.Info-wrapper,.Agendar-wrapper{
   background-color: white;
-  .info-grid{
+  .info-grid, .Agendar-grid{
     display: grid;
     grid-template-columns: 40% 1fr;
     color: #4874c5;
+
+    .icon-Agendar{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      i{
+        font-size: 200px;
+      }
+    }
 
     .img-info{
       img{
@@ -242,7 +251,7 @@ header {
         border-radius: 20px;
       }
     }
-    .info-info{
+    .info-info, .info-Agendar{
       display: flex;
       margin: 5px 20px;
       justify-content: center;
@@ -255,6 +264,21 @@ header {
       hr{
         width: 100%;
         border: 1px solid #4874c5;
+      }
+      a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+        border-radius: 10px;
+        width: 200px;
+        height: 50px;
+        background-color: #4874c5;
+        text-align: center;
+      }
+      a:hover{
+        background-color: #5f97ff;
       }
     }
   }
@@ -367,22 +391,110 @@ header {
     }
   }
 }
+.coche-wrapper{
+  .agenda-wrapper{
+    .agenda-bg2{
+      .agenda-bg{
+        margin: 20px 0;
+        .horas{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          .col-grid{
+            width: 500px;
+            display: grid;
+            text-align: center;
+            height: 100%;
+            grid-template-columns: 1fr 1fr;
+            .col-flex{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+            }
+        
+            .col1,.col2{
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+              width: 150px;
+              height: 100%;
+
+              .horario{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                height: 40px;
+                background-color: transparent;
+                border: 1px solid #4874c5;
+                border-radius: 10px;
+                margin: 2px 0;
+                cursor: pointer;
+
+                input[type=checkbox]{
+                  border: 2px solid #4874c5;
+                  width: 20px;
+                  height: 20px;
+                  border-radius: 50%;
+                }
+                input:checked{
+                  border-radius: 20px;
+                }
+                label{
+                  margin-right: 30px;
+                }
+
+              }
+
+              .Titulo{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                height: 50px;
+                color: white;
+                background-color: #4874c5;
+                border: 1px solid #4874c5;
+                border-radius: 10px;
+
+                h1{
+                  margin: 0;
+                  padding: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
 .agenda-wrapper{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: white;
-  .agenda-bg{
+  .agenda-bg2{
+    background-color: white;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    color: #4874c5;
 
-    .agenda-wrapper2{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+    .agenda-bg{
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+  
+      .agenda-wrapper2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
     }
   }
 
@@ -586,6 +698,7 @@ header {
       min-height: 500px;
       display: grid;
       grid-template-columns: 40% 1fr;
+      background-color: white;
 
       .tipo-wrapper{
         display: flex;
