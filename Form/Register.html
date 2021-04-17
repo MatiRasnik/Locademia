@@ -12,6 +12,7 @@
     <script src="https://kit.fontawesome.com/1e193e3a23.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/styles.css" />
     <script src="../js/transiciones.js"></script>
+    <script src="../js/Register.js"></script>
     <script src="../js/functions-external.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Locademia | Register</title>
@@ -27,17 +28,15 @@
           <img src="../img/LogoV1.1 - Transparente.png" alt="" />
         </div>
         <div class="inputs">
-          <form action="Register2.html" method="post">
             <h1>Register</h1>
             <h4>Paso 1:</h4>
             <p>CI (Cedula de Identidad) sin puntos ni guiones.</p>
             <div class="input-wrapper">
-              <input type="text" name="CI" required/>
+              <input type="text" id="CI" name="CI" required/>
             </div>
             <div class="center-submit-register">
-              <input type="submit" value="Enviar" />
+              <button onclick='Register1()'>Enviar</button>
             </div>
-          </form>
         </div>
       </div>
     </section>

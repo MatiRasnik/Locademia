@@ -12,6 +12,7 @@
     <script src="https://kit.fontawesome.com/1e193e3a23.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/styles.css" />
     <script src="../js/transiciones.js"></script>
+    <script src="../js/Register.js"></script>
     <script src="../js/functions-external.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Locademia | Register</title>
@@ -27,21 +28,19 @@
           <img src="../img/LogoV1.1 - Transparente.png" alt="" />
         </div>
           <div class="inputs">
-            <form action="" method="post">
               <h1>Register</h1>
               <h4>Paso 2:</h4>
               <div>
                 <p>Usuario:</p>
-                <input type="text" name="usuario" required />
+                <input type="text" id="usuario" name="usuario" required />
                 <p>Contraseña:</p>
-                <input type="password" name="password" required />
+                <input type="password" id="password" name="password" required />
                 <p>Confirmar Contraseña:</p>
-                <input type="password" name="password2" required />
+                <input type="password" id="password2" name="password2" required />
                 <div class="center-submit">
-                  <input type="submit">
+                  <button onclick='Register2()'>Enviar</button>
                 </div>
               </div>
-            </form>
           </div>
       </div>
     </section>
