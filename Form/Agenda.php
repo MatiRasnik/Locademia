@@ -58,7 +58,11 @@
                 $calendario .= "<td><button class='dias diaActual' id='$i$mes$año' >" . $i . "</button></td>";
             }
             else{
-                $calendario .= "<td><button class='dias' id='$i$mes$año' >" . $i . "</button></td>";
+                if($i > $dia || $mes > $mesActual || $año > $añoActual){
+                    $calendario .= "<td><button class='dias' id='$i$mes$año' >" . $i . "</button></td>";
+                } elseif($i < $dia && $mes <= $mesActual && $año <= $añoActual){
+                    $calendario .= "<td><button class='dias' id='$i$mes$año' disabled>" . $i . "</button></td>";
+                }
             }
             $semana++;
             if($semana % 7 == 0){
