@@ -7,8 +7,9 @@ function Register1(){
         type: "post",
         data: { ci: ci },
         success: function(asd) {
+            alert(asd);
             switch(asd){
-                case 1:
+                case '1':
                     Cedula = ci;
                     $.ajax({
                         url: "Register2.html",
@@ -18,10 +19,10 @@ function Register1(){
                         },
                     });
                 break;
-                case 2:
-                    alert("Su cedula es validada");
+                case '2':
+                    alert("Su cedula es invalidada");
                 break;
-                case 3:
+                case '3':
                     $.ajax({
                         url: "Login.html",
                         type: "post",
@@ -30,7 +31,7 @@ function Register1(){
                         },
                     });
                 break;
-                case 4:
+                case '4':
                     alert("este usuario ya existe");
                 break;
             }

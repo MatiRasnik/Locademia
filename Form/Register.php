@@ -1,4 +1,5 @@
 <?php
+include 'conexion.php';
     if(isset($_POST['ci'])){
         $sql = "SELECT * FROM cliente WHERE CI = '" . $_POST['ci'] . "'";
         $result = $mysqli->query($sql);
