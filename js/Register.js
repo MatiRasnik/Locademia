@@ -1,18 +1,19 @@
-var Cedula;
+
 
 function Register1(){
     var ci = $('#CI').val();
+    sessionStorage.setItem("cedula", ci);
     $.ajax({
         url: "Register.php",
         type: "post",
         data: { ci: ci },
         success: function(respuesta) {
             if(respuesta == 1){
-                sessionStorage.setItem('Cedula', ci);
                 alert("Su cedula a sido validada");
                 window.location.assign("Register2.html")
             }else{
                 alert("Su cedula es invalida");
+                sessionStorage.clear();
             }
         },
     });
@@ -21,17 +22,23 @@ function Register2(){
     var username = $('#usuario').val();
     var password = $('#password').val();
     var password2 = $('#password2').val();
+    var Cedula = sessionStorage.getItem("cedula");
     if(password == password2){
         $.ajax({
             url: "Register.php",
             type: "post",
-            data: {CI: sessionStorage.getItem('Cedula'), Usename: username, Password: password},
+            data: {CI: Cedula, Usename: username, Password: password},
             success: function(respuesta) {
-                if(respuesta == 1){
+                if(respuesta == 3){
                     alert("se guardaron sus datos");
                     window.location.assign("Login.html")
+                    sessionStorage.clear();
                 }else{
-                    alert("este usuario ya existe");
+                    if(respuesta == 4){
+                        alert("este usuario ya existe");
+                    }else{
+                        alert("Hubo un error");
+                    }
                 }
             },
         });
