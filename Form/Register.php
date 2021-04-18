@@ -1,7 +1,18 @@
 <?php
 include 'conexion.php';
+if(isset($_POST['ci'])){
+    $sql = "SELECT * FROM cliente WHERE CI = '" . $_POST['ci'] . "'";
+    $result = $mysqli->query($sql);
+    $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    if (isset($ss['CI'])) {
+        $respuesta = "1";
+    } else {
+    $respuesta = "2";
+    }
+}else{
+
 if(isset($_POST['CI']) && isset($_POST['Usename']) && isset($_POST['Password'])){
-    $sql = "SELECT * FROM usuario WHERE Username = '" . $_POST['Usename'] . "'";
+    $sql = "SELECT * FROM cuenta WHERE username = '" . $_POST['Usename'] . "'";
     $result = $mysqli->query($sql);
     $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
     if (isset($ss['Username'])) {
@@ -14,16 +25,9 @@ if(isset($_POST['CI']) && isset($_POST['Usename']) && isset($_POST['Password']))
         $respuesta = "3";
     }
 }else{
-    if(isset($_POST['ci'])){
-        $sql = "SELECT * FROM cliente WHERE CI = '" . $_POST['ci'] . "'";
-        $result = $mysqli->query($sql);
-        $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
-        if (isset($ss['CI'])) {
-            $respuesta = "1";
-        } else {
-        $respuesta = "2";
-        }
-    }
+    $respuesta = "4";
 }
+}
+echo $respuesta;
 return $respuesta;
 ?>
