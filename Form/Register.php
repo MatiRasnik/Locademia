@@ -21,11 +21,15 @@ if(isset($_POST['CI']) && isset($_POST['Usename']) && isset($_POST['Password']))
         $usuario = '"' . $mysqli->real_escape_string($_POST['Usename']) . '"';
         $contra = '"' . $mysqli->real_escape_string($_POST['Password']) . '"';
         $CI = '"' . $mysqli->real_escape_string($_POST['CI']) . '"';
-        $insert_row = $mysqli->query("INSERT INTO usuario  (Username, Pass, CI) VALUES($usuario, $contra, $CI)");
-        $respuesta = "3";
+        $insert_row = $mysqli->query("INSERT INTO cuenta  (Username, Pass, CI) VALUES($usuario, $contra, $CI)");
+        if($insert_row){
+            $respuesta = "3";
+        }else{
+            $respuesta ="4";
+        }
     }
 }else{
-    $respuesta = "4";
+    $respuesta = "5";
 }
 }
 echo $respuesta;
