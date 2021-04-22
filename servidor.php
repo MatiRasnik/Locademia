@@ -1,6 +1,17 @@
 <?php
 class servidor{
 
+    switch($_POST['funcion']){
+        case "1":
+            $fun = $this->crearUsuario($_POST['usuario'],$_POST['pass'],$_POST['ci']);
+            break;
+        case "2":
+            $fun = $this->login($_POST['usuario'],$_POST['pass']);
+            break;
+        case "3":
+            break;
+    }
+
     function conectar(){
 
         if(!$conexion = mysqli_connect('localhost','root','root','locademia')){
@@ -11,6 +22,10 @@ class servidor{
             mysqli_query($conexion, $sql);
             return $conexion;
         }
+    }
+
+    function close(){
+        $conexion->close();
     }
 
     function crearUsuario($usuario, $pass, $ci){
@@ -35,21 +50,10 @@ class servidor{
         }else{
             echo "<script>alert('no funca')</alert>";
         }
-        }
-    
-
-/*
-    switch($_POST['Funcion']){
-        case "1":
-            $fun = $this->crearUsuario($_POST['usuario'],$_POST['pass'],$_POST['ci']);
-            break;
-        case "2":
-            $fun = $this->login($_POST['usuario'],$_POST['pass']);
-            break;
-        case "3":
-            break;
     }
+
     function crearUsuario($usuario, $pass, $ci){
+        
         $respuesta;
         $conn = $this->conectar();
         if(isset($_POST['ci'])){
@@ -59,15 +63,9 @@ class servidor{
                     $stmts = $conn->prepare($sql);
                     $stmts->bind_param("ssi",$usuario, $pass, $ci);
                     if($stmts->execute()){
-                        $stmts->store_result()
-                        $stmts->bind_result($result)
-                        if($result = 1){
-                            $respuesta = "3";
-                        }else{
-                            $respuesta = "4";
-                        }
+                        $respuesta = 3;
                     }else{
-                        $respuesta = "5";
+                        $respuesta = 4;
                     }
                 }
             }else{
@@ -75,25 +73,16 @@ class servidor{
                 $stmts = $conn->prepare($sql);
                 $stmts->bind_param("i",$ci);
                 if($stmts->execute()){
-                    $stmts->store_result()
-                        $stmts->bind_result($result)
-                        if($result = 1){
-                            $respuesta = "1";
-                        }else{
-                            $respuesta = "2";
-                        }
+                    $respuesta = 1;
                 }else{
-                    $respuesta = "5";
+                    $respuesta = 2;
                 }
             }
         }else{
-            $respuesta = "2";
+            $respuesta = 5;
         }
         $conn = $this->close();
         return $respuesta;
     }
-
-
-*/
 }
 ?>
