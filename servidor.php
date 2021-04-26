@@ -31,10 +31,24 @@ class servidor{
         $stmts->bind_param("ss",$usuario, $pass);
 
         if($stmts->execute()){
-            echo "<script>alert('funca')</alert>";
+            $stmts->store_result();
+            $stmts->bind_result($us,$pas);
+            if($stmts->fetch()){
+                if($us== null){
+                    $stmts->close();
+                    $log = 0;
+                }else{
+                    $stmts->close();
+                    $log = 1;
+                }
+            }else{
+                $log = 0;
+            }
+        
         }else{
-            echo "<script>alert('no funca')</alert>";
+           $log = 0;
         }
+        return $log;
         }
     
 

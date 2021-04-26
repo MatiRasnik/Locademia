@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../css/styles.css" />
     <script src="../js/transiciones.js"></script>
     <script src="../js/functions-external.js"></script>
-    <script src="../js/login.js"></script>
+    <script src="../js/log.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Locademia | Login</title>
   </head>
@@ -28,16 +28,17 @@
           <img src="../img/LogoV1.1 - Transparente.png" alt="" />
         </div>
         <div class="inputs">
+          <form>
             <h1>Login</h1>
             <p>Usuario:</p>
-            <input type="text" id = "usuario" name="usuario" required />
+            <input type="text" id="usuario" name="usuario" required />
             <p>Contraseña:</p>
             <input type="password" id="contra" name="constraseña" required />
             <p>
               Si no tienes cuenta, haz click <a href="Register.html">aquí</a>.
             </p>
             <div class="center-submit">
-              <button onclick="login()">Entrar</button>
+             <button onclick="log()">Entrar</button>
             </div>
           </form>
         </div>
