@@ -55,13 +55,13 @@
         }
         for($i = 1; $i <= $diasMes; $i++){
             if($i == $dia && $mes == $mesActual && $año == $añoActual){
-                $calendario .= "<td><button class='dias diaActual' id='$i$mes$año' >" . $i . "</button></td>";
+                $calendario .= "<td><button class='dias diaActual' id='$i-$mes-$año' onclick='revisarHoras(this.id)'>" . $i . "</button></td>";
             }
             else{
                 if($i > $dia || $mes > $mesActual || $año > $añoActual){
-                    $calendario .= "<td><button class='dias' id='$i$mes$año' onclick='revisarHoras(this.id)'>" . $i . "</button></td>";
+                    $calendario .= "<td><button class='dias' id='$i-$mes-$año' onclick='revisarHoras(this.id)'>" . $i . "</button></td>";
                 } elseif($i < $dia && $mes <= $mesActual && $año <= $añoActual){
-                    $calendario .= "<td><button class='dias' id='$i$mes$año' disabled>" . $i . "</button></td>";
+                    $calendario .= "<td><button class='dias' id='$i-$mes-$año' disabled>" . $i . "</button></td>";
                 }
             }
             $semana++;
