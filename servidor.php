@@ -40,5 +40,59 @@ class servidor{
             return false;
         }
         }
+
+        
+    function crearUsuario($user, $pwd, $ci){
+        $conn = $this->conectar();
+        $sql = "CALL crearUsuario(?,?,?)";
+        $stmts = $conn->prepare($sql);
+        $stmts->bind_param("ssi",$user, $pwd, $ci);
+        if($stmts->execute()){
+            $stmts->store_result();
+            $stmts->bind_result($usuario,$pass);
+            if($stmts->fetch()){
+                if($usuario == null){
+                    $stmts->close();
+                    return false;
+                }else{
+                    $stmts->close();
+                    return true;
+                }
+            }else{
+                return false;
+            }
+        
+        }else{
+            return false;
+        }
+        return false;
+        }
     }
+
+    function ComprobarCI($ci){
+        $conn = $this->conectar();
+        $sql = "CALL ComprobarCI(?)";
+        $stmts = $conn->prepare($sql);
+        $stmts->bind_param("i",$ci);
+        if($stmts->execute()){
+            $stmts->store_result();
+            $stmts->bind_result($usuario,$pass);
+            if($stmts->fetch()){
+                if($comprobacion == null){
+                    $stmts->close();
+                    $register = 2;
+                }else{
+                    $stmts->close();
+                    $register = 1;
+                }
+            }else{
+                $register = 2;
+            }    
+        }else{
+            $respuesta = 5;
+        }
+        $conn = $this->close();
+        return $respuesta;
+    }
+    
 ?>
