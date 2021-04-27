@@ -2,7 +2,6 @@
 class servidor{
 
     function conectar(){
-
         if(!$conexion = mysqli_connect('localhost','root','root','locademia')){
             echo "No se pudo conectar a la base de datos";
             exit;
