@@ -1,17 +1,6 @@
 <?php
 class servidor{
 
-    switch($_POST['funcion']){
-        case "1":
-            $fun = $this->crearUsuario($_POST['usuario'],$_POST['pass'],$_POST['ci']);
-            break;
-        case "2":
-            $fun = $this->login($_POST['usuario'],$_POST['pass']);
-            break;
-        case "3":
-            break;
-    }
-
     function conectar(){
 
         if(!$conexion = mysqli_connect('localhost','root','root','locademia')){
@@ -23,19 +12,6 @@ class servidor{
             return $conexion;
         }
     }
-
-    function close(){
-        $conexion->close();
-    }
-
-    function crearUsuario($usuario, $pass, $ci){
-        $conn = $this->conectar();
-
-        $sql = "CALL crearUsuario(?,?,?)";
-        $stmts = $conn->prepare($sql);
-
-        $stmts->bind_param("ssi",$usuario, $pass, $ci);
-    }
     
     function login($usuario, $pass){
         $conn = $this->conectar();
@@ -44,28 +20,27 @@ class servidor{
         $stmts = $conn->prepare($sql);
 
         $stmts->bind_param("ss",$usuario, $pass);
-
+        $us="";
         if($stmts->execute()){
             $stmts->store_result();
-            $stmts->bind_result($us,$pas);
+            $stmts->bind_result($ci,$us,$pas);
             if($stmts->fetch()){
-                if($us== null){
+                if($us == null){
                     $stmts->close();
-                    $log = 0;
+                    return false;
                 }else{
                     $stmts->close();
-                    $log = 1;
+                    return true;
                 }
             }else{
-                $log = 0;
+                return false;
             }
         
         }else{
-           $log = 0;
+            return false;
         }
-        return $log;
         }
-    
+    /*
         function crearUsuario($usuario, $pass, $ci){
         
             $respuesta;
@@ -97,7 +72,7 @@ class servidor{
             }
             $conn = $this->close();
             return $respuesta;
-        }
+        }*/
     }
     ?>
   
