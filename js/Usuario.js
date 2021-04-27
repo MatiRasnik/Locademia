@@ -26,26 +26,23 @@ class Usuario{
     }
     
     login(usuario, passw){ 
+        var x=0;
         $.ajax({
             async: false,
             type: "POST",
             url: "../Form/logearse.php",
             data: {usuario:usuario,passw:passw},
             success: function(log){
-                alert("log" + log);
                 if(log == 1){
-                    alert(" logeado");
-                    var asd = "1";
-                    return asd;
+                    x = 1;
                 }else{
-                    alert("no logeado");
-                var asd = "0";
-                return asd;
+                    x= 0;
                 }
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) { 
                 alert("Status: " + textStatus); alert("Error: " + errorThrown); 
             }   
         });
+        return x;
     }
 }
