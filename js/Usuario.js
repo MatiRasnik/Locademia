@@ -27,17 +27,20 @@ class Usuario{
     
     login(usuario, passw){ 
         $.ajax({
+            async: false,
             type: "POST",
             url: "../Form/logearse.php",
             data: {usuario:usuario,passw:passw},
             success: function(log){
-                alert("log: " + log);
+                alert("log" + log);
                 if(log == 1){
                     alert(" logeado");
-                return true; 
+                    var asd = "1";
+                    return asd;
                 }else{
                     alert("no logeado");
-                return false;
+                var asd = "0";
+                return asd;
                 }
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) { 
