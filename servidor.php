@@ -1,17 +1,6 @@
 <?php
 class servidor{
 
-    switch($_POST['funcion']){
-        case "1":
-            $fun = $this->crearUsuario($_POST['usuario'],$_POST['pass'],$_POST['ci']);
-            break;
-        case "2":
-            $fun = $this->login($_POST['usuario'],$_POST['pass']);
-            break;
-        case "3":
-            break;
-    }
-
     function conectar(){
 
         if(!$conexion = mysqli_connect('localhost','root','root','locademia')){
@@ -28,13 +17,57 @@ class servidor{
         $conexion->close();
     }
 
-    function crearUsuario($usuario, $pass, $ci){
+    function crearUsuario($user, $pwd, $ci){
         $conn = $this->conectar();
-
         $sql = "CALL crearUsuario(?,?,?)";
         $stmts = $conn->prepare($sql);
+        $stmts->bind_param("ssi",$user, $pwd, $ci);
+        if($stmts->execute()){
+            $stmts->store_result();
+            $stmts->bind_result($usuario,$pass);
+            if($stmts->fetch()){
+                if($usuario == null){
+                    $stmts->close();
+                    $register = 4;
+                }else{
+                    $stmts->close();
+                    $register = 3;
+                }
+            }else{
+                $register = 4;
+            }
+        
+        }else{
+            $register = 5;
+        }
+        return $register;
+        }
+    }
 
-        $stmts->bind_param("ssi",$usuario, $pass, $ci);
+    function ComprobarCI($ci){
+        $conn = $this->conectar();
+        $sql = "CALL ComprobarCI(?)";
+        $stmts = $conn->prepare($sql);
+        $stmts->bind_param("i",$ci);
+        if($stmts->execute()){
+            $stmts->store_result();
+            $stmts->bind_result($usuario,$pass);
+            if($stmts->fetch()){
+                if($comprobacion == null){
+                    $stmts->close();
+                    $register = 2;
+                }else{
+                    $stmts->close();
+                    $register = 1;
+                }
+            }else{
+                $register = 2;
+            }    
+        }else{
+            $respuesta = 5;
+        }
+        $conn = $this->close();
+        return $respuesta;
     }
     
     function login($usuario, $pass){
@@ -61,43 +94,8 @@ class servidor{
             }
         
         }else{
-           $log = 0;
+            $log = 0;
         }
         return $log;
         }
-    
-        function crearUsuario($usuario, $pass, $ci){
-        
-            $respuesta;
-            $conn = $this->conectar();
-            if(isset($_POST['ci'])){
-                if(isset($_POST['usuario']) && isset($_POST['pass'])){
-                    else{
-                        $sql = "CALL crearUsuario(?,?,?)";
-                        $stmts = $conn->prepare($sql);
-                        $stmts->bind_param("ssi",$usuario, $pass, $ci);
-                        if($stmts->execute()){
-                            $respuesta = 3;
-                        }else{
-                            $respuesta = 4;
-                        }
-                    }
-                }else{
-                    $sql = "CALL ComprobarCI(?)";
-                    $stmts = $conn->prepare($sql);
-                    $stmts->bind_param("i",$ci);
-                    if($stmts->execute()){
-                        $respuesta = 1;
-                    }else{
-                        $respuesta = 2;
-                    }
-                }
-            }else{
-                $respuesta = 5;
-            }
-            $conn = $this->close();
-            return $respuesta;
-        }
-    }
-    ?>
-  
+?>
