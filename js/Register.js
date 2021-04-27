@@ -1,15 +1,12 @@
-
-
 function Register1(){
-    var funcion = 1;
     var ci = $('#CI').val();
     sessionStorage.setItem("cedula", ci);
     $.ajax({
-        url: "../servidor.php",
+        url: "Register.php",
         type: "post",
-        data: {funcion: funcion ,  ci: ci },
+        data: {ci: ci },
         success: function(respuesta) {
-            if(respuesta == 1){
+            if(respuesta == 1){s
                 alert("Su cedula a sido validada");
                 window.location.assign("Register2.html")
             }else{
@@ -25,16 +22,15 @@ function Register1(){
     });
 }
 function Register2(){
-    var funcion = 1;
     var username = $('#usuario').val();
     var password = $('#password').val();
     var password2 = $('#password2').val();
     var Cedula = sessionStorage.getItem("cedula");
     if(password == password2){
         $.ajax({
-            url: "../servidor.php",
+            url: "Register.php",
             type: "post",
-            data: {funcion: funcion , ci: Cedula, Usename: username, Password: password},
+            data: {ci: Cedula, Usename: username, Password: password},
             success: function(respuesta) {
                 if(respuesta == 3){
                     alert("se guardaron sus datos");

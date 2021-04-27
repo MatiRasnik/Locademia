@@ -40,39 +40,4 @@ class servidor{
             return false;
         }
         }
-    /*
-        function crearUsuario($usuario, $pass, $ci){
-        
-            $respuesta;
-            $conn = $this->conectar();
-            if(isset($_POST['ci'])){
-                if(isset($_POST['usuario']) && isset($_POST['pass'])){
-                    else{
-                        $sql = "CALL crearUsuario(?,?,?)";
-                        $stmts = $conn->prepare($sql);
-                        $stmts->bind_param("ssi",$usuario, $pass, $ci);
-                        if($stmts->execute()){
-                            $respuesta = 3;
-                        }else{
-                            $respuesta = 4;
-                        }
-                    }
-                }else{
-                    $sql = "CALL ComprobarCI(?)";
-                    $stmts = $conn->prepare($sql);
-                    $stmts->bind_param("i",$ci);
-                    if($stmts->execute()){
-                        $respuesta = 1;
-                    }else{
-                        $respuesta = 2;
-                    }
-                }
-            }else{
-                $respuesta = 5;
-            }
-            $conn = $this->close();
-            return $respuesta;
-        }*/
-    }
-    ?>
-  
+?>
