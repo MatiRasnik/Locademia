@@ -2,16 +2,16 @@ var diaG;
 var arri = [];
 var i;
 
-function revisarHoras(dia) {
+function revisarHoras(fecha, dia, mes, año) {
     arri.length=0;
     diaG = dia;
     console.log(dia);
     $.ajax({
         url: "Reservas.php",
         type: "post",
-        data: { dia:dia },
+        data: { fecha:fecha, dia:dia, mes: mes, año: año},
         success: function (html) {
-            $(".col2").html(html);
+            $(".horas").html(html);
         },
     });
 }

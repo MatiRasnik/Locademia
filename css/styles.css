@@ -575,12 +575,15 @@ header .links ul li a:hover:after {
           flex-direction: column;
 }
 
+.coche-wrapper .agenda-wrapper .agenda-bg2 .agenda-bg .horas h1 {
+  margin: 20px 0;
+}
+
 .coche-wrapper .agenda-wrapper .agenda-bg2 .agenda-bg .horas .col-grid {
   width: 500px;
   display: -ms-grid;
   display: grid;
   text-align: center;
-  height: 100%;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
 }
