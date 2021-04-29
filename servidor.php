@@ -119,5 +119,19 @@ class servidor{
             $stmts->bind_result(/*arry horarios*/);
 
         }}
+
+        function infoCliente($ci){
+            $conn = $this->conectar();
+    
+            $sql = "CALL infoCliente(?)";
+            $stmts = $conn->prepare($sql);
+    
+            $stmts->bind_param("i", $ci);
+            $us="";
+            if($stmts->execute()){
+                $stmts->store_result();
+                $stmts->bind_result(/*arry horarios*/);
+    
+            }}
 }
 ?>
