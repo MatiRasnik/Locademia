@@ -7,8 +7,7 @@ function log(){
       let user = new Usuario();
       var log = user.login(usuario, contra);
       if(log == 1){
-        window.location.assign("/locademia/index.html");
-
+        //location.href ="https://didesweb.com/";
       }else{
           alert("El usuario o contraseña que ingreso es incorrecto");
       }
