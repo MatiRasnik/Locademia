@@ -506,9 +506,11 @@ header .links ul li a:hover:after {
   width: 100%;
 }
 
-.login-wrapper .login .inputs input, .login-wrapper .register .inputs input,
+.login-wrapper .login .inputs input, .login-wrapper .login .inputs button, .login-wrapper .register .inputs input, .login-wrapper .register .inputs button,
 .register-wrapper .login .inputs input,
-.register-wrapper .register .inputs input {
+.register-wrapper .login .inputs button,
+.register-wrapper .register .inputs input,
+.register-wrapper .register .inputs button {
   outline: none;
   text-indent: 10px;
   font-family: Poppins, Arial;
@@ -540,9 +542,11 @@ header .links ul li a:hover:after {
   width: 100%;
 }
 
-.login-wrapper .login .inputs input[type="submit"], .login-wrapper .register .inputs input[type="submit"],
+.login-wrapper .login .inputs input[type="submit"], .login-wrapper .login .inputs button, .login-wrapper .register .inputs input[type="submit"], .login-wrapper .register .inputs button,
 .register-wrapper .login .inputs input[type="submit"],
-.register-wrapper .register .inputs input[type="submit"] {
+.register-wrapper .login .inputs button,
+.register-wrapper .register .inputs input[type="submit"],
+.register-wrapper .register .inputs button {
   margin: 20px 0;
   width: 100px;
   text-indent: 0px;
@@ -609,7 +613,6 @@ header .links ul li a:hover:after {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 150px;
-  height: 100%;
 }
 
 .coche-wrapper .agenda-wrapper .agenda-bg2 .agenda-bg .horas .col-grid .col1 .horario, .coche-wrapper .agenda-wrapper .agenda-bg2 .agenda-bg .horas .col-grid .col2 .horario {

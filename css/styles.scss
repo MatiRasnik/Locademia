@@ -355,7 +355,7 @@ header {
           width: 100%;
         }
       }
-      input {
+      input, button {
         outline: none;
         text-indent: 10px;
         font-family: Poppins, Arial;
@@ -378,7 +378,7 @@ header {
           width: 100%;
         }
       }
-      input[type="submit"] {
+      input[type="submit"], button {
         margin: 20px 0;
         width: 100px;
         text-indent: 0px;
@@ -418,7 +418,6 @@ header {
               align-items: center;
               flex-direction: column;
               width: 150px;
-              height: 100%;
 
               .horario{
                 display: flex;
