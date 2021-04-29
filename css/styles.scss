@@ -330,63 +330,61 @@ header {
       gap: 20px;
     }
     .inputs {
-      .form, form {
+      color: white;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      gap: 5px;
+      margin: 0 50px;
+      h1 {
+        margin: 5px 0;
+      }
+      h4 {
+        margin: 0;
+      }
+      p {
+        margin: 0;
+      }
+      a,
+      a:visited {
+        color: #0099ff;
+        text-decoration: none;
+      }
+      .input-wrapper{
+        input{
+          width: 100%;
+        }
+      }
+      input {
+        outline: none;
+        text-indent: 10px;
+        font-family: Poppins, Arial;
         color: white;
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-        gap: 5px;
-        margin: 0 50px;
-        h1 {
-          margin: 5px 0;
-        }
-        h4 {
-          margin: 0;
-        }
-        p {
-          margin: 0;
-        }
-        a,
-        a:visited {
-          color: #0099ff;
-          text-decoration: none;
-        }
-        .input-wrapper{
-          input{
-            width: 100%;
-          }
-        }
-        input {
-          outline: none;
-          text-indent: 10px;
-          font-family: Poppins, Arial;
-          color: white;
-          background-color: transparent;
-          border: 1px solid white;
-          border-radius: 15px;
-          width: 300px;
-          height: 40px;
-        }
-        .center-submit {
-          width: 100%;
-          text-align: right;
-        }
-        .center-submit-register {
-          width: 100%;
-          text-align: right;
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: 15px;
+        width: 300px;
+        height: 40px;
+      }
+      .center-submit {
+        width: 100%;
+        text-align: right;
+      }
+      .center-submit-register {
+        width: 100%;
+        text-align: right;
 
-          input[type="submit"] {
-            width: 100%;
-          }
-        }
         input[type="submit"] {
-          margin: 20px 0;
-          width: 100px;
-          text-indent: 0px;
-          background-color: white;
-          color: #4874c5;
-          font-weight: bold;
+          width: 100%;
         }
+      }
+      input[type="submit"] {
+        margin: 20px 0;
+        width: 100px;
+        text-indent: 0px;
+        background-color: white;
+        color: #4874c5;
+        font-weight: bold;
       }
     }
   }
