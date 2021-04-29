@@ -11,9 +11,9 @@ echo "<div class='Titulo'> <h1>Vespertino</h1> </div>";
 
 for($i=14;$i<=19;$i++) {
     if(date("H", mktime($i)) < $hora && date("j") >= $arr[0] && date("n") >= $arr[1] && date("Y") >= $arr[2]) {
-        echo "<label class='horario' style='background-color: lightgrey;'> <input type='checkbox' id='horario1' name='horario1' disabled value=" . date('H:i', mktime($i, 00)) . "> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
+        echo "<label class='horario' id='V" . $i . "' style='background-color: lightgrey;'> <input type='checkbox' id='horario1' name='horario1' disabled value=" . date('H:i', mktime($i, 00)) . "> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
     } else {
-        echo "<label class='horario'> <input type='checkbox' id=" . $i . " name='horario1' onclick='horasSeguidas(this.id)'> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
+        echo "<label class='horario' id='V" . $i . "'> <input type='checkbox' id=" . $i . " name='horario1' onchange='horasSeguidas(this.id)'> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
     }
 }
 ?>
