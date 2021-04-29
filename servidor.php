@@ -39,23 +39,23 @@ class servidor{
             return false;
         }
         }
-
         
     function crearUsuario($user, $pwd, $ci){
         $conn = $this->conectar();
-        $sql = "CALL crearUsuario(?,?,?)";
+        $sql = "CALL crearUsuario(?,?,?,@x)";
         $stmts = $conn->prepare($sql);
         $stmts->bind_param("ssi",$user, $pwd, $ci);
         if($stmts->execute()){
-            $stmts->store_result();
-            $stmts->bind_result($usuario,$pass);
+            //$stmts->store_result();
+            //$stmts->bind_result($x);
+            $x = $conn->query('SELECT @x')->fetch();
             if($stmts->fetch()){
-                if($usuario == null){
-                    $stmts->close();
-                    return false;
-                }else{
+                if($x == 1){
                     $stmts->close();
                     return true;
+                }else{
+                    $stmts->close();
+                    return false;
                 }
             }else{
                 return false;
@@ -66,7 +66,6 @@ class servidor{
         }
         return false;
         }
-    }
 
     function ComprobarCI($ci){
         $conn = $this->conectar();
@@ -75,23 +74,23 @@ class servidor{
         $stmts->bind_param("i",$ci);
         if($stmts->execute()){
             $stmts->store_result();
-            $stmts->bind_result($usuario,$pass);
+            $stmts->bind_result($ci);
             if($stmts->fetch()){
-                if($comprobacion == null){
+                if($ci == null){
                     $stmts->close();
-                    $register = 2;
+                    return false;
                 }else{
                     $stmts->close();
-                    $register = 1;
+                    return true;
                 }
             }else{
-                $register = 2;
+                return false;
             }    
         }else{
-            $respuesta = 5;
+            return false;
         }
         $conn = $this->close();
-        return $respuesta;
+        return false;
     }
-    
+}
 ?>
