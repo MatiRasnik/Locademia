@@ -1,28 +1,19 @@
 $( document ).ready(function(){
-
-    $(".tipocoche").hide();
     $("#agendadiv").hide();
     $('#autos').on('click', function(){
         alert($(this).text());
     });
-});
 
-function tipo(tipo){
     var coche = document.getElementById("phpcoche");
     $.ajax({
         url: "TipoCoche.php",
         type: "post",
-        data: { tipo: tipo },
+        data: { tipo: "Hatchback" },
         success: function (html) {
-          coche.innerHTML = html;
-        },
-        complete: function (html) {
-            $(".tipocoche").show();
-            coche.scrollIntoView();
-            
+            coche.innerHTML = html;
         }
     });
-}
+});
 
 function tipoAuto(tipo){
     
