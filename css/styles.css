@@ -455,11 +455,9 @@ header .links ul li a:hover:after {
   gap: 20px;
 }
 
-.login-wrapper .login .inputs .form, .login-wrapper .login .inputs form, .login-wrapper .register .inputs .form, .login-wrapper .register .inputs form,
-.register-wrapper .login .inputs .form,
-.register-wrapper .login .inputs form,
-.register-wrapper .register .inputs .form,
-.register-wrapper .register .inputs form {
+.login-wrapper .login .inputs, .login-wrapper .register .inputs,
+.register-wrapper .login .inputs,
+.register-wrapper .register .inputs {
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -473,60 +471,44 @@ header .links ul li a:hover:after {
   margin: 0 50px;
 }
 
-.login-wrapper .login .inputs .form h1, .login-wrapper .login .inputs form h1, .login-wrapper .register .inputs .form h1, .login-wrapper .register .inputs form h1,
-.register-wrapper .login .inputs .form h1,
-.register-wrapper .login .inputs form h1,
-.register-wrapper .register .inputs .form h1,
-.register-wrapper .register .inputs form h1 {
+.login-wrapper .login .inputs h1, .login-wrapper .register .inputs h1,
+.register-wrapper .login .inputs h1,
+.register-wrapper .register .inputs h1 {
   margin: 5px 0;
 }
 
-.login-wrapper .login .inputs .form h4, .login-wrapper .login .inputs form h4, .login-wrapper .register .inputs .form h4, .login-wrapper .register .inputs form h4,
-.register-wrapper .login .inputs .form h4,
-.register-wrapper .login .inputs form h4,
-.register-wrapper .register .inputs .form h4,
-.register-wrapper .register .inputs form h4 {
+.login-wrapper .login .inputs h4, .login-wrapper .register .inputs h4,
+.register-wrapper .login .inputs h4,
+.register-wrapper .register .inputs h4 {
   margin: 0;
 }
 
-.login-wrapper .login .inputs .form p, .login-wrapper .login .inputs form p, .login-wrapper .register .inputs .form p, .login-wrapper .register .inputs form p,
-.register-wrapper .login .inputs .form p,
-.register-wrapper .login .inputs form p,
-.register-wrapper .register .inputs .form p,
-.register-wrapper .register .inputs form p {
+.login-wrapper .login .inputs p, .login-wrapper .register .inputs p,
+.register-wrapper .login .inputs p,
+.register-wrapper .register .inputs p {
   margin: 0;
 }
 
-.login-wrapper .login .inputs .form a,
-.login-wrapper .login .inputs .form a:visited, .login-wrapper .login .inputs form a,
-.login-wrapper .login .inputs form a:visited, .login-wrapper .register .inputs .form a,
-.login-wrapper .register .inputs .form a:visited, .login-wrapper .register .inputs form a,
-.login-wrapper .register .inputs form a:visited,
-.register-wrapper .login .inputs .form a,
-.register-wrapper .login .inputs .form a:visited,
-.register-wrapper .login .inputs form a,
-.register-wrapper .login .inputs form a:visited,
-.register-wrapper .register .inputs .form a,
-.register-wrapper .register .inputs .form a:visited,
-.register-wrapper .register .inputs form a,
-.register-wrapper .register .inputs form a:visited {
+.login-wrapper .login .inputs a,
+.login-wrapper .login .inputs a:visited, .login-wrapper .register .inputs a,
+.login-wrapper .register .inputs a:visited,
+.register-wrapper .login .inputs a,
+.register-wrapper .login .inputs a:visited,
+.register-wrapper .register .inputs a,
+.register-wrapper .register .inputs a:visited {
   color: #0099ff;
   text-decoration: none;
 }
 
-.login-wrapper .login .inputs .form .input-wrapper input, .login-wrapper .login .inputs form .input-wrapper input, .login-wrapper .register .inputs .form .input-wrapper input, .login-wrapper .register .inputs form .input-wrapper input,
-.register-wrapper .login .inputs .form .input-wrapper input,
-.register-wrapper .login .inputs form .input-wrapper input,
-.register-wrapper .register .inputs .form .input-wrapper input,
-.register-wrapper .register .inputs form .input-wrapper input {
+.login-wrapper .login .inputs .input-wrapper input, .login-wrapper .register .inputs .input-wrapper input,
+.register-wrapper .login .inputs .input-wrapper input,
+.register-wrapper .register .inputs .input-wrapper input {
   width: 100%;
 }
 
-.login-wrapper .login .inputs .form input, .login-wrapper .login .inputs form input, .login-wrapper .register .inputs .form input, .login-wrapper .register .inputs form input,
-.register-wrapper .login .inputs .form input,
-.register-wrapper .login .inputs form input,
-.register-wrapper .register .inputs .form input,
-.register-wrapper .register .inputs form input {
+.login-wrapper .login .inputs input, .login-wrapper .register .inputs input,
+.register-wrapper .login .inputs input,
+.register-wrapper .register .inputs input {
   outline: none;
   text-indent: 10px;
   font-family: Poppins, Arial;
@@ -538,37 +520,29 @@ header .links ul li a:hover:after {
   height: 40px;
 }
 
-.login-wrapper .login .inputs .form .center-submit, .login-wrapper .login .inputs form .center-submit, .login-wrapper .register .inputs .form .center-submit, .login-wrapper .register .inputs form .center-submit,
-.register-wrapper .login .inputs .form .center-submit,
-.register-wrapper .login .inputs form .center-submit,
-.register-wrapper .register .inputs .form .center-submit,
-.register-wrapper .register .inputs form .center-submit {
+.login-wrapper .login .inputs .center-submit, .login-wrapper .register .inputs .center-submit,
+.register-wrapper .login .inputs .center-submit,
+.register-wrapper .register .inputs .center-submit {
   width: 100%;
   text-align: right;
 }
 
-.login-wrapper .login .inputs .form .center-submit-register, .login-wrapper .login .inputs form .center-submit-register, .login-wrapper .register .inputs .form .center-submit-register, .login-wrapper .register .inputs form .center-submit-register,
-.register-wrapper .login .inputs .form .center-submit-register,
-.register-wrapper .login .inputs form .center-submit-register,
-.register-wrapper .register .inputs .form .center-submit-register,
-.register-wrapper .register .inputs form .center-submit-register {
+.login-wrapper .login .inputs .center-submit-register, .login-wrapper .register .inputs .center-submit-register,
+.register-wrapper .login .inputs .center-submit-register,
+.register-wrapper .register .inputs .center-submit-register {
   width: 100%;
   text-align: right;
 }
 
-.login-wrapper .login .inputs .form .center-submit-register input[type="submit"], .login-wrapper .login .inputs form .center-submit-register input[type="submit"], .login-wrapper .register .inputs .form .center-submit-register input[type="submit"], .login-wrapper .register .inputs form .center-submit-register input[type="submit"],
-.register-wrapper .login .inputs .form .center-submit-register input[type="submit"],
-.register-wrapper .login .inputs form .center-submit-register input[type="submit"],
-.register-wrapper .register .inputs .form .center-submit-register input[type="submit"],
-.register-wrapper .register .inputs form .center-submit-register input[type="submit"] {
+.login-wrapper .login .inputs .center-submit-register input[type="submit"], .login-wrapper .register .inputs .center-submit-register input[type="submit"],
+.register-wrapper .login .inputs .center-submit-register input[type="submit"],
+.register-wrapper .register .inputs .center-submit-register input[type="submit"] {
   width: 100%;
 }
 
-.login-wrapper .login .inputs .form input[type="submit"], .login-wrapper .login .inputs form input[type="submit"], .login-wrapper .register .inputs .form input[type="submit"], .login-wrapper .register .inputs form input[type="submit"],
-.register-wrapper .login .inputs .form input[type="submit"],
-.register-wrapper .login .inputs form input[type="submit"],
-.register-wrapper .register .inputs .form input[type="submit"],
-.register-wrapper .register .inputs form input[type="submit"] {
+.login-wrapper .login .inputs input[type="submit"], .login-wrapper .register .inputs input[type="submit"],
+.register-wrapper .login .inputs input[type="submit"],
+.register-wrapper .register .inputs input[type="submit"] {
   margin: 20px 0;
   width: 100px;
   text-indent: 0px;

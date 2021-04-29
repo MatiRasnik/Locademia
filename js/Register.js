@@ -6,7 +6,7 @@ function Register1(){
         type: "post",
         data: {ci: ci },
         success: function(respuesta) {
-            if(respuesta == 1){s
+            if(respuesta == 1){
                 alert("Su cedula a sido validada");
                 window.location.assign("Register2.html")
             }else{
@@ -14,7 +14,7 @@ function Register1(){
                     alert("Su cedula es invalida");
                     sessionStorage.clear();
                 }else{
-                    alert("hubo un error");
+                    alert("Hubo un error");
                     sessionStorage.clear();
                 }    
             }
@@ -40,7 +40,7 @@ function Register2(){
                     if(respuesta == 4){
                         alert("este usuario ya existe");
                     }else{
-                        alert("Hubo un error");
+                        alert(respuesta);
                     }
                 }
             },
