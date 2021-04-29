@@ -4,15 +4,15 @@ var i;
 
 function revisarHoras(fecha, dia, mes, año) {
     arri.length=0;
-    diaG = dia;
-    console.log(dia);
+    diaG = fecha;
+    console.log(fecha);
     $.ajax({
         url: "Reservas.php",
         type: "post",
-        data: { fecha:fecha, dia:dia, mes: mes, año: año},
+        data: { fecha: fecha, dia: dia, mes: mes, año: año },
         success: function (html) {
             $(".horas").html(html);
-        },
+        }
     });
 }
 
