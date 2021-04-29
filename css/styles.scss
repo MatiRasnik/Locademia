@@ -391,7 +391,7 @@ header {
     }
   }
 }
-/*
+
 .coche-wrapper{
   .agenda-wrapper{
     .agenda-bg2{
@@ -473,7 +473,7 @@ header {
     }
 
   }
-}*/
+}
 .agenda-wrapper{
   display: flex;
   justify-content: center;
@@ -615,7 +615,7 @@ header {
       margin: 10px 0;
       width:1000px;
       display: grid;
-      grid-template-columns: 40% 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
   
       .conductor{
         display: flex;
