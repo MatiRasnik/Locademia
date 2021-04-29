@@ -39,8 +39,7 @@ class servidor{
             return false;
         }
         }
-
-        
+  
     function crearUsuario($user, $pwd, $ci){
         $conn = $this->conectar();
         $sql = "CALL crearUsuario(?,?,?)";
@@ -66,8 +65,7 @@ class servidor{
         }
         return false;
         }
-    }
-
+    
     function ComprobarCI($ci){
         $conn = $this->conectar();
         $sql = "CALL ComprobarCI(?)";
@@ -91,7 +89,34 @@ class servidor{
             $respuesta = 5;
         }
         $conn = $this->close();
-        return $respuesta;
-    }
-    
+        return $respuesta;}
+
+    function traicoCoches($tipo){
+        $conn = $this->conectar();
+
+        $sql = "CALL traicoCoches(?)";
+        $stmts = $conn->prepare($sql);
+
+        $stmts->bind_param("s", $tipo);
+        $us="";
+        if($stmts->execute()){
+            $stmts->store_result();
+            $stmts->bind_result(/*arry coches*/);
+
+        }}
+
+    function horariosCoches($matricula){
+        $conn = $this->conectar();
+
+        $sql = "CALL horariosCoche(?)";
+        $stmts = $conn->prepare($sql);
+
+        $stmts->bind_param("s", $matricula);
+        $us="";
+        if($stmts->execute()){
+            $stmts->store_result();
+            $stmts->bind_result(/*arry horarios*/);
+
+        }}
+}
 ?>
