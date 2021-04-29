@@ -7,7 +7,7 @@ function log(){
       let user = new Usuario();
       var log = user.login(usuario, contra);
       if(log == 1){
-        //location.href ="https://didesweb.com/";
+        location.href ="Agendar.html";
       }else{
           alert("El usuario o contraseña que ingreso es incorrecto");
       }
