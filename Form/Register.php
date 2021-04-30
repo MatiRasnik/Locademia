@@ -6,7 +6,8 @@ if(isset($_POST['ci'])){
         $ci = $_POST['ci'];
         $user = $_POST["Usename"];
         $pwd = $_POST["Password"];
-        if($server->crearUsuario($user, $pwd, $ci)){
+        $x = $server->crearUsuario($user, $pwd, $ci);
+        if($x == 1){
             $respuesta = 3;
         }else{
             $respuesta = 4;

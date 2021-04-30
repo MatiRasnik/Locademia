@@ -14,7 +14,7 @@ function Register1(){
                     alert("Su cedula es invalida");
                     sessionStorage.clear();
                 }else{
-                    alert("Hubo un error");
+                    alert(respuesta);
                     sessionStorage.clear();
                 }    
             }

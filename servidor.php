@@ -39,7 +39,7 @@ class servidor{
             return false;
         }
         }
-  
+
     function crearUsuario($user, $pwd, $ci){
         $conn = $this->conectar();
         $sql = "CALL crearUsuario(?,?,?,@x)";
@@ -48,23 +48,19 @@ class servidor{
         if($stmts->execute()){
             //$stmts->store_result();
             //$stmts->bind_result($x);
-            $x = $conn->query('SELECT @x')->fetch();
-            if($stmts->fetch()){
-                if($x == 1){
-                    $stmts->close();
-                    return true;
-                }else{
-                    $stmts->close();
-                    return false;
-                }
+            $resultado = $conn->query('SELECT @x as p_out');
+            $x = $resultado->fetch_assoc();
+            if($x['p_out'] == "1"){
+                $stmts->close();
+                $valor = 1;
             }else{
-                return false;
+                $stmts->close();
+                $valor = 2;
             }
-        
         }else{
-            return false;
+            $valor = 2;
         }
-        return false;
+        return $valor;
         }
     
     function ComprobarCI($ci){
