@@ -16,15 +16,16 @@ function log(){
 
 function traigoCoches(){
         var cedula = sessionStorage.getItem('ci');
-        alert(cedula);
         let car = new Coches();
         var tipocar = car.autos(cedula);
-        alert('tipocar> ' + tipocar);
-        if(tipocar == 0){
+        if(tipocar[0] == "asd"){
           alert("Hubo un error al cargar la informacion de la base de datos");
-           
         }else{
-             //$(".phpcoche").html(tipocar);
-             alert("funciona");
+          armoAutos(tipocar);
         }
+}
+
+function armoAutos(tipocar){
+  alert("tomas manco");
+//inner
 }
