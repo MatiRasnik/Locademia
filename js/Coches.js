@@ -40,7 +40,23 @@ class Coches{
     }
   
     traigoCoches(tipo){ 
-       //trae todos los coches de un tipo
+        $.ajax({
+            async: false,
+            type: "POST",
+            url: "../Form/TraigoCoches.php",
+            data: {tipo:tipo},
+            success: function(log){
+                if(log == 1){
+                    x = 1;
+                }else{
+                    x= 0;
+                }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+            }   
+        });
+        return x;
     }
 
     horariosCoches(matricula){

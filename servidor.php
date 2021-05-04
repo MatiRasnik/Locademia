@@ -1,4 +1,5 @@
 <?php
+session_start();
 class servidor{
 
     function conectar(){
@@ -29,6 +30,7 @@ class servidor{
                     return false;
                 }else{
                     $stmts->close();
+                    $_SESSION['ci']=$ci;
                     return true;
                 }
             }else{
@@ -92,18 +94,27 @@ class servidor{
         $conn = $this->close();
         return false;}
 
-    function traicoCoches($tipo){
+    function traigoCoches($ci){
+        $coches = array();
         $conn = $this->conectar();
 
-        $sql = "CALL traicoCoches(?)";
+        $sql = "CALL traigoCoches(?)";
         $stmts = $conn->prepare($sql);
 
-        $stmts->bind_param("s", $tipo);
-        $us="";
+        $stmts->bind_param("s", $ci);
         if($stmts->execute()){
             $stmts->store_result();
-            $stmts->bind_result(/*arry coches*/);
+            $stmts->bind_result($x);
 
+            while($stmts->fetch()){
+                $car = array('c'=> $x);
+                $coches[] = $car;
+            }
+                $stmts->close();
+                return $coches;
+        }else{
+            $stmts->close();
+            return $stmts->error;
         }}
 
     function horariosCoches($matricula){
