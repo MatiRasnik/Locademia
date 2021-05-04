@@ -1,17 +1,17 @@
 <?php
 include '../servidor.php';
 $server= new servidor();
-
+$autos = array();
 if(isset($_POST['cedula'])){
     $ci = $_POST["cedula"];
     $coches = $server->traigoCoches($ci);
     if($coches !== null){
-        $autos = json_encode($coches);
+        $autos = $coches;
     }else{
-        $autos = "0";
+        $autos = "1";
     }    
 }else{
-    $autos = "0";
+    $autos = "1";
 }
-return $autos;
+return json_encode($autos);
 ?>

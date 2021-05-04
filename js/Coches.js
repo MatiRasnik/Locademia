@@ -41,14 +41,17 @@ class Coches{
   
    autos(cedula){ 
        var x = 0;
+       var coches = [];
         $.ajax({
             async: false,
             type: "POST",
             url: "../Form/TraigoCoches.php",
             data: {cedula:cedula},
             success: function(autos){
-                if(autos == 0){
+                if(autos[0] == 1){
                     x = 1;
+                }else{
+                    Array.prototype.push.apply(coches, autos);
                 }
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) { 
@@ -56,9 +59,10 @@ class Coches{
             }   
         });
         if(x == 1){
-            return x;
+            coches[0] = "asd";
+            return coches;
         }else{
-            return autos;
+            return coches;
         }
     }
 
