@@ -112,7 +112,7 @@ class servidor{
             return $stmts->error;
         }}
 
-    function horariosCoches($matricula){
+    /*function horariosCoches($matricula){
         $conn = $this->conectar();
 
         $sql = "CALL horariosCoche(?)";
@@ -122,11 +122,11 @@ class servidor{
         $us="";
         if($stmts->execute()){
             $stmts->store_result();
-            $stmts->bind_result(/*arry horarios*/);
+            $stmts->bind_result(arry horarios);
 
-        }}
+        }}*/
 
-        function infoCliente($ci){
+       /* function infoCliente($ci){
             $conn = $this->conectar();
     
             $sql = "CALL infoCliente(?)";
@@ -136,8 +136,7 @@ class servidor{
             $us="";
             if($stmts->execute()){
                 $stmts->store_result();
-                $stmts->bind_result(/*arry horarios*/);
-    
-            }}
+                $stmts->bind_result(arry horarios);
+            }}*/
 }
 ?>
