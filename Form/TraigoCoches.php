@@ -2,17 +2,16 @@
 include '../servidor.php';
 $server= new servidor();
 
-if(isset($_POST['tipo'])){
-    $tipo = $_POST["tipo"];
-
-    if($server->traigoCoches($tipo)){
-        $log = "1";
+if(isset($_POST['cedula'])){
+    $ci = $_POST["cedula"];
+    $coches = $server->traigoCoches($ci);
+    if($coches !== null){
+        $autos = json_encode($coches);
     }else{
-        $log = "0";
+        $autos = "0";
     }    
 }else{
-    $log = "0";
+    $autos = "0";
 }
-echo $log;
-return $log;
+return $autos;
 ?>

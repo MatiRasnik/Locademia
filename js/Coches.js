@@ -1,29 +1,29 @@
 class Coches{
 
-    constructor(ci, matricula, tipo, desc, url){
-        this.ci=ci;
-        this.matricula=matricula;
-        this.tipo=tipo;
-        this.desc=desc;
-        this.url=url;
+    constructor(Cedu, mat, tip, desc, link){
+        this.cedula=Cedu;
+        this.matricula=mat;
+        this.tipo=tip;
+        this.descripcion=desc;
+        this.url=link;
     }
 
-    get cedula(){
-        return this.ci;
+    get Cedu(){
+        return this.cedula;
     }
-    set cedula(x){
-        this.ci=x;
+    set Cedu(c){
+        this.cedula=c;
     }
-    get matricula(){
+    get mat(){
         return this.matricula;
     }
-    set matricula(x){
+    set mat(x){
         this.matricula=x;
     }
-    get tipo(){
+    get tip(){
         return this.tipo;
     }
-    set tipo(x){
+    set tip(x){
         this.tipo=x;
     }
     get desc(){
@@ -32,31 +32,34 @@ class Coches{
     set desc(x){
         this.desc=x;
     }
-    get url(){
+    get link(){
         return this.url;
     }
-    set url(x){
+    set link(x){
         this.url=x;
     }
   
-    traigoCoches(tipo){ 
+   autos(cedula){ 
+       var x = 0;
         $.ajax({
             async: false,
             type: "POST",
             url: "../Form/TraigoCoches.php",
-            data: {tipo:tipo},
-            success: function(log){
-                if(log == 1){
+            data: {cedula:cedula},
+            success: function(autos){
+                if(autos == 0){
                     x = 1;
-                }else{
-                    x= 0;
                 }
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) { 
                 alert("Status: " + textStatus); alert("Error: " + errorThrown); 
             }   
         });
-        return x;
+        if(x == 1){
+            return x;
+        }else{
+            return autos;
+        }
     }
 
     horariosCoches(matricula){
