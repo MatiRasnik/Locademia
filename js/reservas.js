@@ -1,18 +1,19 @@
 var diaG;
 var arri = [];
 var i;
+var horaL;
 
-function revisarHoras(dia) {
+function revisarHoras(id, hora) {
+    horaL = hora;
     arri.length=0;
-    diaG = dia;
-    console.log(dia);
+    diaG = id;
     $.ajax({
         url: "Reservas.php",
         type: "post",
-        data: { dia:dia },
+        data: { dia: diaG },
         success: function (html) {
-            $(".col-grid").html(html);
-        },
+            $(".horas").html(html);
+        }
     });
 }
 
@@ -28,7 +29,7 @@ function horasSeguidas(hrsel) {
         if(i+1 < arri[0] || i-1 > arri[0] || i+1 < arri[1] || i-1 > arri[1]) {
             document.getElementById(i).disabled = true;
             document.getElementById("H"+i).style.backgroundColor = "lightgrey";
-        } else {
+        } else if(horaL <= i) {
             document.getElementById(i).disabled = false;
             document.getElementById("H"+i).style.backgroundColor = "white";
         }
@@ -37,7 +38,7 @@ function horasSeguidas(hrsel) {
         if(i+1 < arri[0] || i-1 > arri[0] || i+1 < arri[1] || i-1 > arri[1]) {
             document.getElementById(i).disabled = true;
             document.getElementById("H"+i).style.backgroundColor = "lightgrey";
-        } else {
+        } else if(horaL <= i) {
             document.getElementById(i).disabled = false;
             document.getElementById("H"+i).style.backgroundColor = "white";
         }

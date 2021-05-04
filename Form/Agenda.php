@@ -1,6 +1,6 @@
 <?php
 
-    date_default_timezone_set("America/Los_Angeles");
+    date_default_timezone_set("America/Montevideo");
     $mes = isset($_POST['mes']) ? $_POST['mes']: date("n");
     $mesActual = date("m");
     $año = isset($_POST['año']) ? $_POST['año']: date("Y");
@@ -18,7 +18,7 @@
     $diaSemana=date("N",mktime(0,0,0,$mes,1,$año));
     $primerDia = $diaSemana - 1;
     $meses = array(1=>"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre");
-
+    $hora = date("H", mktime(date("H")+2));
     $calendario = "<div class='año'>";
 
     if($mes == $mesActual && $año == $añoActual){
@@ -55,11 +55,11 @@
         }
         for($i = 1; $i <= $diasMes; $i++){
             if($i == $dia && $mes == $mesActual && $año == $añoActual){
-                $calendario .= "<td><button class='dias diaActual' id='$i-$mes-$año' onclick='revisarHoras(this.id)'>" . $i . "</button></td>";
+                $calendario .= "<td><button class='dias diaActual' id='$i-$mes-$año' onclick='revisarHoras(this.id, $hora)'>" . $i . "</button></td>";
             }
             else{
                 if($i > $dia || $mes > $mesActual || $año > $añoActual){
-                    $calendario .= "<td><button class='dias' id='$i-$mes-$año' onclick='revisarHoras(this.id)'>" . $i . "</button></td>";
+                    $calendario .= "<td><button class='dias' id='$i-$mes-$año' onclick='revisarHoras(this.id, 03)'>" . $i . "</button></td>";
                 } elseif($i < $dia && $mes <= $mesActual && $año <= $añoActual){
                     $calendario .= "<td><button class='dias' id='$i-$mes-$año' disabled>" . $i . "</button></td>";
                 }
