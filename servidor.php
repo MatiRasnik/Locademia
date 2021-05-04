@@ -28,8 +28,8 @@ class servidor{
                     return false;
                 }else{
                     $stmts->close();
-                    $_SESSION['ci']=$ci;
-                    return true;
+                    echo $ci;
+                    return $ci;
                 }
             }else{
                 return false;
@@ -83,7 +83,7 @@ class servidor{
         }else{
             return false;
         }
-        $conn = $this->close();
+        $conn->close();
         return false;}
 
     function traigoCoches($ci){
@@ -96,10 +96,10 @@ class servidor{
         $stmts->bind_param("s", $ci);
         if($stmts->execute()){
             $stmts->store_result();
-            $stmts->bind_result($x);
+            $stmts->bind_result($ci, $matricula, $tipo, $descripcion, $url);
 
             while($stmts->fetch()){
-                $car = array('c'=> $x);
+                $car = array('ci'=> $ci, 'matricula' => $matricula, 'tipo' => $tipo, 'desc' => $descripcion, 'usr' =>$url);
                 $coches[] = $car;
             }
                 $stmts->close();
@@ -109,7 +109,7 @@ class servidor{
             return $stmts->error;
         }}
 
-    function horariosCoches($matricula){
+    /*function horariosCoches($matricula){
         $conn = $this->conectar();
 
         $sql = "CALL horariosCoche(?)";
@@ -119,9 +119,9 @@ class servidor{
         $us="";
         if($stmts->execute()){
             $stmts->store_result();
-            $stmts->bind_result(/*arry horarios*/);
+            $stmts->bind_result(arry horarios);
 
-        }}
+        }}*/
 
         function Cliente($ci){
             $conn = $this->conectar();

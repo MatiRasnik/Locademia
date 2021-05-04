@@ -15,13 +15,16 @@ function log(){
 }
 
 function traigoCoches(){
-        
-        alert(sessionStorage.getItem("ci"));
+        var cedula = sessionStorage.getItem('ci');
+        alert(cedula);
         let car = new Coches();
-        var tipocar = car.traigoCoches(ci);
-        if(tipocar !== null){
-            $(".phpcoche").html(tipocar);
+        var tipocar = car.autos(cedula);
+        alert('tipocar> ' + tipocar);
+        if(tipocar == 0){
+          alert("Hubo un error al cargar la informacion de la base de datos");
+           
         }else{
-            alert("A habido un error al cargar la informacion de la base de datos");
+             //$(".phpcoche").html(tipocar);
+             alert("funciona");
         }
 }

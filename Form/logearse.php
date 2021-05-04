@@ -5,9 +5,9 @@ $server= new servidor();
 if(isset($_POST['usuario'])){
     $user = $_POST["usuario"];
     $pwd = $_POST["passw"];
-
-    if($server->login($user, $pwd)){
-        $log = "1";
+    $log = $server->login($user, $pwd);
+    if($log !== null){
+        return $log;
     }else{
         $log = "0";
     }    

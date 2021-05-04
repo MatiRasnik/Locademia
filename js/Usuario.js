@@ -33,10 +33,11 @@ class Usuario{
             url: "../Form/logearse.php",
             data: {usuario:usuario,passw:passw},
             success: function(log){
-                if(log == 1){
-                    x = 1;
-                }else{
+                if(log == 0){
                     x= 0;
+                }else{
+                    sessionStorage.setItem("ci", log);
+                    x = 1;
                 }
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) { 
