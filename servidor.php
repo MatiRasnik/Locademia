@@ -122,7 +122,6 @@ class servidor{
             $stmts->bind_result(arry horarios);
 
         }}*/
-
         function Cliente($ci){
             $conn = $this->conectar();
     
@@ -192,5 +191,6 @@ class servidor{
                 }
             }
         } 
+        
 }
 ?>
