@@ -1,7 +1,5 @@
 <?php
-session_start();
 class servidor{
-
     function conectar(){
         if(!$conexion = mysqli_connect('localhost','root','root','locademia')){
             echo "No se pudo conectar a la base de datos";
@@ -48,8 +46,6 @@ class servidor{
         $stmts = $conn->prepare($sql);
         $stmts->bind_param("ssi",$user, $pwd, $ci);
         if($stmts->execute()){
-            //$stmts->store_result();
-            //$stmts->bind_result($x);
             $resultado = $conn->query('SELECT @x as p_out');
             $x = $resultado->fetch_assoc();
             if($x['p_out'] == "1"){
@@ -127,18 +123,74 @@ class servidor{
 
         }}
 
-        function infoCliente($ci){
+        function Cliente($ci){
             $conn = $this->conectar();
     
-            $sql = "CALL infoCliente(?)";
+            $sql = "CALL cliente(?)";
             $stmts = $conn->prepare($sql);
     
             $stmts->bind_param("i", $ci);
-            $us="";
             if($stmts->execute()){
                 $stmts->store_result();
-                $stmts->bind_result(/*arry horarios*/);
+                $stmts->bind_result($nombre,$apellido,$telefono,$mail,$direccion,$estado);
+                if($stmts->fetch()){
+                    if($nombre == null){
+                        $stmts->close();
+                        return false;
+                    }else{
+                        $stmts->close();
+                        return array($estado,$nombre,$apellido,$telefono,$mail,$direccion);
+                    }
+                }else{
+                    return false;
+                }
+            }
+        }
+        function Contrato($ci){
+            $conn = $this->conectar();
     
-            }}
+            $sql = "CALL contrato(?)";
+            $stmts = $conn->prepare($sql);
+    
+            $stmts->bind_param("i", $ci);
+            if($stmts->execute()){
+                $stmts->store_result();
+                $stmts->bind_result($horas_efectuadas,$horas_reservadas);
+                if($stmts->fetch()){
+                    if($horas_reservadas == null){
+                        $stmts->close();
+                        return false;
+                    }else{
+                        $stmts->close();
+                        return array($horas_efectuadas,$horas_reservadas);
+                    }
+                }else{
+                    return false;
+                }
+            }
+        }
+        function Automovil($ci){
+            $conn = $this->conectar();
+    
+            $sql = "CALL Automovil(?)";
+            $stmts = $conn->prepare($sql);
+    
+            $stmts->bind_param("i", $ci);
+            if($stmts->execute()){
+                $stmts->store_result();
+                $stmts->bind_result($matricula,$tipo);
+                if($stmts->fetch()){
+                    if($tipo == null){
+                        $stmts->close();
+                        return false;
+                    }else{
+                        $stmts->close();
+                        return array($tipo,$matricula);
+                    }
+                }else{
+                    return false;
+                }
+            }
+        } 
 }
 ?>
