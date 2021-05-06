@@ -844,8 +844,21 @@ header .links ul li a:hover:after {
   padding: 5px;
 }
 
-.pruebacss {
-  color: red;
+.pdf {
+  text-align: left;
+}
+
+.pdf .Titulo {
+  color: #4874c5;
+}
+
+.pdf .Informacion-pdf columns {
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.pdf h2 {
+  color: #4874c5;
 }
 
 .coche-wrapper .coche-vector img {

@@ -597,8 +597,22 @@ header {
     }
   }
 }
-.pruebacss{
-  color: red;
+.pdf{
+  text-align: left;
+
+  .Titulo{
+    color: #4874c5;
+  }
+
+  .Informacion-pdf{
+    columns{
+      border: 1px solid black;
+      padding: 20px;
+    }
+  }
+  h2{
+    color: #4874c5;
+  }
 }
 .coche-wrapper{
   .coche-vector{
