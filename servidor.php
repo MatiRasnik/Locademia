@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 class servidor{
     function conectar(){
         if(!$conexion = mysqli_connect('localhost','root','root','locademia')){
@@ -86,6 +89,7 @@ class servidor{
         $conn->close();
         return false;}
 
+        
     function traigoCoches($ci){
         $coches = array();
         $conn = $this->conectar();
@@ -100,13 +104,14 @@ class servidor{
 
             while($stmts->fetch()){
                 $car = array('ci'=> $ci, 'matricula' => $matricula, 'tipo' => $tipo, 'desc' => $descripcion, 'usr' =>$url);
-                $coches[] = $car;
+                array_push($coches, $car);
             }
                 $stmts->close();
                 return $coches;
         }else{
             $stmts->close();
-            return $stmts->error;
+            array_push($coches, "error");
+            return $coches;
         }}
 
     /*function horariosCoches($matricula){

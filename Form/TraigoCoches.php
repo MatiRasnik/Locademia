@@ -4,14 +4,10 @@ $server= new servidor();
 $autos = array();
 if(isset($_POST['cedula'])){
     $ci = $_POST["cedula"];
-    $coches = $server->traigoCoches($ci);
-    if($coches !== null){
-        $autos = $coches;
-    }else{
-        $autos = "1";
-    }    
+    echo json_encode($server->traigoCoches($ci));
 }else{
-    $autos = "1";
+    $autos[0] = "1";
+    echo json_encode($autos);
 }
-return json_encode($autos);
+
 ?>

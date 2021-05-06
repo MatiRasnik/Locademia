@@ -26,7 +26,6 @@ function traigoCoches(){
 }
 
 function armoAutos(tipocar){
-  alert("funciona");
-//inner
-
+  console.log(tipocar);
+ //document.getElementById("phpcoche").innerHTML = tipocoche;
 }
