@@ -191,6 +191,23 @@ class servidor{
                 }
             }
         } 
+        function Automovil($ci){
+            $conn = $this->conectar();
+    
+            $sql = "CALL InfoAgenda(?)";
+            $stmts = $conn->prepare($sql);
+    
+            $stmts->bind_param("i", $ci);
+            if($stmts->execute()){
+                $stmts->store_result();
+                $stmts->bind_result($ci,$matricula,$Dia,$Hora_Inicio,$Hora_fin);
+                if($stmts->fetch()){
+                    
+                }else{
+                    return false;
+                }
+            }
+        } 
         
 }
 ?>

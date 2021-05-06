@@ -32,6 +32,20 @@
                 
             </div>
         </div>
+        <table>
+            <tr>
+                <th>Dia</th>
+                <th>Hora Inicio</th>
+                <th>Hora fin</th>
+            </tr>
+            while($Info->fetch()){
+                <tr>
+                    <th>$Info</th>
+                    <th>$Info</th>
+                    <th>$Info</th>
+                </tr>
+            }    
+        </table>
     </div>";
     echo $return;
     return $return;
