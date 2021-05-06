@@ -51,7 +51,7 @@ class Coches{
                 if(autos[0] == 1){
                     x = 1;
                 }else{
-                    Array.prototype.push.apply(coches, autos);
+                    coches.concat(autos);
                 }
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) { 

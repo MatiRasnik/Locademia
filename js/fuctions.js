@@ -26,6 +26,7 @@ function traigoCoches(){
 }
 
 function armoAutos(tipocar){
-  alert("tomas manco");
+  alert("funciona");
 //inner
+
 }

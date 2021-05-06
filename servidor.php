@@ -116,7 +116,6 @@ class servidor{
         $stmts = $conn->prepare($sql);
 
         $stmts->bind_param("s", $matricula);
-        $us="";
         if($stmts->execute()){
             $stmts->store_result();
             $stmts->bind_result(arry horarios);
