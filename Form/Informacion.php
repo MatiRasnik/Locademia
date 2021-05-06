@@ -1,10 +1,13 @@
 <?php
     session_start();
-    $ci = $_SESSION["ci"];
+    //$ci = $_SESSION["ci"];
+    $ci = 14785236;
     include '../servidor.php';
     $server= new servidor();
-    list($estado,$nombre,$apellido,$telefono,$mail,$direccion) = $server->Cliente($ci);
+    list($estado,$nombre,$apellido,$telefono,$mail,$direccion) = $server->Cliente($_SESSION["ci"]);
     list($horas_efectuadas,$horas_reservadas) = $server->Contrato($ci);
+    $Info = array();
+    $Info = $server->InfoAgenda($ci);
     //list($tipo,$matricula) = $server->Automovil($ci);
     $horas_restantes=$horas_reservadas-$horas_efectuadas;
     $return =
@@ -37,15 +40,15 @@
                 <th>Dia</th>
                 <th>Hora Inicio</th>
                 <th>Hora fin</th>
-            </tr>
-            while($Info->fetch()){
-                <tr>
-                    <th>$Info</th>
-                    <th>$Info</th>
-                    <th>$Info</th>
-                </tr>
-            }    
-        </table>
+            </tr>";
+            foreach ( $Info as $r ) {
+                $return .= '<tr>';
+                foreach ( $r as $v ) {
+                    $return .= '<td>'.$v.'</td>';
+                }
+                $return .= '</tr>';
+            }
+            $return .="</table>
     </div>";
     echo $return;
     return $return;

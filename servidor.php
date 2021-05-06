@@ -195,7 +195,8 @@ class servidor{
                 }
             }
         } 
-        function Automovil($ci){
+        function InfoAgenda($ci){
+            $Info = array();
             $conn = $this->conectar();
     
             $sql = "CALL InfoAgenda(?)";
@@ -204,12 +205,13 @@ class servidor{
             $stmts->bind_param("i", $ci);
             if($stmts->execute()){
                 $stmts->store_result();
-                $stmts->bind_result($ci,$matricula,$Dia,$Hora_Inicio,$Hora_fin);
-                if($stmts->fetch()){
-                    
-                }else{
-                    return false;
+                $stmts->bind_result($Dia,$Hora_Inicio,$Hora_fin);
+                while($stmts->fetch()){
+                    $data = array('dia' => $Dia, 'hora_i' => $Hora_Inicio, 'hora_f' =>$Hora_fin);
+                    array_push($Info, $data);
                 }
+                    $stmts->close();
+                    return $Info;
             }
         } 
         
