@@ -1,10 +1,9 @@
 <?php
     session_start();
-    //$ci = $_SESSION["ci"];
-    $ci = 14785236;
+    $ci = $_SESSION['ci'];
     include '../servidor.php';
     $server= new servidor();
-    list($estado,$nombre,$apellido,$telefono,$mail,$direccion) = $server->Cliente($_SESSION["ci"]);
+    list($estado,$nombre,$apellido,$telefono,$mail,$direccion) = $server->Cliente($ci);
     list($horas_efectuadas,$horas_reservadas) = $server->Contrato($ci);
     $Info = array();
     $Info = $server->InfoAgenda($ci);

@@ -1,7 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 class servidor{
     function conectar(){
         if(!$conexion = mysqli_connect('localhost','root','root','locademia')){
@@ -31,6 +28,7 @@ class servidor{
                     return false;
                 }else{
                     $stmts->close();
+                    $_SESSION['ci'] = $ci;
                     echo $ci;
                     return $ci;
                 }
@@ -112,7 +110,8 @@ class servidor{
             $stmts->close();
             array_push($coches, "error");
             return $coches;
-        }}
+        }
+    }
 
     /*function horariosCoches($matricula){
         $conn = $this->conectar();
@@ -127,6 +126,7 @@ class servidor{
 
         }}*/
         function Cliente($ci){
+            echo "<script> console.log(".$ci.")</script>";
             $conn = $this->conectar();
     
             $sql = "CALL cliente(?)";
