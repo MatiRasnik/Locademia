@@ -15,6 +15,11 @@ function log(){
 }
 
 function traigoCoches(){
+        const transition_el = document.querySelector('.transition');
+        setTimeout(() => {
+            transition_el.classList.remove('is-active');    
+        }, 100);
+
         var cedula = sessionStorage.getItem('ci');
         let car = new Coches();
         var tipocar = car.autos(cedula);
