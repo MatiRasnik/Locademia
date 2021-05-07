@@ -26,6 +26,28 @@ function traigoCoches(){
 }
 
 function armoAutos(tipocar){
-  console.log(tipocar);
  //document.getElementById("phpcoche").innerHTML = tipocoche;
+}
+
+function traigoHorarios(){
+  var matricula = sessionStorage.getItem('matricula');
+  let car = new Coches();
+  var horas = car.horariosCoches(matricula);
+  if(horas[0] == "asd"){
+    alert("asd");
+  }else{
+    armoHoras(horas);
+  }
+}
+
+function armoHoras(horas){
+    var txt = horas;
+    var log2 = JSON.parse(txt);
+    for (var i = 0; i < log2.length; i++) {
+      console.log(log2[i]["id"]);
+      console.log(log2[i]["ci"]);
+      console.log(log2[i]["horaComienzo"]);
+      console.log(log2[i]["horaFin"]);
+    }
+
 }

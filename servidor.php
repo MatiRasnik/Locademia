@@ -13,7 +13,7 @@ class servidor{
     
     function login($usuario, $pass){
         $conn = $this->conectar();
-
+        $info = array();
         $sql = "CALL login(?,?)";
         $stmts = $conn->prepare($sql);
 
@@ -21,16 +21,18 @@ class servidor{
         $us="";
         if($stmts->execute()){
             $stmts->store_result();
-            $stmts->bind_result($ci,$us,$pas);
+            $stmts->bind_result($ci,$us,$pas,$mat);
             if($stmts->fetch()){
                 if($us == null){
                     $stmts->close();
                     return false;
                 }else{
                     $stmts->close();
+                    session_start();
                     $_SESSION['ci'] = $ci;
-                    echo $ci;
-                    return $ci;
+                    $_SESSION['matricula'] = $mat;
+                    $info = array('ci'=> $ci, 'matricula' => $mat);
+                    return $info;
                 }
             }else{
                 return false;
@@ -101,7 +103,7 @@ class servidor{
             $stmts->bind_result($ci, $matricula, $tipo, $descripcion, $url);
 
             while($stmts->fetch()){
-                $car = array('ci'=> $ci, 'matricula' => $matricula, 'tipo' => $tipo, 'desc' => $descripcion, 'usr' =>$url);
+                $car = array('ci'=> $ci, 'matricula' => $matricula, 'tipo' => $tipo, 'desc' => $descripcion, 'url' => $url);
                 array_push($coches, $car);
             }
                 $stmts->close();
@@ -113,18 +115,30 @@ class servidor{
         }
     }
 
-    /*function horariosCoches($matricula){
+    function horariosCoches($matricula){
+        $horarios = array();
         $conn = $this->conectar();
 
-        $sql = "CALL horariosCoche(?)";
+        $sql = "CALL traigoHorarios(?)";
         $stmts = $conn->prepare($sql);
 
         $stmts->bind_param("s", $matricula);
         if($stmts->execute()){
             $stmts->store_result();
-            $stmts->bind_result(arry horarios);
+            $stmts->bind_result($id, $ci, $matricula, $dia, $horaComienzo, $horaFin);
 
-        }}*/
+            while($stmts->fetch()){
+                $h = array('id'=> $id ,'ci'=> $ci, 'dia' => $dia, 'horaComienzo' => $horaComienzo, 'horaFin' => $horaFin);
+                array_push($horarios, $h);
+            }   
+                $stmts->close();
+                return $horarios;
+        }else{
+            $stmts->close();
+            array_push($horarios, "error");
+            return $horarios;
+        }}
+
         function Cliente($ci){
             $conn = $this->conectar();
     

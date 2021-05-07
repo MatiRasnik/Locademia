@@ -1,5 +1,4 @@
 <?php
-    session_start();
     $ci = $_SESSION['ci'];
     include '../servidor.php';
     $server= new servidor();
