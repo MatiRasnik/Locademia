@@ -21,7 +21,7 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 101;
+  z-index: 100;
   background-color: rgba(74, 167, 255, 0.25);
   opacity: 0;
   pointer-events: none;
@@ -602,13 +602,6 @@ header {
 
   .Titulo{
     color: #4874c5;
-  }
-
-  .Informacion-pdf{
-    columns{
-      border: 1px solid black;
-      padding: 20px;
-    }
   }
   h2{
     color: #4874c5;
