@@ -126,7 +126,6 @@ class servidor{
 
         }}*/
         function Cliente($ci){
-            echo "<script> console.log(".$ci.")</script>";
             $conn = $this->conectar();
     
             $sql = "CALL cliente(?)";
