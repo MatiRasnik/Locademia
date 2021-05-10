@@ -227,6 +227,23 @@ class servidor{
                     return $Info;
             }
         } 
+        function guardoAuto($ci, $mat){
+            $conn = $this->conectar();
+    
+            $sql = "CALL guardoAuto(?,?)";
+            $stmts = $conn->prepare($sql);
+    
+            $stmts->bind_param("is", $ci, $mat);
+            if($stmts->execute()){
+                $stmts->close();
+                return true;
+            }else{
+                return false;
+            }
+        } 
         
 }
 ?>
+ 
+
+       

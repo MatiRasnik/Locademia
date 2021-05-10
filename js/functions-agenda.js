@@ -5,7 +5,3 @@ $( document ).ready(function(){
     });
 });
 
-function agenda(){
-    $("#agendadiv").show();
-    document.getElementById("agendadiv").scrollIntoView();
-}

@@ -92,4 +92,19 @@ class Coches{
             return horarios;
         }
     }
+    guardoCoche(ci, matricula){
+        $.ajax({
+            async: false,
+            type: "POST",
+            url: "../Form/guardoAuto.php",
+            data: {ci:ci, matricula:matricula},
+            success: function(asd){
+               if(asd){
+                return 1;
+               }else{
+                return 0;
+               }
+            }
+        });
+    }
 }
