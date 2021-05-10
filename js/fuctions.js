@@ -103,7 +103,6 @@ function traigoHorarios(){
 function armoHoras(horas){
   var Horas = horas;
   Horas2 = JSON.parse(Horas);
-  console.log(Horas2);
   $.ajax({
     url: "Reservas.php",
     type: "post",
@@ -115,16 +114,20 @@ function armoHoras(horas){
 }
 
 function cerrarSesion(){
-  alert("asd");
+  console.log("----------------");
+  var borrar = true;
   $.ajax({
-    url: "../Form/CerrarSesion.php",
+    url: "CerrarSesion.php",
     type: "post",
+    data: { borrar:borrar },
     succes: function (asd) {
-      alert(asd);
+      console.log(asd);
       alert("borrado");
       //storage.removeItem(keyName);
     }
   })
+  console.log("----------------");
+  //location.href ="CerrarSesion.php";
 }
 
 function agenda(){
