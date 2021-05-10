@@ -10,7 +10,7 @@ function revisarHoras(id, hora) {
     $.ajax({
         url: "Reservas.php",
         type: "post",
-        data: { dia: diaG, log2:log2 },
+        data: { dia: diaG, Horas2:Horas2 },
         success: function (html) {
             $(".horas").html(html);
         }

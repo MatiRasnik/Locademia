@@ -1,5 +1,6 @@
 var log2;
 var txt;
+var Horas2;
 
 function log(){
     var usuario=$('#usuario').val();
@@ -102,6 +103,7 @@ function traigoHorarios(){
 function armoHoras(horas){
   var Horas = horas;
   Horas2 = JSON.parse(Horas);
+  console.log(Horas2);
   $.ajax({
     url: "Reservas.php",
     type: "post",
@@ -117,7 +119,6 @@ function cerrarSesion(){
   $.ajax({
     url: "../Form/CerrarSesion.php",
     type: "post",
-    data: {},
     succes: function (asd) {
       alert(asd);
       alert("borrado");
