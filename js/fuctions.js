@@ -1,3 +1,5 @@
+var log2;
+
 function log(){
     var usuario=$('#usuario').val();
     var contra=$('#contra').val();
@@ -46,13 +48,20 @@ function traigoHorarios(){
 }
 
 function armoHoras(horas){
-    var txt = horas;
-    var log2 = JSON.parse(txt);
-    for (var i = 0; i < log2.length; i++) {
-      console.log(log2[i]["id"]);
-      console.log(log2[i]["ci"]);
-      console.log(log2[i]["horaComienzo"]);
-      console.log(log2[i]["horaFin"]);
+  var txt = horas;
+  log2 = JSON.parse(txt);
+  $.ajax({
+    url: "Reservas.php",
+    type: "post",
+    data: { log2:log2 },
+    succes: function (html) {
+      $(".horas").html(html);
     }
-
+  })
+  for (var i = 0; i < log2.length; i++) {
+    console.log(log2[i]["id"]);
+    console.log(log2[i]["ci"]);
+    console.log(log2[i]["horaComienzo"]);
+    console.log(log2[i]["horaFin"]);
+  }
 }
