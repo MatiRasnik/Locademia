@@ -10,7 +10,7 @@ function revisarHoras(id, hora) {
     $.ajax({
         url: "Reservas.php",
         type: "post",
-        data: { dia: diaG },
+        data: { dia: diaG, log2:log2 },
         success: function (html) {
             $(".horas").html(html);
         }
@@ -28,13 +28,7 @@ function horasSeguidas(hrsel) {
     for(i=7;i<=12;i++) {
         if(i+1 < arri[0] || i-1 > arri[0] || i+1 < arri[1] || i-1 > arri[1]) {
             document.getElementById(i).disabled = true;
-            for(var j=0;j<log2.length;j++) {
-                if(log2[j]["horaComienzo"].slice(0, 2) == i || log2[j]["horaFin"].slice(0, 2) == i ) {
-                    document.getElementById("H"+i).style.backgroundColor = "red";
-                } else {
-                    document.getElementById("H"+i).style.backgroundColor = "lightgrey";
-                }
-            }
+            document.getElementById("H"+i).style.backgroundColor = "lightgrey";
         } else if(horaL <= i) {
             document.getElementById(i).disabled = false;
             document.getElementById("H"+i).style.backgroundColor = "white";
@@ -43,13 +37,7 @@ function horasSeguidas(hrsel) {
     for(i=14;i<=19;i++) {
         if(i+1 < arri[0] || i-1 > arri[0] || i+1 < arri[1] || i-1 > arri[1]) {
             document.getElementById(i).disabled = true;
-            for(var j=0;j<log2.length;j++) {
-                if(log2[j]["horaComienzo"].slice(0, 2) == i || log2[j]["horaFin"].slice(0, 2) == i ) {
-                    document.getElementById("H"+i).style.backgroundColor = "red";
-                } else {
-                    document.getElementById("H"+i).style.backgroundColor = "lightgrey";
-                }
-            }
+            document.getElementById("H"+i).style.backgroundColor = "lightgrey";
         } else if(horaL <= i) {
             document.getElementById(i).disabled = false;
             document.getElementById("H"+i).style.backgroundColor = "white";
