@@ -213,6 +213,28 @@ class servidor{
                     return $Info;
             }
         } 
+        function Borrar($Dia,$Hora_Inicio,$Hora_fin){
+            $conn = $this->conectar();
+    
+            $sql = "CALL Borrar(?,?,?,@x)";
+            $stmts = $conn->prepare($sql);
+    
+            $stmts->bind_param("sss", $Dia,$Hora_Inicio,$Hora_fin);
+            if($stmts->execute()){
+                $resultado = $conn->query('SELECT @x as p_out');
+                $x = $resultado->fetch_assoc();
+                if($x['p_out'] == "1"){
+                    $stmts->close();
+                    $valor = 1;
+                }else{
+                    $stmts->close();
+                    $valor = 2;
+                }
+            }else{
+                $valor = 2;
+            }
+            return $valor;
+            }
         
 }
 ?>
