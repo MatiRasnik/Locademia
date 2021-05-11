@@ -17,6 +17,23 @@ function revisarHoras(id, hora) {
     });
 }
 
+function hrReservadas() {
+    $.ajax({
+        url: "hrReser.php",
+        type: "post",
+        data: { Horas2:Horas2 },
+        success: function () {
+            var oReq = new XMLHttpRequest();
+            oReq.open("post", "hrReser.php");
+            oReq.onload = function() {
+                horaRes = this.response;
+                horaRes = JSON.parse(horaRes);
+            };
+            oReq.send();
+        }
+    });
+}
+
 function horasSeguidas(hrsel) {
     if(arri.indexOf(hrsel) == -1) {
         arri.push(hrsel);
