@@ -24,13 +24,6 @@ function horasSeguidas(hrsel) {
         arri.splice(arri.indexOf(hrsel), 1);
     }
 
-    var oReq = new XMLHttpRequest();
-    oReq.onload = function() {
-        horaRes = this.responseText;
-    };
-    oReq.open("get", "Reservas.php", true);
-    oReq.send();
-    console.log(horaRes);
     for(var a=7;a<=12;a++) {
         if(a+1 < arri[0] || a-1 > arri[0] || a+1 < arri[1] || a-1 > arri[1]) {
             document.getElementById(a).disabled = true;
