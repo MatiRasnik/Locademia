@@ -19,11 +19,6 @@ function log(){
 }
 
 function traigoCoches(){
-        const transition_el = document.querySelector('.transition');
-        setTimeout(() => {
-            transition_el.classList.remove('is-active');    
-        }, 100);
-
         var cedula = sessionStorage.getItem('ci');
         let car = new Coches();
         var tipocar = car.autos(cedula);
@@ -121,7 +116,7 @@ function cerrarSesion(){
     url: "/locademia/Form/CerrarSesion.php",
     success: function(){
       sessionStorage.clear();
-      location.href ="/locademia/Form/Login.html";
+      location.href ="/locademia/index.html";
     }
 });
 console.log("--------3--------");
@@ -149,4 +144,21 @@ function guardoAutoAgenda(){
         $("#agendadiv").show();
         document.getElementById("agendadiv").scrollIntoView();
       }
+}
+
+function VerificoSesion(){
+  const transition_el = document.querySelector('.transition');
+        setTimeout(() => {
+            transition_el.classList.remove('is-active');    
+        }, 100);
+  $.ajax({
+    async: false,
+    type: "POST",
+    url: "/locademia/Form/VerificoSesion.php",
+    success: function(asd){
+      if(asd == 1){
+      location.href ="/locademia/Form/Login.html";
+      }
+    }
+});
 }

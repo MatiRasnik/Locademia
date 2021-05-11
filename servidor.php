@@ -10,6 +10,15 @@ class servidor{
             return $conexion;
         }
     }
+
+    function VerificoSesion(){
+        session_start();
+        if(!isset($_SESSION["ci"])){
+            return "1";
+        }else{
+            return "0";
+        }
+    }
     
     function login($usuario, $pass){
         $conn = $this->conectar();
