@@ -30,9 +30,9 @@ if(isset($log2)) {
             array_push($horas, $h);
         }
     }
-    json_encode($horas);
+    echo json_encode($horas);
 } else {
-    json_encode(0);
+    echo json_encode(0);
 }
 
 echo   "<h1>" . $dias[$diaSemana] . ", " . $arr[0] . " de " . $meses[$arr[1]] . " de " . $arr[2] . "</h1>";
