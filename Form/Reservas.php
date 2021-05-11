@@ -6,7 +6,6 @@ if(isset($_POST['dia'])) {
 }
 if(isset($_POST['Horas2'])) {
     $log2 = $_POST['Horas2'];
-    echo $log2[2]['dia'];
 } else {
     echo "error2";
 }
@@ -14,7 +13,7 @@ if(isset($_POST['Horas2'])) {
 
 date_default_timezone_set("America/Montevideo");
 
-$norep;
+$norep = null;
 
 $diaSemana=date("N",mktime(0,0,0,$arr[1],$arr[0],$arr[2]));
 
