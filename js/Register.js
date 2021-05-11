@@ -26,32 +26,44 @@ function Register2(){
     var password = $('#password').val();
     var password2 = $('#password2').val();
     var Cedula = sessionStorage.getItem("cedula");
-    if(password == password2){
-        $.ajax({
-            url: "Register.php",
-            type: "post",
-            data: {ci: Cedula, Usename: username, Password: password},
-            success: function(respuesta) {
-                if(respuesta == 3){
-                    alert("se guardaron sus datos");
-                    window.location.assign("Login.html")
-                    sessionStorage.clear();
-                }else{
-                    if(respuesta == 4){
-                        alert("este usuario ya existe");
+    var numeros = /[0-9]/gi;
+    var letras = /[A-Z]/gi;
+    //var simbolos = /+*\-\@\!\#$/gi;
+
+    if(password.length > 8 && password.match(numeros) && password.match(letras)){
+        if(password == password2){
+            $.ajax({
+                url: "Register.php",
+                type: "post",
+                data: {ci: Cedula, Usename: username, Password: password},
+                success: function(respuesta) {
+                    if(respuesta == 3){
+                        window.location.assign("Login.html")
+                        sessionStorage.clear();
                     }else{
-                        alert(respuesta);
+                        if(respuesta == 4){
+                            alert("El usuario ingresado ya existe");
+                        }else{
+                            alert(respuesta);
+                        }
                     }
-                }
-            },
-        });
+                },
+            });
+        }else{
+            $.ajax({
+                url: "Register2.html",
+                type: "post",
+                success: function() {
+                    alert("Las contraseñas ingresadas no coinciden");
+                },
+            });
+        }
     }else{
-        $.ajax({
-            url: "Register2.html",
-            type: "post",
-            success: function() {
-                alert("Las contraseñas que a colocado son distintas");
-            },
-        });
+        alert("Su contraseña no cumple con los requisitos");
+        console.log("asd" + password);
+         console.log(password.length);
+         console.log(password.match(numeros));
+         console.log(password.match(letras));
     }
+    
 }
