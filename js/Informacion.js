@@ -29,13 +29,13 @@ function CargarCalendario(dias){
         },
     });
 }
-function mesSiguiente(mes, año){
+function mesSiguiente(mes, año, dias){
     mes++;
 
     $.ajax({
         url: "Agenda.php",
         type: "post",
-        data: { mes: mes, año: año, info:info},
+        data: { mes: mes, año: año, info:info, diasinfo:dias},
         success: function (calendario) {
             document.getElementById("calendario").innerHTML = calendario;
         },
@@ -48,13 +48,13 @@ function mesSiguiente(mes, año){
         }
     });
 }
-function mesAnterior(mes, año){
+function mesAnterior(mes, año, dias){
     mes--;
 
     $.ajax({
         url: "Agenda.php",
         type: "post",
-        data: { mes: mes, año: año, info:info},
+        data: { mes: mes, año: año, info:info, diasinfo:dias}, 
         success: function (calendario) {
             document.getElementById("calendario").innerHTML = calendario;
         },

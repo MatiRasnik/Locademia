@@ -1,5 +1,5 @@
 <?php
-
+    error_reporting(E_ALL ^ E_NOTICE);
     date_default_timezone_set("America/Montevideo");
     $mes = isset($_POST['mes']) ? $_POST['mes']: date("n");
     $mesActual = date("m");
@@ -9,6 +9,7 @@
     if(isset($_POST['info'])){
         $info = $_POST['info'];
         $diasInfo = $_POST['diasinfo'];
+        $agendadias = json_encode($diasInfo);
         if($info == 1){
             $infodias = array();
             for($e = 0;$e < count($diasInfo);$e++){
@@ -35,11 +36,11 @@
     if($mes == $mesActual && $año == $añoActual){
 
     }else{
-        $calendario .= "<button class='botonesCal' onclick='mesAnterior($mes, $año)'> < </button>";
+        $calendario .= "<button class='botonesCal' onclick='mesAnterior($mes, $año , $agendadias)'> < </button>";
     }    
 
     $calendario .= "    <h2>$año</h2>
-                        <button class='botonesCal' onclick='mesSiguiente($mes, $año)'> > </button>
+                        <button class='botonesCal' onclick='mesSiguiente($mes, $año , $agendadias)'> > </button>
                     </div>
                     <div class='mes'><h3>$meses[$mes]</h3></div><hr>";
     $calendario .= "<table id='calendar'>
