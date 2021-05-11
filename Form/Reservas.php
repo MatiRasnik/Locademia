@@ -14,6 +14,8 @@ if(isset($_POST['Horas2'])) {
 
 date_default_timezone_set("America/Montevideo");
 
+$norep;
+
 $diaSemana=date("N",mktime(0,0,0,$arr[1],$arr[0],$arr[2]));
 
 $dias = array(1=>'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo');
@@ -43,9 +45,12 @@ if(isset($log2)){
             for($j=0;$j<count($horas);$j++) {
                 if($log2[$horas[$j]]["horaComienzo"] == $i || $log2[$horas[$j]]["horaComienzo"] == $i) {
                     echo "<label class='horario' id='H" . $i . "' style='background-color: red;'> <input type='checkbox' id=" . $i . "name='horario1' disabled value=" . date('H:i', mktime($i, 00)) . "> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
+                    $norep = $i;
                 }
             }
-            echo "<label class='horario' id='H" . $i . "' style='background-color: lightgrey;'> <input type='checkbox' id=" . $i . "name='horario1' disabled value=" . date('H:i', mktime($i, 00)) . "> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
+            if($norep != $i) {
+                echo "<label class='horario' id='H" . $i . "' style='background-color: lightgrey;'> <input type='checkbox' id=" . $i . "name='horario1' disabled value=" . date('H:i', mktime($i, 00)) . "> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
+            }
         } else {
             echo "<label class='horario' id='H" . $i . "'> <input type='checkbox' id=" . $i . " name='horario1' onchange='horasSeguidas(" . $i . ")'> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
         }
