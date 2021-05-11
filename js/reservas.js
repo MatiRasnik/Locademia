@@ -28,7 +28,7 @@ function horasSeguidas(hrsel) {
     oReq.onload = function() {
         horaRes = this.responseText;
     }
-
+    console.log(horaRes);
     for(var a=7;a<=12;a++) {
         if(a+1 < arri[0] || a-1 > arri[0] || a+1 < arri[1] || a-1 > arri[1]) {
             document.getElementById(a).disabled = true;
