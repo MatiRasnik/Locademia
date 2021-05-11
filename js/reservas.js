@@ -1,6 +1,6 @@
 var diaG;
 var arri = [];
-var horaRes;
+var horaRes = <?php echo json_encode($horas); ?>;
 var horaL;
 
 function revisarHoras(id, hora) {
@@ -23,13 +23,6 @@ function horasSeguidas(hrsel) {
     } else {
         arri.splice(arri.indexOf(hrsel), 1);
     }
-
-    var oReq = new XMLHttpRequest();
-    oReq.onload = function() {
-        horaRes = this.responseText;
-    };
-    oReq.open("get", "Reservas.php", true);
-    oReq.send();
 
     for(var a=7;a<=12;a++) {
         if(a+1 < arri[0] || a-1 > arri[0] || a+1 < arri[1] || a-1 > arri[1]) {
