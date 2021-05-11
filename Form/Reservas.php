@@ -32,7 +32,8 @@ if(isset($log2)) {
     }
     echo json_encode($horas);
 } else {
-    echo json_encode(0);
+    $horas[0] = "0";
+    echo json_encode($horas);
 }
 
 echo   "<h1>" . $dias[$diaSemana] . ", " . $arr[0] . " de " . $meses[$arr[1]] . " de " . $arr[2] . "</h1>";
