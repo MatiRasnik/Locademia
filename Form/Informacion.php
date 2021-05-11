@@ -7,6 +7,8 @@
     list($estado,$nombre,$apellido,$telefono,$mail,$direccion) = $server->Cliente($ci);
     list($horas_efectuadas,$horas_reservadas) = $server->Contrato($ci);
     $Info = array();
+    $Borrar = array();
+    $contador = 0;
     $Info = $server->InfoAgenda($ci);
     //list($tipo,$matricula) = $server->Automovil($ci);
     $horas_restantes=$horas_reservadas-$horas_efectuadas;
@@ -45,8 +47,16 @@
                 $return .= '<tr>';
                 foreach ( $r as $v ) {
                     $return .= '<td>'.$v.'</td>';
+                    $Borrar[$contador] = $v;
+                    $contador++;
                 }
-                $return .= '</tr>';
+                $contador = 0;
+                list($dia,$horai,$horaf) = $Borrar;
+                $return .= '
+                    <td>
+                        <button onclick='Borrar($dia,$horai,$horaf)'>Borrar</button>
+                    </td>
+                </tr>';
             }
             $return .="</table>
     </div>";

@@ -227,6 +227,7 @@ class servidor{
                     return $Info;
             }
         } 
+
         function guardoAuto($ci, $mat){
             $conn = $this->conectar();
     
