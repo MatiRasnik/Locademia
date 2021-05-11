@@ -1,6 +1,6 @@
 var diaG;
 var arri = [];
-var i;
+var horaRes;
 var horaL;
 
 function revisarHoras(id, hora) {
@@ -23,7 +23,12 @@ function horasSeguidas(hrsel) {
     } else {
         arri.splice(arri.indexOf(hrsel), 1);
     }
-    var horaRes = json_encode($horas);
+
+    var oReq = new XMLHttpRequest();
+    oReq.onload = function() {
+        horaRes = this.responseText;
+    }
+
     for(var a=7;a<=12;a++) {
         if(a+1 < arri[0] || a-1 > arri[0] || a+1 < arri[1] || a-1 > arri[1]) {
             document.getElementById(a).disabled = true;
