@@ -23,23 +23,29 @@ function horasSeguidas(hrsel) {
     } else {
         arri.splice(arri.indexOf(hrsel), 1);
     }
-
-    for(i=7;i<=12;i++) {
-        if(i+1 < arri[0] || i-1 > arri[0] || i+1 < arri[1] || i-1 > arri[1]) {
-            document.getElementById(i).disabled = true;
-            document.getElementById("H"+i).style.backgroundColor = "lightgrey";
-        } else if(horaL <= i) {
-            document.getElementById(i).disabled = false;
-            document.getElementById("H"+i).style.backgroundColor = "white";
+    for(var a=7;a<=12;a++) {
+        console.log("1>" + a);
+        console.log("arri>" + arri[0]);
+        if(a+1 < arri[0] || a-1 > arri[0] || a+1 < arri[1] || a-1 > arri[1]) {
+            console.log("2>" + a);
+            console.log("arri>" + arri[0]);
+            console.log("asd");
+            document.getElementById(a).disabled = true;
+            console.log("3>" + a);
+            document.getElementById("H"+a).style.backgroundColor = "lightgrey";
+            console.log("4>" + a);
+        } else if(horaL <= a) {
+            document.getElementById(a).disabled = false;
+            document.getElementById("H"+a).style.backgroundColor = "white";
         }
     }
-    for(i=14;i<=19;i++) {
-        if(i+1 < arri[0] || i-1 > arri[0] || i+1 < arri[1] || i-1 > arri[1]) {
-            document.getElementById(i).disabled = true;
-            document.getElementById("H"+i).style.backgroundColor = "lightgrey";
-        } else if(horaL <= i) {
-            document.getElementById(i).disabled = false;
-            document.getElementById("H"+i).style.backgroundColor = "white";
+    for(var a=14;a<=19;a++) {
+        if(a+1 < arri[0] || a-1 > arri[0] || a+1 < arri[1] || a-1 > arri[1]) {
+            document.getElementById(a).disabled = true;
+            document.getElementById("H"+a).style.backgroundColor = "lightgrey";
+        } else if(horaL <= a) {
+            document.getElementById(a).disabled = false;
+            document.getElementById("H"+a).style.backgroundColor = "white";
         }
     }
 }
