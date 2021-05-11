@@ -24,7 +24,7 @@ function horasSeguidas(hrsel) {
         arri.splice(arri.indexOf(hrsel), 1);
     }
     for(var a=7;a<=12;a++) {
-        if(a+1 < arri[0] || a-1 > arri[0] || a+1 < arri[1] || a-1 > arri[1]) {;
+        if(a+1 < arri[0] || a-1 > arri[0] || a+1 < arri[1] || a-1 > arri[1]) {
             document.getElementById(a).disabled = true;
             document.getElementById("H"+a).style.backgroundColor = "lightgrey";
         } else if(horaL <= a) {
