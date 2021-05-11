@@ -60,10 +60,6 @@ function Register2(){
         }
     }else{
         alert("Su contraseña no cumple con los requisitos");
-        console.log("asd" + password);
-         console.log(password.length);
-         console.log(password.match(numeros));
-         console.log(password.match(letras));
     }
     
 }
