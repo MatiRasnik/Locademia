@@ -1,6 +1,6 @@
 var diaG;
 var arri = [];
-var horaRes;
+var horaRes = 0;
 var horaL;
 
 function revisarHoras(id, hora) {
@@ -13,27 +13,36 @@ function revisarHoras(id, hora) {
         data: { dia: diaG, Horas2:Horas2 },
         success: function (html) {
             $(".horas").html(html);
+            hrReservadas();
         }
     });
 }
 
 function hrReservadas() {
+    console.log("-------");
+    console.log(diaG);
+    console.log(diaG[0]);
+    console.log("-------");
     $.ajax({
-        url: "hrReser.php",
+        url: "hrReser.php", 
+        dataType: "json",
         type: "post",
-        data: { Horas2:Horas2 },
-        success: function () {
-            var oReq = new XMLHttpRequest();
+        data: { Horas2:Horas2, dia:diaG},
+        success: function (asd) {
+            var assd = JSON.parse(asd);
+            console.log(assd);
+            //horaRes = JSON.parse(asd);
+           /* var oReq = new XMLHttpRequest();
             oReq.open("post", "hrReser.php");
             oReq.onload = function() {
                 horaRes = this.response;
-                horaRes = JSON.parse(horaRes);
+             
             };
-            oReq.send();
+            oReq.send();*/
         }
     });
 }
-
+console.log("hora res " + horaRes);
 function horasSeguidas(hrsel) {
     if(arri.indexOf(hrsel) == -1) {
         arri.push(hrsel);

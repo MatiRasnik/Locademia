@@ -2,6 +2,9 @@
 if(isset($_POST['Horas2'])) {
     $log2 = $_POST['Horas2'];
 }
+if(isset($_POST['dia'])) {
+    $arr = explode('-',$_POST['dia']);
+}
 
 $horas = [];
 if(isset($log2)) {
