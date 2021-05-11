@@ -6,12 +6,13 @@ if(isset($_POST['dia'])){
     $dia = $_POST["dia"];
     $hora_inicio = $_POST["horai"];
     $hora_fin = $_POST["horaf"];
-    $respuesta = $server->Borrar($dia, $hora_inicio, $hora_fin);
-    if($respuesta !== null){
-        return $respuesta;
-    }else{
-        $respuesta = "0";
-    }    
+    $ci = $_POST["ci"];
+    $respuesta = $server->Borrar($dia, $hora_inicio, $hora_fin, $ci);
+    if($respuesta != "1"){
+        if($respuesta != "2"){
+            $respuesta = "0";
+        }   
+    }
 }else{
     $respuesta = "0";
 }

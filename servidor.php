@@ -242,7 +242,26 @@ class servidor{
                 return false;
             }
         } 
-        
+        function Borrar($dia, $hora_inicio, $hora_fin, $ci){
+            $conn = $this->conectar();
+            $sql = "CALL Borrar(?,?,?,?,@x)";
+            $stmts = $conn->prepare($sql);
+            $stmts->bind_param("sssi",$dia, $hora_inicio, $hora_fin, $ci);
+            if($stmts->execute()){
+                $resultado = $conn->query('SELECT @x as p_out');
+                $x = $resultado->fetch_assoc();
+                if($x['p_out'] == "1"){
+                    $stmts->close();
+                    $valor = 1;
+                }else{
+                    $stmts->close();
+                    $valor = 2;
+                }
+            }else{
+                $valor = 2;
+            }
+            return $valor;
+        }
 }
 ?>
  

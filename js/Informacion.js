@@ -1,10 +1,18 @@
-function borrar(dia,horai,horaf){
+function borrar(dia,horai,horaf,ci){
     $.ajax({
         url: "Borrar.php",
         type: "post",
-        data: {dia:dia,horai:horai,horaf:horaf},
+        data: {dia:dia,horai:horai,horaf:horaf,ci:ci},
         success: function(respuesta) {
-            alert(respuesta);
+            if(respuesta == 1){
+                alert("se borro corectamente")
+            }else{
+                if(respuesta == 2){
+                    alert("no se pudo borrar")
+                }else{
+                    alert("hubo un error")
+                }
+            }
         },
     });
 }
@@ -13,7 +21,5 @@ function borrar(dia,horai,horaf){
 
 $( document ).ready(function(){
     sessionStorage.getItem('ci');
-    console.log(sessionStorage.getItem('ci'))
     $("#Informacion").load('informacion.php');
-    
 });
