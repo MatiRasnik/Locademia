@@ -21,9 +21,9 @@ $meses = array(1=>"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio"
 
 $hora = date("H", mktime(date("H")+2));
 
-$diaRes = explode('-', $log2[$j]["dia"]);
 $horas = [];
 for($h=0;$h<count($log2);$h++) {
+    $diaRes = explode('-', $log2[$h]["dia"]);
     if($diaRes[2] == $arr[0] && $diaRes[1] == $arr[1] && $diaRes[0] == $arr[2]) {
         array_push($horas, $h);
     }
