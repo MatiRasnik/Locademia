@@ -6,6 +6,17 @@
     $año = isset($_POST['año']) ? $_POST['año']: date("Y");
     $añoActual = date("Y");
     $dia = date("d");
+    if(isset($_POST['info'])){
+        $info = $_POST['info'];
+        $diasInfo = $_POST['diasinfo'];
+        if($info == 1){
+            $infodias = array();
+            for($e = 0;$e < count($diasInfo);$e++){
+                $string = $diasInfo[$e];
+                $infodias = explode('-', $string);
+            }
+        }
+    }
     if($mes > 12){
     $mes = 1;
     $año++;
@@ -55,11 +66,41 @@
         }
         for($i = 1; $i <= $diasMes; $i++){
             if($i == $dia && $mes == $mesActual && $año == $añoActual){
-                $calendario .= "<td><button class='dias diaActual' id='$i-$mes-$año' onclick='revisarHoras(this.id, $hora)'>" . $i . "</button></td>";
+                if(isset($info)){
+                    $calendario .= "<td><a class='dias diaActual' id='$i-$mes-$año'>" . $i . "</a></td>";
+                }else{
+                    $calendario .= "<td><button class='dias diaActual' id='$i-$mes-$año' onclick='revisarHoras(this.id, $hora)'>" . $i . "</button></td>";
+                }
             }
             else{
                 if($i > $dia || $mes > $mesActual || $año > $añoActual){
-                    $calendario .= "<td><button class='dias' id='$i-$mes-$año' onclick='revisarHoras(this.id, 03)'>" . $i . "</button></td>";
+                    if(isset($info)){
+                        $z = 0;
+                        $c = 0;
+                        $a = 1;
+                        $b = 2;
+                        for($d = 0;$d < count($diasInfo);$d++){
+                            
+                            if($infodias[$b] == $i && $mes == $infodias[$a] && $año == $infodias[$c]){
+                                $calendario .="$i";
+                                $z = 1;
+                                $d=count($diasInfo)+1;
+                            }else{
+                                $z = 0;
+                            }
+                            $c = $c + 3;
+                            $a = $a + 3;
+                            $b = $b + 3;
+                        }
+                        if($z == 1){
+                            $calendario .= "<td><a class='diasAgendado' id='$i-$mes-$año'>" . $i . "</a></td>";
+                        }else{
+                            $calendario .= "<td><a class='dias' id='$i-$mes-$año'>" . $i . "</a></td>";
+                        }
+                        $d = 0;
+                    }else{
+                        $calendario .= "<td><button class='dias' id='$i-$mes-$año' onclick='revisarHoras(this.id, 03)'>" . $i . "</button></td>";
+                    }
                 } elseif($i < $dia && $mes <= $mesActual && $año <= $añoActual){
                     $calendario .= "<td><button class='dias' id='$i-$mes-$año' disabled>" . $i . "</button></td>";
                 }
