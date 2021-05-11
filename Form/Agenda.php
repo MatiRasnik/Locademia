@@ -9,6 +9,7 @@
     if(isset($_POST['info'])){
         $info = $_POST['info'];
         $diasInfo = $_POST['diasinfo'];
+        $agendadias = json_encode($diasInfo);
         if($info == 1){
             $infodias = array();
             for($e = 0;$e < count($diasInfo);$e++){
@@ -35,11 +36,11 @@
     if($mes == $mesActual && $año == $añoActual){
 
     }else{
-        $calendario .= "<button class='botonesCal' onclick='mesAnterior($mes, $año)'> < </button>";
+        $calendario .= "<button class='botonesCal' onclick='mesAnterior($mes, $año , $agendadias)'> < </button>";
     }    
 
     $calendario .= "    <h2>$año</h2>
-                        <button class='botonesCal' onclick='mesSiguiente($mes, $año)'> > </button>
+                        <button class='botonesCal' onclick='mesSiguiente($mes, $año , $agendadias)'> > </button>
                     </div>
                     <div class='mes'><h3>$meses[$mes]</h3></div><hr>";
     $calendario .= "<table id='calendar'>
@@ -82,7 +83,6 @@
                         for($d = 0;$d < count($diasInfo);$d++){
                             
                             if($infodias[$b] == $i && $mes == $infodias[$a] && $año == $infodias[$c]){
-                                $calendario .="$i";
                                 $z = 1;
                                 $d=count($diasInfo)+1;
                             }else{
