@@ -35,7 +35,7 @@ CREATE TABLE `agenda` (
   KEY `ci_idx` (`CI`),
   CONSTRAINT `agenda_ibfk_2` FOREIGN KEY (`matricula`) REFERENCES `automoviles` (`matricula`),
   CONSTRAINT `ci` FOREIGN KEY (`CI`) REFERENCES `cliente` (`CI`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `agenda` (
 
 LOCK TABLES `agenda` WRITE;
 /*!40000 ALTER TABLE `agenda` DISABLE KEYS */;
-INSERT INTO `agenda` VALUES (1,96325874,'AAW-8562','2021-05-07','10:00:00','11:00:00'),(2,96325874,'AAW-8562','2021-05-08','10:00:00','11:00:00'),(3,96325874,'AAW-8562','2021-05-11','10:00:00','11:00:00');
+INSERT INTO `agenda` VALUES (1,96325874,'AAW-8562','2021-05-07','10:00:00','11:00:00'),(2,96325874,'AAW-8562','2021-05-08','10:00:00','11:00:00'),(3,96325874,'AAW-8562','2021-05-11','10:00:00','11:00:00'),(4,96325874,'AAW-8562','2021-05-11','09:00:00','10:00:00');
 /*!40000 ALTER TABLE `agenda` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -191,7 +191,7 @@ CREATE TABLE `cuenta` (
 
 LOCK TABLES `cuenta` WRITE;
 /*!40000 ALTER TABLE `cuenta` DISABLE KEYS */;
-INSERT INTO `cuenta` VALUES (14785236,'a','a','IJO-4785'),(96325874,'pepe','1234','AAW-8562');
+INSERT INTO `cuenta` VALUES (14785236,'a','a',NULL),(96325874,'pepe','1234','AAW-8562');
 /*!40000 ALTER TABLE `cuenta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -227,9 +227,9 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `cliente`(IN ci int)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `cliente`(IN ci1 int)
 BEGIN
-	select nombre,apellido,telefono,mail,direccion,estado from cliente where ci = CI;
+	select nombre,apellido,telefono,mail,direccion,estado from cliente where CI = ci1;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -265,9 +265,9 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `contrato`(IN ci int)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `contrato`(IN ci1 int)
 BEGIN
-	select horas_efectuadas,horas_reservadas from contrato where ci = CI;
+	select horas_efectuadas,horas_reservadas from contrato where CI = ci1;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -327,9 +327,9 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `InfoAgenda`(IN ci int)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InfoAgenda`(IN ci1 int)
 BEGIN
-	select dia,hora_comienzo,hora_fin from agenda where  ci = CI;
+	select dia,hora_comienzo,hora_fin from agenda where  CI = ci1;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -405,4 +405,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-10 17:52:15
+-- Dump completed on 2021-05-11 11:06:11

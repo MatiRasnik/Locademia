@@ -52,11 +52,11 @@
                 }
                 $contador = 0;
                 list($dia,$horai,$horaf) = $Borrar;
-                $return .= '
+                /*$return .= '
                     <td>
                         <button onclick='Borrar($dia,$horai,$horaf)'>Borrar</button>
                     </td>
-                </tr>';
+                </tr>';*/
             }
             $return .="</table>
     </div>";
