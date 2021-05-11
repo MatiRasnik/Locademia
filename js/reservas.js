@@ -18,7 +18,6 @@ function revisarHoras(id, hora) {
 }
 
 function horasSeguidas(hrsel) {
-
     if(arri.indexOf(hrsel) == -1) {
         arri.push(hrsel);
     } else {

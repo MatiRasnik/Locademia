@@ -114,21 +114,18 @@ function armoHoras(horas){
 }
 
 function cerrarSesion(){
-  console.log("----------------");
-  var borrar = true;
+  console.log("--------1--------");
   $.ajax({
-    url: "CerrarSesion.php",
-    type: "post",
-    data: { borrar:borrar },
-    succes: function (asd) {
-      console.log(asd);
-      alert("borrado");
-      //storage.removeItem(keyName);
+    async: false,
+    type: "POST",
+    url: "/locademia/Form/CerrarSesion.php",
+    success: function(){
+      sessionStorage.clear();
+      location.href ="/locademia/Form/Login.html";
     }
-  })
-  console.log("----------------");
-  //location.href ="CerrarSesion.php";
-}
+});
+console.log("--------3--------");
+ }
 
 function agenda(){
   $("#agendadiv").show();

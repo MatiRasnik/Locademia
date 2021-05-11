@@ -1,4 +1,5 @@
 <header>
+<script src="../locademia/js/fuctions.js"></script>
   <div class="logo">
     <a href="index.html">
       <img src="img/LogoV1.1 - Transparente.png" alt="" />

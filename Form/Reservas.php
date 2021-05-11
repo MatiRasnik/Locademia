@@ -43,7 +43,7 @@ if(isset($log2)){
         if(date("H", mktime($i)) < $hora && date("j") >= $arr[0] && date("n") >= $arr[1] && date("Y") >= $arr[2]) {
             for($j=0;$j<count($horas);$j++) {
                 if($log2[$horas[$j]]["horaComienzo"] == $i || $log2[$horas[$j]]["horaComienzo"] == $i) {
-                    echo "<label class='horario' id='H" . $i . "' style='background-color: red;'> <input type='checkbox' id=" . $i . "name='horario1' disabled value=" . date('H:i', mktime($i, 00)) . "> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
+                    echo "<label class='horario' id='H" . $i . "' style='background-color: #db5e5e; color: white'> <input type='checkbox' id=" . $i . "name='horario1' disabled value=" . date('H:i', mktime($i, 00)) . "> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
                     $norep = $i;
                 }
             }
@@ -74,7 +74,7 @@ if(isset($log2)){
         if(date("H", mktime($i)) < $hora && date("j") >= $arr[0] && date("n") >= $arr[1] && date("Y") >= $arr[2]) {
             for($j=0;$j<count($horas);$j++) {
                 if($log2[$horas[$j]]["horaComienzo"] == $i || $log2[$horas[$j]]["horaComienzo"] == $i) {
-                    echo "<label class='horario' id='H" . $i . "' style='background-color: red;'> <input type='checkbox' id=" . $i . "name='horario1' disabled value=" . date('H:i', mktime($i, 00)) . "> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
+                    echo "<label class='horario' id='H" . $i . "' style='background-color: #db5e5e; color: white'> <input type='checkbox' id=" . $i . "name='horario1' disabled value=" . date('H:i', mktime($i, 00)) . "> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
                     $norep = $i;
                 }
             }
