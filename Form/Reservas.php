@@ -14,7 +14,7 @@ if(isset($_POST['Horas2'])) {
 
 date_default_timezone_set("America/Montevideo");
 
-$norep;
+$norep = null;
 
 $diaSemana=date("N",mktime(0,0,0,$arr[1],$arr[0],$arr[2]));
 
@@ -73,19 +73,15 @@ echo "<div class='col-flex'> <div class='col2'> <div class='Titulo'> <h1>Vespert
 if(isset($log2)){
     for($i=14;$i<=19;$i++) {
         if(date("H", mktime($i)) < $hora && date("j") >= $arr[0] && date("n") >= $arr[1] && date("Y") >= $arr[2]) {
-            for($j=0;$j<count($log2);$j++) {
-                $diaRes = explode('-', $log2[$j]["dia"]);
-                if(isset($log2) && substr($log2[$j]["horaComienzo"], 0, 2) == $i && $diaRes[2] == $arr[0]) {
+            for($j=0;$j<count($horas);$j++) {
+                if($log2[$horas[$j]]["horaComienzo"] == $i || $log2[$horas[$j]]["horaComienzo"] == $i) {
                     echo "<label class='horario' id='H" . $i . "' style='background-color: red;'> <input type='checkbox' id=" . $i . "name='horario1' disabled value=" . date('H:i', mktime($i, 00)) . "> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
-                    $i++;
-                } else if (isset($log2) && substr($log2[$j]["horaFin"], 0, 2) == $i && $diaRes[2] == $arr[0]) {
-                    echo "<label class='horario' id='H" . $i . "' style='background-color: red;'> <input type='checkbox' id=" . $i . "name='horario1' disabled value=" . date('H:i', mktime($i, 00)) . "> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
-                    $i++;
-                } else {
-                    echo "<label class='horario' id='H" . $i . "' style='background-color: lightgrey;'> <input type='checkbox' id=" . $i . "name='horario1' disabled value=" . date('H:i', mktime($i, 00)) . "> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
-                    $i++;
+                    $norep = $i;
                 }
-            } $i--;
+            }
+            if($norep != $i) {
+                echo "<label class='horario' id='H" . $i . "' style='background-color: lightgrey;'> <input type='checkbox' id=" . $i . "name='horario1' disabled value=" . date('H:i', mktime($i, 00)) . "> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
+            }
         } else {
             echo "<label class='horario' id='H" . $i . "'> <input type='checkbox' id=" . $i . " name='horario1' onchange='horasSeguidas(" . $i . ")'> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
         }
