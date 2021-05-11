@@ -82,7 +82,6 @@
                         for($d = 0;$d < count($diasInfo);$d++){
                             
                             if($infodias[$b] == $i && $mes == $infodias[$a] && $año == $infodias[$c]){
-                                $calendario .="$i";
                                 $z = 1;
                                 $d=count($diasInfo)+1;
                             }else{
