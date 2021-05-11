@@ -7,7 +7,9 @@
     list($estado,$nombre,$apellido,$telefono,$mail,$direccion) = $server->Cliente($ci);
     list($horas_efectuadas,$horas_reservadas) = $server->Contrato($ci);
     $Info = array();
+    $dias = array();
     $contador = 0;
+    $i = 0;
     $Info = $server->InfoAgenda($ci);
     $horas_restantes=$horas_reservadas-$horas_efectuadas;
     $return =
@@ -47,6 +49,8 @@
                     $return .= '<td>'.$v.'</td>';
                     if($contador == "0"){
                         $dia = $v;
+                        $dias[$i] = $v;
+                        $i++;
                         $contador++;
                     }else{
                         if($contador == "1"){
@@ -65,7 +69,10 @@
                     </td>
                 </tr>";
             }
+            $agendadias = json_encode($dias);
             $return .="</table>
+            <script>CargarCalendario($agendadias)</script>
+            <div id='calendario'></div>
     </div>";
     echo $return;
     return $return;

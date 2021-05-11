@@ -1,3 +1,5 @@
+var diasAgendados = [];
+var info = 1;
 function borrar(dia,horai,horaf,ci){
     $.ajax({
         url: "Borrar.php",
@@ -6,6 +8,7 @@ function borrar(dia,horai,horaf,ci){
         success: function(respuesta) {
             if(respuesta == 1){
                 alert("se borro corectamente")
+                window.location.reload()
             }else{
                 if(respuesta == 2){
                     alert("no se pudo borrar")
@@ -16,7 +19,54 @@ function borrar(dia,horai,horaf,ci){
         },
     });
 }
+function CargarCalendario(dias){
+    $.ajax({
+        url: "Agenda.php",
+        type: "post",
+        data: {info:info, diasinfo:dias},
+        success: function(calendario) {
+            document.getElementById("calendario").innerHTML=calendario;
+        },
+    });
+}
+function mesSiguiente(mes, año){
+    mes++;
 
+    $.ajax({
+        url: "Agenda.php",
+        type: "post",
+        data: { mes: mes, año: año, info:info},
+        success: function (calendario) {
+            document.getElementById("calendario").innerHTML = calendario;
+        },
+        complete: function (calendario) {
+            for(var a = 0; a < diasAgendados.length; a++){
+                if(document.getElementById(diasAgendados[a]) !== null){
+                    document.getElementById(diasAgendados[a]).classList.add("agendado");
+                }
+            }
+        }
+    });
+}
+function mesAnterior(mes, año){
+    mes--;
+
+    $.ajax({
+        url: "Agenda.php",
+        type: "post",
+        data: { mes: mes, año: año, info:info},
+        success: function (calendario) {
+            document.getElementById("calendario").innerHTML = calendario;
+        },
+        complete: function (calendario) {
+            for(var a = 0; a < diasAgendados.length; a++){
+                if(document.getElementById(diasAgendados[a]) !== null){
+                    document.getElementById(diasAgendados[a]).classList.add("agendado");
+                }
+            }
+        }
+    });
+}
 
 
 $( document ).ready(function(){
