@@ -12,7 +12,8 @@ function borrar(dia,horai,horaf){
 
 
 $( document ).ready(function(){
-
+    sessionStorage.getItem('ci');
+    console.log(sessionStorage.getItem('ci'))
     $("#Informacion").load('informacion.php');
     
 });

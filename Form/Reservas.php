@@ -1,7 +1,16 @@
 <?php
 if(isset($_POST['dia'])) {
     $arr = explode('-', $_POST['dia']);
+} else {
+    echo "error1";
 }
+if(isset($_POST['Horas2'])) {
+    $log2 = $_POST['Horas2'];
+    echo $log2[2]['dia'];
+} else {
+    echo "error2";
+}
+
 
 date_default_timezone_set("America/Montevideo");
 
@@ -20,26 +29,70 @@ echo "<div class='col-grid'>
             <div class='Titulo'>
                 <h1>Matutino</h1>
             </div>";
-
-for($i=7;$i<=12;$i++) {
-    if(date("H", mktime($i)) < $hora && date("j") >= $arr[0] && date("n") >= $arr[1] && date("Y") >= $arr[2]) {
-        echo "<label class='horario' id='H" . $i . "' style='background-color: lightgrey;'> <input type='checkbox' id=" . $i . " name='horario1' disabled value=" . date('H:i', mktime($i, 00)) . "> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
-    } else {
-        echo "<label class='horario' id='H" . $i . "'> <input type='checkbox' id=" . $i . " name='horario1' onchange='horasSeguidas(" . $i . ")'> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
+if(isset($log2)){
+    for($i=7;$i<=12;$i++) {
+        if(date("H", mktime($i)) < $hora && date("j") >= $arr[0] && date("n") >= $arr[1] && date("Y") >= $arr[2]) {
+            for($j=0;$j<count($log2);$j++) {
+                $diaRes = explode('-', $log2[$j]["dia"]);
+                if($diaRes[2] == $arr[0]){
+                    if(isset($log2) && substr($log2[$j]["horaComienzo"], 0, 2) == $i) {
+                    echo "<label class='horario' id='H" . $i . "' style='background-color: red;'> <input type='checkbox' id=" . $i . "name='horario1' disabled value=" . date('H:i', mktime($i, 00)) . "> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
+                    $i++;
+                } else if (isset($log2) && substr($log2[$j]["horaFin"], 0, 2) == $i && $diaRes[2] == $arr[0]) {
+                    echo "<label class='horario' id='H" . $i . "' style='background-color: red;'> <input type='checkbox' id=" . $i . "name='horario1' disabled value=" . date('H:i', mktime($i, 00)) . "> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
+                    $i++;
+                }} else {
+                    echo "<label class='horario' id='H" . $i . "' style='background-color: lightgrey;'> <input type='checkbox' id=" . $i . "name='horario1' disabled value=" . date('H:i', mktime($i, 00)) . "> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
+                    $i++;
+                }
+            } $i--;
+        } else {
+            echo "<label class='horario' id='H" . $i . "'> <input type='checkbox' id=" . $i . " name='horario1' onchange='horasSeguidas(" . $i . ")'> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
+        }
+    }
+}else{
+    for($i=7;$i<=12;$i++) {
+        if(date("H", mktime($i)) < $hora && date("j") >= $arr[0] && date("n") >= $arr[1] && date("Y") >= $arr[2]) {
+                    echo "<label class='horario' id='H" . $i . "' style='background-color: lightgrey;'> <input type='checkbox' id=" . $i . "name='horario1' disabled value=" . date('H:i', mktime($i, 00)) . "> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
+        } else {
+            echo "<label class='horario' id='H" . $i . "'> <input type='checkbox' id=" . $i . " name='horario1' onchange='horasSeguidas(" . $i . ")'> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
+        }
     }
 }
+
 
 echo "</div></div>";
 
 echo "<div class='col-flex'> <div class='col2'> <div class='Titulo'> <h1>Vespertino</h1> </div>";
 
-for($i=14;$i<=19;$i++) {
-    if(date("H", mktime($i)) < $hora && date("j") >= $arr[0] && date("n") >= $arr[1] && date("Y") >= $arr[2]) {
-        echo "<label class='horario' id='H" . $i . "' style='background-color: lightgrey; border: 1px solid lightgrey !important'> <input type='checkbox' id=" . $i . " name='horario1' disabled value=" . date('H:i', mktime($i, 00)) . "> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
-    } else {
-        echo "<label class='horario' id='H" . $i . "'> <input type='checkbox' id=" . $i . " name='horario1' onchange='horasSeguidas(" . $i . ")'> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
+if(isset($log2)){
+    for($i=14;$i<=19;$i++) {
+        if(date("H", mktime($i)) < $hora && date("j") >= $arr[0] && date("n") >= $arr[1] && date("Y") >= $arr[2]) {
+            for($j=0;$j<count($log2);$j++) {
+                $diaRes = explode('-', $log2[$j]["dia"]);
+                if(isset($log2) && substr($log2[$j]["horaComienzo"], 0, 2) == $i && $diaRes[2] == $arr[0]) {
+                    echo "<label class='horario' id='H" . $i . "' style='background-color: red;'> <input type='checkbox' id=" . $i . "name='horario1' disabled value=" . date('H:i', mktime($i, 00)) . "> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
+                    $i++;
+                } else if (isset($log2) && substr($log2[$j]["horaFin"], 0, 2) == $i && $diaRes[2] == $arr[0]) {
+                    echo "<label class='horario' id='H" . $i . "' style='background-color: red;'> <input type='checkbox' id=" . $i . "name='horario1' disabled value=" . date('H:i', mktime($i, 00)) . "> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
+                    $i++;
+                } else {
+                    echo "<label class='horario' id='H" . $i . "' style='background-color: lightgrey;'> <input type='checkbox' id=" . $i . "name='horario1' disabled value=" . date('H:i', mktime($i, 00)) . "> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
+                    $i++;
+                }
+            } $i--;
+        } else {
+            echo "<label class='horario' id='H" . $i . "'> <input type='checkbox' id=" . $i . " name='horario1' onchange='horasSeguidas(" . $i . ")'> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
+        }
+    }
+}else{
+    for($i=14;$i<=19;$i++) {
+        if(date("H", mktime($i)) < $hora && date("j") >= $arr[0] && date("n") >= $arr[1] && date("Y") >= $arr[2]) {
+                    echo "<label class='horario' id='H" . $i . "' style='background-color: lightgrey;'> <input type='checkbox' id=" . $i . "name='horario1' disabled value=" . date('H:i', mktime($i, 00)) . "> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
+        } else {
+            echo "<label class='horario' id='H" . $i . "'> <input type='checkbox' id=" . $i . " name='horario1' onchange='horasSeguidas(" . $i . ")'> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
+        }
     }
 }
-
 echo "</div> </div> </div>"
 ?>

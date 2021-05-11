@@ -35,7 +35,7 @@ CREATE TABLE `agenda` (
   KEY `ci_idx` (`CI`),
   CONSTRAINT `agenda_ibfk_2` FOREIGN KEY (`matricula`) REFERENCES `automoviles` (`matricula`),
   CONSTRAINT `ci` FOREIGN KEY (`CI`) REFERENCES `cliente` (`CI`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `agenda` (
 
 LOCK TABLES `agenda` WRITE;
 /*!40000 ALTER TABLE `agenda` DISABLE KEYS */;
-INSERT INTO `agenda` VALUES (1,96325874,'AAW-8562','2021-05-07','10:00:00','11:00:00'),(2,96325874,'AAW-8562','2021-05-08','10:00:00','11:00:00');
+INSERT INTO `agenda` VALUES (1,96325874,'AAW-8562','2021-05-07','10:00:00','11:00:00'),(2,96325874,'AAW-8562','2021-05-08','10:00:00','11:00:00'),(3,96325874,'AAW-8562','2021-05-11','10:00:00','11:00:00');
 /*!40000 ALTER TABLE `agenda` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,14 +57,14 @@ DROP TABLE IF EXISTS `automoviles`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `automoviles` (
   `CI` int NOT NULL,
-  `matricula` varchar(50) NOT NULL,
-  `tipo` varchar(50) NOT NULL,
-  `descripcion` varchar(50) NOT NULL,
-  `url` varchar(200) DEFAULT NULL,
+  `matricula` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `tipo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `descripcion` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `url` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`matricula`),
   UNIQUE KEY `CI` (`CI`),
   CONSTRAINT `automoviles_ibfk_1` FOREIGN KEY (`CI`) REFERENCES `chofer` (`CI`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,7 +73,7 @@ CREATE TABLE `automoviles` (
 
 LOCK TABLES `automoviles` WRITE;
 /*!40000 ALTER TABLE `automoviles` DISABLE KEYS */;
-INSERT INTO `automoviles` VALUES (12345678,'AAF-2647','A','Nissan Versa 2018','locademia/img/Versa.png'),(78534682,'AAR-7859','B','Volkswagen UP','locademia/img/Up.png'),(23456789,'AAW-8562','A','Tesla Model S','locademia/img/ModelS.png'),(86512403,'ASD-2245','B','Volkswagen Golf','locademia/img/Golf.png'),(75413025,'BHM-7234','C','Fiat 500','locademia/img/Fiat500.png'),(32562478,'CXB-3259','C','Smart ForTwo','locademia/img/Smart.png'),(76521452,'FBG-3201','B','Peugeot 208','locademia/img/208.png'),(96325632,'GIJ-6322','A','Honda Civic','locademia/img/Civic.png'),(96336958,'IJO-4785','C','Volkswagen Beetle','locademia/img/Beetle.png'),(32445862,'JLP-8832','B','Ford Focus','locademia/img/Focus.png'),(98765432,'QFR-781','A','Mitubishi Lancer','locademia/img/Lancer.png'),(54789215,'TMR-4756','C','Tyota ae86','locademia/img/ae86.png');
+INSERT INTO `automoviles` VALUES (12345678,'AAF-2647','A','Nissan Versa 2018','Versa.png'),(78534682,'AAR-7859','B','Volkswagen UP','Up.png'),(23456789,'AAW-8562','A','Tesla Model S','ModelS.png'),(86512403,'ASD-2245','B','Volkswagen Golf','Golf.png'),(75413025,'BHM-7234','C','Fiat 500','Fiat500.png'),(32562478,'CXB-3259','C','Smart ForTwo','Smart.png'),(76521452,'FBG-3201','B','Peugeot 208','208.png'),(96325632,'GIJ-6322','A','Honda Civic','Civic.png'),(96336958,'IJO-4785','C','Volkswagen Beetle','Beetle.png'),(32445862,'JLP-8832','B','Ford Focus','Focus.png'),(98765432,'QFR-781','A','Mitubishi Lancer','Lancer.png'),(54789215,'TMR-4756','C','Tyota ae86','ae86.png');
 /*!40000 ALTER TABLE `automoviles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -177,6 +177,7 @@ CREATE TABLE `cuenta` (
   `CI` int NOT NULL,
   `username` varchar(50) NOT NULL,
   `pass` varchar(50) NOT NULL,
+  `matricula` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`username`),
   UNIQUE KEY `CI` (`CI`),
   UNIQUE KEY `username_UNIQUE` (`username`),
@@ -190,7 +191,7 @@ CREATE TABLE `cuenta` (
 
 LOCK TABLES `cuenta` WRITE;
 /*!40000 ALTER TABLE `cuenta` DISABLE KEYS */;
-INSERT INTO `cuenta` VALUES (14785236,'a','a'),(96325874,'pepe','1234');
+INSERT INTO `cuenta` VALUES (14785236,'a','a','IJO-4785'),(96325874,'pepe','1234','AAW-8562');
 /*!40000 ALTER TABLE `cuenta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -297,6 +298,25 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `guardoAuto` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `guardoAuto`(IN ci1 INT, IN mat varchar(50))
+BEGIN
+	UPDATE cuenta SET matricula = mat WHERE CI = ci1;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `InfoAgenda` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -356,6 +376,25 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `traigoHorarios` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `traigoHorarios`(IN mat varchar(50))
+BEGIN
+    SELECT * FROM agenda where matricula=mat;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -366,4 +405,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-06 21:28:22
+-- Dump completed on 2021-05-10 17:52:15

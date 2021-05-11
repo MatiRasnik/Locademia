@@ -1,20 +1,13 @@
 <?php
 include '../servidor.php';
 $server= new servidor();
-
+$log = array();
 if(isset($_POST['usuario'])){
     $user = $_POST["usuario"];
     $pwd = $_POST["passw"];
-    $log = $server->login($user, $pwd);
-    if($log !== null){
-        return $log;
-    }else{
-        $log = "0";
-    }    
+    echo json_encode($server->login($user, $pwd)); 
 }else{
-    $log = "0";
+    $log[0] = "asd";
+    echo json_encode($log);
 }
-echo $log;
-return $log;
-
 ?>

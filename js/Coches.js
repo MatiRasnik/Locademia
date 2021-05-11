@@ -67,6 +67,44 @@ class Coches{
     }
 
     horariosCoches(matricula){
-        //trae todas las reservas de un coche especifico
+        var x = 0;
+        var horarios = [];
+        $.ajax({
+            async: false,
+            type: "POST",
+            url: "../Form/TraigoHorarios.php",
+            data: {matricula:matricula},
+            success: function(horas){
+                if(horas[0] == 1){
+                    x = 1;
+                }else{
+                    horarios = horas;
+                }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+            }   
+        });
+        if(x == 1){
+            horarios[0] = "asd";
+            return horarios;
+        }else{
+            return horarios;
+        }
+    }
+    guardoCoche(ci, matricula){
+        $.ajax({
+            async: false,
+            type: "POST",
+            url: "../Form/guardoAuto.php",
+            data: {ci:ci, matricula:matricula},
+            success: function(asd){
+               if(asd){
+                return 1;
+               }else{
+                return 0;
+               }
+            }
+        });
     }
 }
