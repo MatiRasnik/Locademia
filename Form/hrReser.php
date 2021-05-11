@@ -11,5 +11,7 @@ if(isset($log2)) {
             array_push($horas, $h);
         }
     }
+    echo json_encode($horas);
 }
+
 ?>
