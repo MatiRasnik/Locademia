@@ -24,16 +24,9 @@ function horasSeguidas(hrsel) {
         arri.splice(arri.indexOf(hrsel), 1);
     }
     for(var a=7;a<=12;a++) {
-        console.log("1>" + a);
-        console.log("arri>" + arri[0]);
-        if(a+1 < arri[0] || a-1 > arri[0] || a+1 < arri[1] || a-1 > arri[1]) {
-            console.log("2>" + a);
-            console.log("arri>" + arri[0]);
-            console.log("asd");
+        if(a+1 < arri[0] || a-1 > arri[0] || a+1 < arri[1] || a-1 > arri[1]) {;
             document.getElementById(a).disabled = true;
-            console.log("3>" + a);
             document.getElementById("H"+a).style.backgroundColor = "lightgrey";
-            console.log("4>" + a);
         } else if(horaL <= a) {
             document.getElementById(a).disabled = false;
             document.getElementById("H"+a).style.backgroundColor = "white";
