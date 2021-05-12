@@ -19,26 +19,19 @@ function revisarHoras(id, hora) {
 }
 
 function hrReservadas() {
-    console.log("-------");
-    console.log(diaG);
-    console.log(diaG[0]);
-    console.log("-------");
     $.ajax({
         url: "hrReser.php", 
         dataType: "json",
         type: "post",
         data: { Horas2:Horas2, dia:diaG},
-        success: function (asd) {
-            var assd = JSON.parse(asd);
-            console.log(assd);
-            //horaRes = JSON.parse(asd);
-           /* var oReq = new XMLHttpRequest();
+        success: function () {
+            var oReq = new XMLHttpRequest();
             oReq.open("post", "hrReser.php");
             oReq.onload = function() {
-                horaRes = this.response;
-             
+                horaRes = JSON.parse(this.response);
+                console.log(horaRes);
             };
-            oReq.send();*/
+            oReq.send();
         }
     });
 }
