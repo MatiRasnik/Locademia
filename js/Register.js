@@ -7,11 +7,10 @@ function Register1(){
         data: {ci: ci },
         success: function(respuesta) {
             if(respuesta == 1){
-                alert("Su cedula a sido validada");
                 window.location.assign("Register2.html")
             }else{
                 if(respuesta == 2){
-                    alert("Su cedula es invalida");
+                    alert("Su cedula no es valida");
                     sessionStorage.clear();
                 }else{
                     alert(respuesta);
@@ -60,10 +59,6 @@ function Register2(){
         }
     }else{
         alert("Su contraseña no cumple con los requisitos");
-        console.log("asd" + password);
-         console.log(password.length);
-         console.log(password.match(numeros));
-         console.log(password.match(letras));
     }
     
 }
