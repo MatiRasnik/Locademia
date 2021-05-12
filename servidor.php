@@ -194,6 +194,29 @@ class servidor{
                 }
             }
         }
+        function CocheChofer($matricula){
+            $conn = $this->conectar();
+    
+            $sql = "CALL CocheChofer(?)";
+            $stmts = $conn->prepare($sql);
+    
+            $stmts->bind_param("s", $matricula);
+            if($stmts->execute()){
+                $stmts->store_result();
+                $stmts->bind_result($Nombre_C,$tipo);
+                if($stmts->fetch()){
+                    if($Nombre_C == null){
+                        $stmts->close();
+                        return false;
+                    }else{
+                        $stmts->close();
+                        return array($Nombre_C,$tipo);
+                    }
+                }else{
+                    return false;
+                }
+            }
+        }
         function Automovil($ci){
             $conn = $this->conectar();
     
