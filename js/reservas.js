@@ -41,28 +41,45 @@ function horasSeguidas(hrsel) {
     } else {
         arri.splice(arri.indexOf(hrsel), 1);
     }
+
+    var reser = asd2.split(",");
+
     for(var a=7;a<=12;a++) {
         if(a+1 < arri[0] || a-1 > arri[0] || a+1 < arri[1] || a-1 > arri[1]) {
-            document.getElementById(a).disabled = true;
-            document.getElementById("H"+a).style.backgroundColor = "lightgrey";
-        } else if(asd2.indexOf(a) != -1) {
-            document.getElementById(a).disabled = true;
-            document.getElementById("H"+a).style.backgroundColor = "#db5e5e";
+            if(reser.indexOf(a) != -1) {
+                document.getElementById(a).disabled = true;
+                document.getElementById("H"+a).style.backgroundColor = "#db5e5e";
+            } else {
+                document.getElementById(a).disabled = true;
+                document.getElementById("H"+a).style.backgroundColor = "lightgrey";
+            }
         } else if(horaL <= a) {
-            document.getElementById(a).disabled = false;
-            document.getElementById("H"+a).style.backgroundColor = "white";
+            if(reser.indexOf(a) != -1) {
+                document.getElementById(a).disabled = true;
+                document.getElementById("H"+a).style.backgroundColor = "#db5e5e";
+            } else {
+                document.getElementById(a).disabled = false;
+                document.getElementById("H"+a).style.backgroundColor = "white";
+            }
         }
     }
     for(var a=14;a<=19;a++) {
         if(a+1 < arri[0] || a-1 > arri[0] || a+1 < arri[1] || a-1 > arri[1]) {
-            document.getElementById(a).disabled = true;
-            document.getElementById("H"+a).style.backgroundColor = "lightgrey";
-        } else if(asd2.indexOf(a) != -1) {
-            document.getElementById(a).disabled = true;
-            document.getElementById("H"+a).style.backgroundColor = "#db5e5e";
+            if(reser.indexOf(a) != -1) {
+                document.getElementById(a).disabled = true;
+                document.getElementById("H"+a).style.backgroundColor = "#db5e5e";
+            } else {
+                document.getElementById(a).disabled = true;
+                document.getElementById("H"+a).style.backgroundColor = "lightgrey";
+            }
         } else if(horaL <= a) {
-            document.getElementById(a).disabled = false;
-            document.getElementById("H"+a).style.backgroundColor = "white";
+            if(reser.indexOf(a) != -1) {
+                document.getElementById(a).disabled = true;
+                document.getElementById("H"+a).style.backgroundColor = "#db5e5e";
+            } else {
+                document.getElementById(a).disabled = false;
+                document.getElementById("H"+a).style.backgroundColor = "white";
+            }
         }
     }
 }
