@@ -42,7 +42,10 @@ function horasSeguidas(hrsel) {
         arri.splice(arri.indexOf(hrsel), 1);
     }
 
-    var reser = asd2.split(",");
+    var reser = [];
+    for(var i=0;i<asd2.length;i++) {
+        reser.push(parseInt(asd2[i]));
+    }
 
     for(var a=7;a<=12;a++) {
         if(a+1 < arri[0] || a-1 > arri[0] || a+1 < arri[1] || a-1 > arri[1]) {
