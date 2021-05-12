@@ -44,7 +44,7 @@ CREATE TABLE `agenda` (
 
 LOCK TABLES `agenda` WRITE;
 /*!40000 ALTER TABLE `agenda` DISABLE KEYS */;
-INSERT INTO `agenda` VALUES (1,96325874,'AAW-8562','2021-05-07','10:00:00','11:00:00'),(2,96325874,'AAW-8562','2021-05-08','10:00:00','11:00:00'),(3,96325874,'AAW-8562','2021-05-11','10:00:00','11:00:00'),(4,96325874,'AAW-8562','2021-05-11','09:00:00','10:00:00');
+INSERT INTO `agenda` VALUES (2,96325874,'AAW-8562','2021-05-08','10:00:00','11:00:00'),(3,96325874,'AAW-8562','2021-05-11','10:00:00','11:00:00'),(4,96325874,'AAW-8562','2021-05-11','09:00:00','10:00:00');
 /*!40000 ALTER TABLE `agenda` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -261,6 +261,25 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `CocheChofer` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CocheChofer`(In Matriculaa varchar(50))
+BEGIN
+	SELECT automoviles.tipo, chofer.nombre FROM automoviles INNER JOIN chofer ON chofer.CI=automoviles.CI and automoviles.matricula = Matriculaa;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `ComprobarCI` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -430,4 +449,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-11 12:46:27
+-- Dump completed on 2021-05-12 12:10:07

@@ -2,10 +2,11 @@
     include '../servidor.php';
     session_start();
     $ci = $_SESSION['ci'];
-    //echo $ci;
+    $matricula = $_SESSION['matricula'];
     $server= new servidor();
     list($estado,$nombre,$apellido,$telefono,$mail,$direccion) = $server->Cliente($ci);
     list($horas_efectuadas,$horas_reservadas) = $server->Contrato($ci);
+    list($tipo,$nombre_C) = $server->CocheChofer($matricula);
     $Info = array();
     $dias = array();
     $contador = 0;
@@ -34,6 +35,9 @@
                 <p><b>Horas Reservadas: </b>$horas_reservadas</p>
                 <p><b>Horas Efectuadas: </b>$horas_efectuadas</p>
                 <p><b>Horas Restantes: </b>$horas_restantes</p>
+                <p><b>Matricula: </b>$matricula</p>
+                <p><b>Nombre de chofer: </b>$nombre_C</p>
+                <p><b>Tipo de auto: </b>$tipo</p>
                 
             </div>
         </div>
