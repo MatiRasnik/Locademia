@@ -1,7 +1,7 @@
 var diaG;
 var arri = [];
-var horaRes = 0;
 var horaL;
+var asd2;
 
 function revisarHoras(id, hora) {
     horaL = hora;
@@ -19,35 +19,33 @@ function revisarHoras(id, hora) {
 }
 
 function hrReservadas() {
+    console.log("LOG= " + Horas2.length);
+    console.log("H= " + Horas2[0]['dia']);
+    console.log(diaG);
     $.ajax({
         url: "hrReser.php", 
-        dataType: "json",
         type: "post",
         data: { Horas2:Horas2, dia:diaG},
-        success: function () {
-            var oReq = new XMLHttpRequest();
-            oReq.open("post", "hrReser.php");
-            oReq.onload = function() {
-                horaRes = JSON.parse(this.response);
-                console.log(horaRes);
-            };
-            oReq.send();
+        success: function (asd) {
+            console.log("RESULTADO = " +asd);
+            var txt = asd;
+            asd2 = JSON.parse(txt);
+            console.log(asd2);
         }
     });
 }
-console.log("hora res " + horaRes);
+
 function horasSeguidas(hrsel) {
     if(arri.indexOf(hrsel) == -1) {
         arri.push(hrsel);
     } else {
         arri.splice(arri.indexOf(hrsel), 1);
     }
-
     for(var a=7;a<=12;a++) {
         if(a+1 < arri[0] || a-1 > arri[0] || a+1 < arri[1] || a-1 > arri[1]) {
             document.getElementById(a).disabled = true;
             document.getElementById("H"+a).style.backgroundColor = "lightgrey";
-        } else if(horaRes.indexOf(a) != -1) {
+        } else if(asd2.indexOf(a) != -1) {
             document.getElementById(a).disabled = true;
             document.getElementById("H"+a).style.backgroundColor = "#db5e5e";
         } else if(horaL <= a) {
@@ -59,7 +57,7 @@ function horasSeguidas(hrsel) {
         if(a+1 < arri[0] || a-1 > arri[0] || a+1 < arri[1] || a-1 > arri[1]) {
             document.getElementById(a).disabled = true;
             document.getElementById("H"+a).style.backgroundColor = "lightgrey";
-        } else if(horaRes.indexOf(a) != -1) {
+        } else if(asd2.indexOf(a) != -1) {
             document.getElementById(a).disabled = true;
             document.getElementById("H"+a).style.backgroundColor = "#db5e5e";
         } else if(horaL <= a) {

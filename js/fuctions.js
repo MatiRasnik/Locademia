@@ -109,7 +109,6 @@ function armoHoras(horas){
 }
 
 function cerrarSesion(){
-  console.log("--------1--------");
   $.ajax({
     async: false,
     type: "POST",
@@ -119,7 +118,6 @@ function cerrarSesion(){
       location.href ="/locademia/index.html";
     }
 });
-console.log("--------3--------");
  }
 
 function agenda(){
