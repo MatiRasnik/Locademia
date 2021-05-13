@@ -101,12 +101,12 @@
                         $calendario .= date('N', mktime(0, 0, 0, $mes, $i, $año))."<td><button class='dias' id='$i-$mes-$año' onclick='revisarHoras(this.id, 03)'>" . $i . "</button></td>";
                     } else if(date('N', mktime(0, 0, 0, $mes, $i, $año)) == 6){
                         $calendario .= "<td><button class='dias' id='$i-$mes-$año' onclick='revisarSabado(this.id, 03)'>" . $i . "</button></td>";
-                    }else{
-                        $calendario .= "<td><button class='dias' id='$i-$mes-$año' onclick='revisarSabado(this.id, 03)'>" . $i . "</button></td>";
+                    }else if(date('N', mktime(0, 0, 0, $mes, $i, $año)) == 7){
+                        $calendario .= "<td><button class='dias' style='background-color: #db5e5e;' id='$i-$mes-$año' disabled>" . $i . "</button></td>";
                     }
-                } elseif($i < $dia && $mes <= $mesActual && $año <= $añoActual && date('N', mktime(0, 0, 0, $mes, $i, $año)) != 7){
+                } else if($i < $dia && $mes <= $mesActual && $año <= $añoActual && date('N', mktime(0, 0, 0, $mes, $i, $año)) != 7){
                     $calendario .= "<td><button class='dias' style='background-color: #666666;' id='$i-$mes-$año' disabled>" . $i . "</button></td>";
-                } elseif(date('N', mktime(0, 0, 0, $mes, $i, $año)) == 7) {
+                } else if(date('N', mktime(0, 0, 0, $mes, $i, $año)) == 7) {
                     $calendario .= "<td><button class='dias' style='background-color: #db5e5e;' id='$i-$mes-$año' disabled>" . $i . "</button></td>";
                 }
             }
