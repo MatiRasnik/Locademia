@@ -69,7 +69,7 @@
                 $Data = '"'.$dia.'","'.$horai.'","'.$horaf.'","'.$ci.'"';
                 $return .="
                     <td>
-                        <button onclick='borrar($Data)'>Borrar</button>
+                        <button onclick='borrar($Data)'>Cancelar</button>
                     </td>
                 </tr>";
             }

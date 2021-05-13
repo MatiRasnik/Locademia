@@ -7,7 +7,6 @@ function borrar(dia,horai,horaf,ci){
         data: {dia:dia,horai:horai,horaf:horaf,ci:ci},
         success: function(respuesta) {
             if(respuesta == 1){
-                alert("se borro corectamente")
                 window.location.reload()
             }else{
                 if(respuesta == 2){
