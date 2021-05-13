@@ -66,7 +66,7 @@
             $semana += $primerDia;
         }
         for($i = 1; $i <= $diasMes; $i++){
-            if($i == $dia && $mes == $mesActual && $año == $añoActual){
+            if($i == $dia && $mes == $mesActual && $año == $añoActual && date('N', mktime(0, 0, 0, $mesActual, $dia, $añoActual)) !== 7){
                 if(isset($info)){
                     $calendario .= "<td><a class='dias diaActual' id='$i-$mes-$año'>" . $i . "</a></td>";
                 }else{
@@ -74,7 +74,7 @@
                 }
             }
             else{
-                if($i > $dia || $mes > $mesActual || $año > $añoActual){
+                if($i > $dia || $mes > $mesActual || $año > $añoActual && date('N', mktime(0, 0, 0, $mesActual, $dia, $añoActual)) !== 7){
                     if(isset($info)){
                         $z = 0;
                         $c = 0;
@@ -98,8 +98,10 @@
                             $calendario .= "<td><a class='dias' id='$i-$mes-$año'>" . $i . "</a></td>";
                         }
                         $d = 0;
-                    }else{
+                    }else if(date('N', mktime(0, 0, 0, $mes, $i, $$año)) !== 6) {
                         $calendario .= "<td><button class='dias' id='$i-$mes-$año' onclick='revisarHoras(this.id, 03)'>" . $i . "</button></td>";
+                    } else {
+                        $calendario .= "<td><button class='dias' id='$i-$mes-$año' onclick='revisarSabado(this.id, 03)'>" . $i . "</button></td>";
                     }
                 } elseif($i < $dia && $mes <= $mesActual && $año <= $añoActual){
                     $calendario .= "<td><button class='dias' style='background-color: #666666;' id='$i-$mes-$año' disabled>" . $i . "</button></td>";
