@@ -98,10 +98,12 @@
                             $calendario .= "<td><a class='dias' id='$i-$mes-$año'>" . $i . "</a></td>";
                         }
                         $d = 0;
-                    }else if(date('N', mktime(0, 0, 0, $mes, $i, $año)) != 6) {
+                    }else if(date('N', mktime(0, 0, 0, $mes, $i, $año)) != 6 && date('N', mktime(0, 0, 0, $mes, $i, $año)) != 7 ) {
                         
                         $calendario .= date('N', mktime(0, 0, 0, $mes, $i, $año))."<td><button class='dias' id='$i-$mes-$año' onclick='revisarHoras(this.id, 03)'>" . $i . "</button></td>";
-                    } else {
+                    } else if(date('N', mktime(0, 0, 0, $mes, $i, $año)) == 6){
+                        $calendario .= "<td><button class='dias' id='$i-$mes-$año' onclick='revisarSabado(this.id, 03)'>" . $i . "</button></td>";
+                    }else{
                         $calendario .= "<td><button class='dias' id='$i-$mes-$año' onclick='revisarSabado(this.id, 03)'>" . $i . "</button></td>";
                     }
                 } elseif($i < $dia && $mes <= $mesActual && $año <= $añoActual){
