@@ -217,7 +217,6 @@ class servidor{
                 }
             }
         }
-
         function InfoAgenda($ci){
             $Info = array();
             $conn = $this->conectar();
