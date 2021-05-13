@@ -828,7 +828,35 @@ header {
       color: #4874c5;
     }
   }
-  #Informacion .info-conductor #calendario{
+  #Informacion .info-conductor{
+
+    #info-usuario{
+      color: #4874c5;
+      width: 500px;
+      text-align: center;
+
+      th{
+        font-size: 20px;
+        padding: 0 20px;
+      }
+      td{
+        button{
+          border: 1px solid #4874c5;
+          border-radius: 10px;
+          background: none;
+          padding: 10px;
+          color: #4874c5;
+          font-weight: bold;
+          transition: 0.5s;
+        }
+        button:hover{
+          background-color: #4874c5;
+          color: white;
+        }
+      }
+    }
+
+    #calendario{
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 25px;
     max-width: 400px;
@@ -924,6 +952,7 @@ header {
         padding: 5px;
       }
     }
+   }
   }
 }
 footer{

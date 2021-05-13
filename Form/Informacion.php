@@ -41,7 +41,7 @@
                 
             </div>
         </div>
-        <table>
+        <table id='info-usuario'>
             <tr>
                 <th>Dia</th>
                 <th>Hora Inicio</th>
