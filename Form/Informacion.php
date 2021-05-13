@@ -32,7 +32,7 @@
             <div class='conductor'>
                 <h1>Información Contrato</h1>
                 <hr>
-                <p><b>Horas Reservadas: </b>$horas_reservadas</p>
+                <p><b>Horas Contratadas: </b>$horas_reservadas</p>
                 <p><b>Horas Agendadas: </b>$horas_efectuadas</p>
                 <p><b>Horas Restantes: </b>$horas_restantes</p>
                 <p><b>Matricula: </b>$matricula</p>
