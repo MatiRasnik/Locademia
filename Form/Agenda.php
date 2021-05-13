@@ -66,15 +66,14 @@
             $semana += $primerDia;
         }
         for($i = 1; $i <= $diasMes; $i++){
-            if($i == $dia && $mes == $mesActual && $año == $añoActual && date('N', mktime(0, 0, 0, $mesActual, $dia, $añoActual)) !== 7){
+            if($i == $dia && $mes == $mesActual && $año == $añoActual && date('N', mktime(0, 0, 0, $mesActual, $dia, $añoActual)) != 7){
                 if(isset($info)){
                     $calendario .= "<td><a class='dias diaActual' id='$i-$mes-$año'>" . $i . "</a></td>";
                 }else{
                     $calendario .= "<td><button class='dias diaActual' id='$i-$mes-$año' onclick='revisarHoras(this.id, $hora)'>" . $i . "</button></td>";
                 }
-            }
-            else{
-                if($i > $dia || $mes > $mesActual || $año > $añoActual && date('N', mktime(0, 0, 0, $mesActual, $dia, $añoActual)) !== 7){
+            }else{
+                if($i > $dia || $mes > $mesActual || $año > $añoActual && date('N', mktime(0, 0, 0, $mesActual, $dia, $añoActual)) != 7){
                     if(isset($info)){
                         $z = 0;
                         $c = 0;
@@ -99,15 +98,16 @@
                         }
                         $d = 0;
                     }else if(date('N', mktime(0, 0, 0, $mes, $i, $año)) != 6 && date('N', mktime(0, 0, 0, $mes, $i, $año)) != 7 ) {
-                        
                         $calendario .= date('N', mktime(0, 0, 0, $mes, $i, $año))."<td><button class='dias' id='$i-$mes-$año' onclick='revisarHoras(this.id, 03)'>" . $i . "</button></td>";
                     } else if(date('N', mktime(0, 0, 0, $mes, $i, $año)) == 6){
                         $calendario .= "<td><button class='dias' id='$i-$mes-$año' onclick='revisarSabado(this.id, 03)'>" . $i . "</button></td>";
                     }else{
                         $calendario .= "<td><button class='dias' id='$i-$mes-$año' onclick='revisarSabado(this.id, 03)'>" . $i . "</button></td>";
                     }
-                } elseif($i < $dia && $mes <= $mesActual && $año <= $añoActual){
+                } elseif($i < $dia && $mes <= $mesActual && $año <= $añoActual && date('N', mktime(0, 0, 0, $mes, $i, $año)) != 7){
                     $calendario .= "<td><button class='dias' style='background-color: #666666;' id='$i-$mes-$año' disabled>" . $i . "</button></td>";
+                } elseif(date('N', mktime(0, 0, 0, $mes, $i, $año)) == 7) {
+                    $calendario .= "<td><button class='dias' style='background-color: #db5e5e;' id='$i-$mes-$año' disabled>" . $i . "</button></td>";
                 }
             }
             $semana++;
