@@ -66,7 +66,7 @@ function armoAutos(tipocar){
       }
    }
     var autos = "  <div class='vector-wrapper'> \n <img class='vector' src='../img/Main-Vector.svg' alt='' /> \n </div> \n <div class='tipo-wrapper-grid'> \n <div class='tipo-wrapper'>\n  <h2>Su Vehiculo:</h2> \n  <p>" + coche + "</p>";
-    autos = autos + "</select> \n <button onclick='agenda()'>Seleccionar Horario</button> \n </div> \n <div class='foto-vehiculo' id= 'foto-vehiculo'>";
+    autos = autos + " \n <button onclick='agenda()'>Seleccionar Horario</button> \n </div> \n <div class='foto-vehiculo' id= 'foto-vehiculo'>";
     autos = autos + " \n <img src='../img/"+imgAuto+"' alt='' />";
     autos = autos + "\n </div> \n </div> \n <div class='vector-wrapper-rotate'> \n <img class='vector' src='../img/Main-Vector.svg' alt='' /> \n </div> ";
   }
@@ -75,7 +75,7 @@ function armoAutos(tipocar){
 }
 
 function fotoAuto(foto){
-  foto2 = JSON.parse(txt);
+  foto2 = JSON.parse(txt); 
 for (var i = 0; i < foto2.length; i++) {
   if(foto2[i]["desc"] == foto.value){
     img = "\n <img src='../img/"+foto2[i]["url"]+"' alt='' />"; 
