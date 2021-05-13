@@ -27,7 +27,7 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 101;
+  z-index: 100;
   background-color: rgba(74, 167, 255, 0.25);
   opacity: 0;
   pointer-events: none;
@@ -852,11 +852,6 @@ header .links ul li a:hover:after {
   color: #4874c5;
 }
 
-.pdf .Informacion-pdf columns {
-  border: 1px solid black;
-  padding: 20px;
-}
-
 .pdf h2 {
   color: #4874c5;
 }
@@ -1184,6 +1179,124 @@ header .links ul li a:hover:after {
   color: #4874c5;
 }
 
+.coche-wrapper #Informacion .info-conductor #calendario {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+  max-width: 400px;
+  min-height: 520px;
+  margin: 20px 20px;
+}
+
+.coche-wrapper #Informacion .info-conductor #calendario .año {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 50px;
+  font-size: 20px;
+  padding: 5px 0;
+  color: white !important;
+  background-color: #4874c5;
+  border-radius: 25px 25px 0 0;
+}
+
+.coche-wrapper #Informacion .info-conductor #calendario .año h2 {
+  color: white;
+  margin: 0 20px;
+}
+
+.coche-wrapper #Informacion .info-conductor #calendario .mes {
+  color: white;
+  text-align: center;
+  padding: 2px 0;
+}
+
+.coche-wrapper #Informacion .info-conductor #calendario h3 {
+  margin: 5px 0;
+}
+
+.coche-wrapper #Informacion .info-conductor #calendario .botonesCal {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  margin: 0 20px;
+  background-color: white;
+  border-radius: 50%;
+  color: #4874c5;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.coche-wrapper #Informacion .info-conductor #calendario #calendar {
+  -webkit-transition: 1s;
+  transition: 1s;
+  width: 100%;
+}
+
+.coche-wrapper #Informacion .info-conductor #calendario #calendar td {
+  height: 55px;
+  width: 55px;
+  text-align: center;
+}
+
+.coche-wrapper #Informacion .info-conductor #calendario #calendar tr {
+  color: white;
+}
+
+.coche-wrapper #Informacion .info-conductor #calendario #calendar .dias {
+  width: 30px;
+  height: 30px;
+  color: white;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+}
+
+.coche-wrapper #Informacion .info-conductor #calendario #calendar .dias:hover {
+  border: 1px solid white;
+}
+
+.coche-wrapper #Informacion .info-conductor #calendario #calendar .dias:focus {
+  background-color: white;
+  border: 1px solid white;
+  color: #4874c5;
+  font-weight: bold;
+}
+
+.coche-wrapper #Informacion .info-conductor #calendario #calendar .diaActual {
+  background-color: transparent;
+  border: 1px solid white;
+  font-weight: bold;
+}
+
+.coche-wrapper #Informacion .info-conductor #calendario #calendar .diaActual:focus {
+  background-color: white;
+  color: #4874c5;
+}
+
+.coche-wrapper #Informacion .info-conductor #calendario #calendar .diaActual p {
+  width: 20px;
+  height: 20px;
+  color: #4874c5;
+  font-weight: bold;
+  border-radius: 50%;
+  background-color: white;
+  padding: 5px;
+}
+
 footer {
   margin-top: 20px;
 }
@@ -1312,8 +1425,5 @@ footer .footer-wrapper .info .direccion ul a:visited {
   .coche-wrapper .Coche .coche-wrapper-grid .coche-card-wrapper .coche-card {
     width: 260px;
   }
-}
-.diasAgendado{
-  color: #4874c5;
 }
 /*# sourceMappingURL=styles.css.map */
