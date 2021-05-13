@@ -271,6 +271,26 @@ class servidor{
             }
             return $valor;
         }
+        function agendar($ci, $matricula, $dia, $hora_inicio, $hora_fin){
+            $conn = $this->conectar();
+            $sql = "CALL agendar(?,?,?,?,?,@x)";
+            $stmts = $conn->prepare($sql);
+            $stmts->bind_param("issss",$ci,  $matricula, $dia, $hora_inicio, $hora_fin);
+            if($stmts->execute()){
+                $resultado = $conn->query('SELECT @x as p_out');
+                $x = $resultado->fetch_assoc();
+                if($x['p_out'] == "1"){
+                    $stmts->close();
+                    $resultado = 1;
+                }else{
+                    $stmts->close();
+                    $resultado = 2;
+                }
+            }else{
+                $resultado = 2;
+            }
+            return $resultado;
+        }
 }
 ?>
  

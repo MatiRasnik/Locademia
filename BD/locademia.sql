@@ -35,7 +35,7 @@ CREATE TABLE `agenda` (
   KEY `ci_idx` (`CI`),
   CONSTRAINT `agenda_ibfk_2` FOREIGN KEY (`matricula`) REFERENCES `automoviles` (`matricula`),
   CONSTRAINT `ci` FOREIGN KEY (`CI`) REFERENCES `cliente` (`CI`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -198,7 +198,7 @@ UNLOCK TABLES;
 --
 -- Dumping routines for database 'locademia'
 --
-/*!50003 DROP PROCEDURE IF EXISTS `automoviles` */;
+/*!50003 DROP PROCEDURE IF EXISTS `Agendar` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
@@ -208,9 +208,14 @@ UNLOCK TABLES;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `automoviles`(IN ci int)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Agendar`(IN cia int,IN matriculaa varchar(45),IN diaa date,IN horai time,IN horaf time,out x int)
 BEGIN
-	select matricula,tipo from automoviles where ci = CI;
+	insert into agenda (CI,matricula,dia,hora_comienzo,hora_fin)value(cia,matriculaa,diaa,horai,horaf);  
+    if (exists(select * from agenda where CI = cia and matricula=matriculaa and dia=diaa and hora_comienzo=horai))then
+			set x = "1";
+        else
+			set x = "2";
+    end if;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -449,4 +454,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-12 12:10:07
+-- Dump completed on 2021-05-13  9:34:53
