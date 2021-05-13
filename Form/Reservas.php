@@ -78,7 +78,7 @@ if(isset($log2)){
 
 echo "</div></div>";
 
-echo "<div class='col-flex'> <div class='col2'> <div class='Titulo'> <h1>Vespertino</h1> </div>";
+echo "<form action='../servidor.php'> <div class='col-flex'> <div class='col2'> <div class='Titulo'> <h1>Vespertino</h1> </div>";
 
 if(isset($log2)){
     for($i=14;$i<=19;$i++) {
@@ -113,5 +113,5 @@ if(isset($log2)){
         }
     }
 }
-echo "</div> </div> </div> <div style='width: 100%;'> <form> <div style='width: 100%;'> <label for='opc1'>Diario</label> <input type='radio' id='opc1' name='opciones'> <label for='opc2'>Semanal</label> <input type='radio' id='opc2' name='opciones'> <label for='opc3'>Personalizado</label> <input type='radio' id='opc3' name='opciones'> </div> <div style='width: 100%;'> <input class='button-info' type='submit' value='Enviar'> </div> </form> </div>";
+echo "</div> </div> </div> <div style='width: 100%;'> <div style='width: 100%;'> <label for='opc1'>Diario</label> <input type='radio' id='opc1' name='opciones'> <label for='opc2'>Semanal</label> <input type='radio' id='opc2' name='opciones'> <label for='opc3'>Personalizado</label> <input type='radio' id='opc3' name='opciones'> </div> <div style='width: 100%;'> <input class='button-info' type='submit' value='Enviar'> </div> </form> </div>";
 ?>
