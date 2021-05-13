@@ -113,5 +113,5 @@ if(isset($log2)){
         }
     }
 }
-echo "</div> </div> <form> <label for='opc1'>Diario</label> <input type='radio' id='opc1' name='opciones'> <label for='opc2'>Semanal</label> <input type='radio' id='opc2' name='opciones'> <label for='opc3'>Personalizado</label><input type='radio' id='opc3' name='opciones'> <input type='submit' value='Enviar'> </form> </div>"
+echo "</div> </div> </div> <div style='width: 100%;'> <div style='width: 100%;'> <form> <label for='opc1'>Diario</label> <input type='radio' id='opc1' name='opciones'> <label for='opc2'>Semanal</label> <input type='radio' id='opc2' name='opciones'> <label for='opc3'>Personalizado</label><input type='radio' id='opc3' name='opciones'> </div> <div style='width: 100%;'> <input type='submit' value='Enviar'> </div> </form>"
 ?>
