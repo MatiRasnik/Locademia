@@ -59,7 +59,7 @@
         $semana = 0;
 
 
-        if($primerDia > 1){
+        if($primerDia >= 1){
             for($i = 0; $i < $primerDia; $i++){
                 $calendario .= "<td></td>";
             }
@@ -98,7 +98,7 @@
                         }
                         $d = 0;
                     }else if(date('N', mktime(0, 0, 0, $mes, $i, $año)) != 6 && date('N', mktime(0, 0, 0, $mes, $i, $año)) != 7 ) {
-                        $calendario .= date('N', mktime(0, 0, 0, $mes, $i, $año))."<td><button class='dias' id='$i-$mes-$año' onclick='revisarHoras(this.id, 03)'>" . $i . "</button></td>";
+                        $calendario .="<td><button class='dias' id='$i-$mes-$año' onclick='revisarHoras(this.id, 03)'>" . $i . "</button></td>";
                     } else if(date('N', mktime(0, 0, 0, $mes, $i, $año)) == 6){
                         $calendario .= "<td><button class='dias' id='$i-$mes-$año' onclick='revisarSabado(this.id, 03)'>" . $i . "</button></td>";
                     }else if(date('N', mktime(0, 0, 0, $mes, $i, $año)) == 7){
