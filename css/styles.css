@@ -1294,6 +1294,7 @@ header .links ul li a:hover:after {
 
 .coche-wrapper #Informacion .info-conductor #calendario #calendar .dias:hover {
   border: 1px solid white;
+  padding: 1px 6px;
 }
 
 .coche-wrapper #Informacion .info-conductor #calendario #calendar .dias:focus {
@@ -1301,17 +1302,20 @@ header .links ul li a:hover:after {
   border: 1px solid white;
   color: #4874c5;
   font-weight: bold;
+  padding: 1px 6px;
 }
 
 .coche-wrapper #Informacion .info-conductor #calendario #calendar .diaActual {
   background-color: transparent;
   border: 1px solid white;
   font-weight: bold;
+  padding: 1px 6px;
 }
 
 .coche-wrapper #Informacion .info-conductor #calendario #calendar .diaActual:focus {
   background-color: white;
   color: #4874c5;
+  padding: 1px 6px;
 }
 .coche-wrapper #Informacion .info-conductor #calendario #calendar .diasAgendado {
   background-color: #4874c5;
