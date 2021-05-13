@@ -42,7 +42,7 @@ echo "<div class='col-grid'>
                 <h1>Matutino</h1>
             </div>";
 if(isset($log2)){
-    for($i=7;$i<=12;$i++) {
+    for($i=7;$i<=10;$i++) {
         if(date("H", mktime($i)) < $hora && date("j") >= $arr[0] && date("n") >= $arr[1] && date("Y") >= $arr[2] || $hora < 3) {
             for($j=0;$j<count($horas);$j++) {
                 if($log2[$horas[$j]]["horaComienzo"] == $i || $log2[$horas[$j]]["horaComienzo"] == $i) {
@@ -66,7 +66,7 @@ if(isset($log2)){
         }
     }
 }else{
-    for($i=7;$i<=12;$i++) {
+    for($i=7;$i<=10;$i++) {
         if(date("H", mktime($i)) < $hora && date("j") >= $arr[0] && date("n") >= $arr[1] && date("Y") >= $arr[2] || $hora < 3) {
                     echo "<label class='horario' id='H" . $i . "' style='background-color: lightgrey;'> <input type='checkbox' id=" . $i . " name='horario1' disabled value=" . date('H:i', mktime($i, 00)) . "> <label>" . date('H:i', mktime($i, 00)) . " hs </label> </label>";
         } else {
@@ -81,7 +81,7 @@ echo "</div></div>";
 echo "<form action='../servidor.php'> <div class='col-flex'> <div class='col2'> <div class='Titulo'> <h1>Vespertino</h1> </div>";
 
 if(isset($log2)){
-    for($i=7;$i<=10;$i++) {
+    for($i=11;$i<=13;$i++) {
         if(date("H", mktime($i)) < $hora && date("j") >= $arr[0] && date("n") >= $arr[1] && date("Y") >= $arr[2] || $hora < 3) {
             for($j=0;$j<count($horas);$j++) {
                 if($log2[$horas[$j]]["horaComienzo"] == $i || $log2[$horas[$j]]["horaComienzo"] == $i) {
