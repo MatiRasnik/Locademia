@@ -217,29 +217,7 @@ class servidor{
                 }
             }
         }
-        function Automovil($ci){
-            $conn = $this->conectar();
-    
-            $sql = "CALL Automovil(?)";
-            $stmts = $conn->prepare($sql);
-    
-            $stmts->bind_param("i", $ci);
-            if($stmts->execute()){
-                $stmts->store_result();
-                $stmts->bind_result($matricula,$tipo);
-                if($stmts->fetch()){
-                    if($tipo == null){
-                        $stmts->close();
-                        return false;
-                    }else{
-                        $stmts->close();
-                        return array($tipo,$matricula);
-                    }
-                }else{
-                    return false;
-                }
-            }
-        } 
+
         function InfoAgenda($ci){
             $Info = array();
             $conn = $this->conectar();
