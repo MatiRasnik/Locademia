@@ -74,7 +74,7 @@ if(isset($_POST['Horas2'])){
 
 echo "</div></div>";
 
-echo "<form action='../servidor.php'> <div class='col-flex'> <div class='col2'> <div class='Titulo'> <h1>Vespertino</h1> </div>";
+echo "<div class='col-flex'> <div class='col2'> <div class='Titulo'> <h1>Vespertino</h1> </div>";
 
 if(isset($_POST['Horas2'])){
     for($i=14;$i<=19;$i++) {
@@ -109,5 +109,5 @@ if(isset($_POST['Horas2'])){
         }
     }
 }
-echo "</div> </div> </div> <div class='div1'> <div class='div2'> <div class='options'><input type='radio' id='opc1' name='opciones'> <label for='opc1'>Diario</label></div> <div class='options'><input type='radio' id='opc2' name='opciones'> <label for='opc2'>Semanal</label></div> <div class='options'><input type='radio' id='opc3' name='opciones'> <label for='opc3'>Personalizado</label></div></div> <div class='div3'> <input class='button-info' type='submit' value='Enviar'> </div> </form> </div>";
+echo "<form action='javascript:;' onsubmit='ABD(this)'> </div> </div> </div> <div class='div1'> <div class='div2'> <div class='options'><input type='radio' id='opc1' name='opciones'> <label for='opc1'>Diario</label></div> <div class='options'><input type='radio' id='opc2' name='opciones'> <label for='opc2'>Semanal</label></div> <div class='options'><input type='radio' id='opc3' name='opciones'> <label for='opc3'>Personalizado</label></div></div> <div class='div3'> <input class='button-info' type='submit' value='Enviar'> </div> </form> </div>";
 ?>
