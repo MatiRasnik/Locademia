@@ -575,6 +575,40 @@ header .links ul li a:hover:after {
           flex-direction: column;
 }
 
+.coche-wrapper .agenda-wrapper .agenda-bg2 .agenda-bg .horas .div1 {
+  width: 200px;
+}
+
+.coche-wrapper .agenda-wrapper .agenda-bg2 .agenda-bg .horas .div1 .div2 {
+  padding: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.coche-wrapper .agenda-wrapper .agenda-bg2 .agenda-bg .horas .div1 .div3 input {
+  background: none;
+  border: 1px solid #4874c5;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100px;
+  color: #4874c5;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.coche-wrapper .agenda-wrapper .agenda-bg2 .agenda-bg .horas .div1 .div3 input:hover {
+  background: #4874c5;
+  color: white;
+}
+
 .coche-wrapper .agenda-wrapper .agenda-bg2 .agenda-bg .horas h1 {
   margin: 20px 0;
 }
