@@ -34,7 +34,12 @@ function armoAutos(tipocar){
   txt = tipocar;
   log2 = JSON.parse(txt);
 
-  if(sessionStorage.getItem('matricula').length <= 4){
+  if(mat == null){
+    location.href ="/locademia/Form/Login.html";
+  }
+
+  console.log(mat.length);
+  if(mat.length <= 4){
     //no tiene auto
     var tipo;
 
@@ -127,6 +132,7 @@ function agenda(){
 
 function guardoAutoAgenda(){
   var auto = document.getElementById("autos").value;
+  document.getElementById("autos").disabled = true;
   var ci = sessionStorage.getItem('ci');
   auto2 = JSON.parse(txt);
   for (var i = 0; i < auto2.length; i++) {

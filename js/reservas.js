@@ -152,3 +152,11 @@ function horasSabado(hrsel) {
         }
     }
 }
+
+function ABD(tipo) {
+    console.log("Funciona");
+    console.log("-------------------------");
+    console.log("Dia seleccionado: " + diaG);
+    console.log("Horas: " + arri);
+    console.log("Reserva: " + tipo);
+}
