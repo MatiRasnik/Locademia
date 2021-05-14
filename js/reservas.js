@@ -19,18 +19,13 @@ function revisarHoras(id, hora) {
 }
 
 function hrReservadas() {
-    console.log("LOG= " + Horas2.length);
-    console.log(Horas2);
-    console.log(diaG);
     $.ajax({
         url: "hrReser.php", 
         type: "post",
         data: { Horas2:Horas2, dia:diaG},
         success: function (asd) {
-            console.log("RESULTADO = " +asd);
             var txt = asd;
             asd2 = JSON.parse(txt);
-            console.log(asd2);
         }
     });
 }

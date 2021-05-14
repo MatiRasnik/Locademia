@@ -376,14 +376,9 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `InfoAgenda`(IN ci1 int,out x int)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InfoAgenda`(IN ci1 int)
 BEGIN
-	if(not exists(select dia,hora_comienzo,hora_fin from agenda where  CI = ci1)) then
-		set x = 2;
-    else
-		select dia,hora_comienzo,hora_fin from agenda where  CI = ci1;
-		set x = 1;
-    end if;
+    select dia,hora_comienzo,hora_fin from agenda where  CI = ci1;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -459,4 +454,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-13 21:22:54
+-- Dump completed on 2021-05-14  9:04:45
