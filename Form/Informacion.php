@@ -41,8 +41,7 @@
                 
             </div>
         </div>";
-        if($Info[0] != 'error'){
-
+        if(0 != count($Info)){
         $return .= "<table id='info-usuario'>
             <tr>
                 <th>Dia</th>

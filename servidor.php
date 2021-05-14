@@ -221,29 +221,10 @@ class servidor{
             $Info = array();
             $conn = $this->conectar();
     
-            $sql = "CALL InfoAgenda(?,@x)";
+            $sql = "CALL InfoAgenda(?)";
             $stmts = $conn->prepare($sql);
     
             $stmts->bind_param("i", $ci);
-            if($stmts->execute()){
-                $resultado = $conn->query('SELECT @x as p_out');
-                $x = $resultado->fetch_assoc();
-                if($x['p_out'] == "1"){
-                    $stmts->store_result();
-                    $stmts->bind_result($Dia,$Hora_Inicio,$Hora_fin);
-                    while($stmts->fetch()){
-                        $data = array('dia' => $Dia, 'hora_i' => $Hora_Inicio, 'hora_f' =>$Hora_fin);
-                        array_push($Info, $data);
-                    }
-                    $stmts->close();
-                }else{
-                    $stmts->close();
-                    $Info[0] = 'error';
-                }
-            }else{
-                $Info[0] = 'error';
-            }
-            return $Info;
             if($stmts->execute()){
                 $stmts->store_result();
                 $stmts->bind_result($Dia,$Hora_Inicio,$Hora_fin);
@@ -251,9 +232,9 @@ class servidor{
                     $data = array('dia' => $Dia, 'hora_i' => $Hora_Inicio, 'hora_f' =>$Hora_fin);
                     array_push($Info, $data);
                 }
-                    $stmts->close();
-                    return $Info;
+                $stmts->close();
             }
+            return $Info;
         } 
 
         function guardoAuto($ci, $mat){
