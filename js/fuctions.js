@@ -34,12 +34,7 @@ function armoAutos(tipocar){
   txt = tipocar;
   log2 = JSON.parse(txt);
 
-  if(mat == null){
-    location.href ="/locademia/Form/Login.html";
-  }
-
-  console.log(mat.length);
-  if(mat.length <= 4){
+  if(sessionStorage.getItem('matricula').length <= 4){
     //no tiene auto
     var tipo;
 
