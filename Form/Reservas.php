@@ -23,7 +23,7 @@ $meses = array(1=>"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio"
 $hora = date("H", mktime(date("H")+2));
 
 $horas = [];
-if(isset($log2)) {
+if(isset($_POST['Horas2'])) {
     for($h=0;$h<count($log2);$h++) {
         $diaRes = explode('-', $log2[$h]["dia"]);
         if($diaRes[2] == $arr[0] && $diaRes[1] == $arr[1] && $diaRes[0] == $arr[2]) {
@@ -41,7 +41,7 @@ echo "<div class='col-grid'>
             <div class='Titulo'>
                 <h1>Matutino</h1>
             </div>";
-if(isset($log2)){
+if(isset($_POST['Horas2'])){
     for($i=7;$i<=12;$i++) {
         if(date("H", mktime($i)) < $hora && date("j") >= $arr[0] && date("n") >= $arr[1] && date("Y") >= $arr[2] || $hora < 3) {
             for($j=0;$j<count($horas);$j++) {
@@ -80,7 +80,7 @@ echo "</div></div>";
 
 echo "<form action='../servidor.php'> <div class='col-flex'> <div class='col2'> <div class='Titulo'> <h1>Vespertino</h1> </div>";
 
-if(isset($log2)){
+if(isset($_POST['Horas2'])){
     for($i=14;$i<=19;$i++) {
         if(date("H", mktime($i)) < $hora && date("j") >= $arr[0] && date("n") >= $arr[1] && date("Y") >= $arr[2] || $hora < 3) {
             for($j=0;$j<count($horas);$j++) {
