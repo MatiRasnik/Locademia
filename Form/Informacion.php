@@ -80,7 +80,7 @@
             <div id='calendario'></div>
     </div>";
     }else{
-        $return .="No tiene ninguna reserva";
+        $return .="<div class='conductor'> <h1>No tiene ninguna reserva</h1></div>";
     }
     echo $return;
     return $return;
