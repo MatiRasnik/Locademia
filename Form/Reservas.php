@@ -1,13 +1,9 @@
 <?php
 if(isset($_POST['dia'])) {
     $arr = explode('-', $_POST['dia']);
-} else {
-    echo "error1";
 }
 if(isset($_POST['Horas2'])) {
     $log2 = $_POST['Horas2'];
-} else {
-    echo "error2";
 }
 
 
