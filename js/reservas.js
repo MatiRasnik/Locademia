@@ -43,8 +43,12 @@ function horasSeguidas(hrsel) {
     }
 
     var reser = [];
-    for(var i=0;i<asd2.length;i++) {
-        reser.push(parseInt(asd2[i]));
+    if(asd2.length !== 0) {
+        for(var i=0;i<asd2.length;i++) {
+            reser.push(parseInt(asd2[i]));
+        }
+    } else {
+        reser.push(0);
     }
 
     for(var a=7;a<=12;a++) {
