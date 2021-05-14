@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST['Horas2'])) {
-    $log2 = $_POST['Horas2'];// yy-mm-dd
+    $log2 = $_POST['Horas2'];// yy-mm-dd 
 }
 if(isset($_POST['dia'])) {
     $arr = explode('-',$_POST['dia']);
@@ -15,7 +15,9 @@ if(isset($log2)) {
         }
     }
     echo json_encode($horas);
-    //echo json_encode($horas);
+}else{
+    $horas[0]= "asd";
+    echo json_encode($horas);
 }
 
 ?>

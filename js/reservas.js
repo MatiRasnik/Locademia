@@ -20,7 +20,7 @@ function revisarHoras(id, hora) {
 
 function hrReservadas() {
     console.log("LOG= " + Horas2.length);
-    console.log("H= " + Horas2[0]['dia']);
+    console.log(Horas2);
     console.log(diaG);
     $.ajax({
         url: "hrReser.php", 
