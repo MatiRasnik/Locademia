@@ -44,7 +44,7 @@ CREATE TABLE `agenda` (
 
 LOCK TABLES `agenda` WRITE;
 /*!40000 ALTER TABLE `agenda` DISABLE KEYS */;
-INSERT INTO `agenda` VALUES (2,96325874,'AAW-8562','2021-05-08','10:00:00','11:00:00'),(3,96325874,'AAW-8562','2021-05-11','10:00:00','11:00:00'),(4,96325874,'AAW-8562','2021-05-11','09:00:00','10:00:00');
+INSERT INTO `agenda` VALUES (4,96325874,'AAW-8562','2021-05-14','09:00:00','10:00:00');
 /*!40000 ALTER TABLE `agenda` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -191,7 +191,7 @@ CREATE TABLE `cuenta` (
 
 LOCK TABLES `cuenta` WRITE;
 /*!40000 ALTER TABLE `cuenta` DISABLE KEYS */;
-INSERT INTO `cuenta` VALUES (14785236,'a','a',NULL),(96325874,'pepe','1234','AAW-8562');
+INSERT INTO `cuenta` VALUES (14785236,'a','a','TMR-4756'),(96325874,'pepe','1234','AAW-8562');
 /*!40000 ALTER TABLE `cuenta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -376,9 +376,14 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `InfoAgenda`(IN ci1 int)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InfoAgenda`(IN ci1 int,out x int)
 BEGIN
-	select dia,hora_comienzo,hora_fin from agenda where  CI = ci1;
+	if(not exists(select dia,hora_comienzo,hora_fin from agenda where  CI = ci1)) then
+		set x = 2;
+    else
+		select dia,hora_comienzo,hora_fin from agenda where  CI = ci1;
+		set x = 1;
+    end if;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -454,4 +459,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-13  9:34:53
+-- Dump completed on 2021-05-13 21:22:54

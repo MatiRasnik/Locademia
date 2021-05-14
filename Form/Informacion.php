@@ -40,8 +40,10 @@
                 <p><b>Tipo de auto: </b>$tipo</p>
                 
             </div>
-        </div>
-        <table id='info-usuario'>
+        </div>";
+        if($Info[0] != 'error'){
+
+        $return .= "<table id='info-usuario'>
             <tr>
                 <th>Dia</th>
                 <th>Hora Inicio</th>
@@ -78,6 +80,7 @@
             <script>CargarCalendario($agendadias)</script>
             <div id='calendario'></div>
     </div>";
+    }
     echo $return;
     return $return;
 ?>
