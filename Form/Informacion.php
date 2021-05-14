@@ -79,6 +79,8 @@
             <script>CargarCalendario($agendadias)</script>
             <div id='calendario'></div>
     </div>";
+    }else{
+        $return .="No tiene ninguna reserva";
     }
     echo $return;
     return $return;
