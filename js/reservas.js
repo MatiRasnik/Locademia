@@ -153,18 +153,24 @@ function horasSabado(hrsel) {
     }
 }
 
-function ABD(tipo) {
+function ABD() {
+    var tipo = $('input:radio[name=opciones]:checked').val();
     console.log("Funciona");
     console.log("-------------------------");
     console.log("Dia seleccionado: " + diaG);
     console.log("Horas: " + arri);
     console.log("Reserva: " + tipo);
-    $.ajax({
-        url: "resaBD.php",
-        type: "post",
-        data: { diaG:diaG, tipo:tipo, arri:arri },
-        success: function() {
-
-        }
-    })
+    if(tipo !== undefined){
+        $.ajax({
+            url: "resaBD.php",
+            type: "post",
+            data: { diaG:diaG, tipo:tipo, arri:arri },
+            success: function() {
+                console.log('guardado')
+            }
+        })
+    }else{
+        alert('Debe seleccionar una de las opciones de reserva');
+    }
+   
 }
