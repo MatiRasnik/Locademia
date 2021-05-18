@@ -111,13 +111,13 @@ if(isset($_POST['Horas2'])){
 }
 echo "<form> 
         </div> </div> </div> <div class='div1'> <div class='div2'> 
-        <div class='options'><input type='radio' id='opc1' name='opciones' value ='diario'> 
+        <div class='options'><input type='radio' id='opc1' name='opciones' value ='opc1'> 
         <label for='opc1' >Diario</label></div> 
         <div class='options'>
-        <input type='radio' id='opc2' name='opciones' value='semanal'> 
+        <input type='radio' id='opc2' name='opciones' value='opc2'> 
         <label for='opc2'>Semanal</label></div> 
         <div class='options'>
-        <input type='radio' id='opc3' name='opciones' value ='personalizado'> 
+        <input type='radio' id='opc3' name='opciones' value ='opc3'> 
         <label for='opc3'>Personalizado</label></div></div>  </form>
         <div class='div3'> <button onclick='ABD()' value='Enviar'>Reservar</button>
         </div> </div>";
