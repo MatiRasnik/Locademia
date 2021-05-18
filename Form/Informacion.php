@@ -75,10 +75,12 @@
                 </tr>";
             }
             $agendadias = json_encode($dias);
+            $pdf = '"'.$estado.'","'.$nombre.'"'.$apellido.'","'.$telefono.'"'.$mail.'","'.$direccion.'"'.$horas_efectuadas.'","'.$horas_reservadas.'"'.$tipo.'","'.$nombre_C.'"'.$horas_restantes.'"';
             $return .="</table>
             <script>CargarCalendario($agendadias)</script>
             <div id='calendario'></div>
-    </div>";
+    </div>
+    <button onclick='PDF($pdf)'>Obtener PDF</button>";
     }else{
         $return .="<div class='conductor'> <h1>No tiene ninguna reserva</h1></div>";
     }
