@@ -75,7 +75,8 @@
                 </tr>";
             }
             $agendadias = json_encode($dias);
-            $pdf = '"'.$estado.'","'.$nombre.'"'.$apellido.'","'.$telefono.'"'.$mail.'","'.$direccion.'"'.$horas_efectuadas.'","'.$horas_reservadas.'"'.$tipo.'","'.$nombre_C.'"'.$horas_restantes.'"';
+            $pdf = '"'.$estado.'","'.$nombre.'","'.$apellido.'","'.$telefono.'","'.$mail.'","'.$direccion.'","'.$horas_efectuadas.'","'.$horas_reservadas.'","'.$tipo.'","'.$nombre_C.'","'.$horas_restantes.'"';
+            echo $pdf;
             $return .="</table>
             <script>CargarCalendario($agendadias)</script>
             <div id='calendario'></div>

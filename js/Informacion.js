@@ -72,7 +72,7 @@ function PDF(estado,nombre,apellido,telefono,mail,direccion,horas_efectuadas,hor
         type: "post",
         data: {estado:estado,nombre:nombre,apellido:apellido,telefono:telefono,mail:mail,direccion:direccion,horas_efectuadas:horas_efectuadas,horas_reservadas:horas_reservadas,tipo:tipo,nombre_C:nombre_C,horas_restantes:horas_restantes},
         success: function(data) {
-            Alert(data);
+            alert(data);
         },
     });
 }
