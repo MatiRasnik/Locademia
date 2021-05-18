@@ -14,8 +14,8 @@ if(isset($_POST['arri']) && isset($_POST['diaG']) && isset($_POST['tipo'])) {
             $dia = date('Y-m-d', mktime(0, 0, 0, $revers[1], $revers[0]+$i, $revers[2]));
             sort($irra, SORT_NATURAL);
             for($j=0;$j<count($irra);$j++) {
-                $hora_inicio = $irra[$j];
-                $hora_fin =$hora_inicio + 1;
+                $hora_inicio = date('H:i:s', mktime($irra[$j], 0, 0));
+                $hora_fin = date('H:i:s', mktime($irra[$j]+1, 0, 0));
                 $server->agendar($ci, $matricula, $dia, $hora_inicio, $hora_fin);
             }
         }
@@ -24,8 +24,8 @@ if(isset($_POST['arri']) && isset($_POST['diaG']) && isset($_POST['tipo'])) {
             $dia = date('Y-m-d', mktime(0, 0, 0, $revers[1], $revers[0]+$i*7, $revers[2]));
             sort($irra, SORT_NATURAL);
             for($j=0;$j<count($irra);$j++) {
-                $hora_inicio = $irra[$j];
-                $hora_fin =$hora_inicio + 1;
+                $hora_inicio = date('H:i:s', mktime($irra[$j], 0, 0));
+                $hora_fin = date('H:i:s', mktime($irra[$j]+1, 0, 0));
                 $server->agendar($ci, $matricula, $dia, $hora_inicio, $hora_fin);
             }
         }
@@ -33,8 +33,8 @@ if(isset($_POST['arri']) && isset($_POST['diaG']) && isset($_POST['tipo'])) {
         $dia = date('Y-m-d', mktime(0, 0, 0, $revers[1], $revers[0], $revers[2]));
         sort($irra, SORT_NATURAL);
         for($j=0;$j<count($irra);$j++) {
-            $hora_inicio = $irra[$j];
-            $hora_fin =$hora_inicio + 1;
+            $hora_inicio = date('H:i:s', mktime($irra[$j], 0, 0));
+            $hora_fin = date('H:i:s', mktime($irra[$j]+1, 0, 0));
             $server->agendar($ci, $matricula, $dia, $hora_inicio, $hora_fin);
         }
     } else {
