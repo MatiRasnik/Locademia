@@ -166,7 +166,7 @@ function ABD() {
             type: "post",
             data: { diaG:diaG, tipo:tipo, arri:arri },
             success: function() {
-                console.log('guardado')
+                alert('Sus reservas fueron realizadas');
             }
         })
     }else{
