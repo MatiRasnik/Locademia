@@ -159,4 +159,12 @@ function ABD(tipo) {
     console.log("Dia seleccionado: " + diaG);
     console.log("Horas: " + arri);
     console.log("Reserva: " + tipo);
+    $.ajax({
+        url: "resaBD.php",
+        type: "post",
+        data: { diaG:diaG, tipo:tipo, arri:arri },
+        success: function() {
+
+        }
+    })
 }
