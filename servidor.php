@@ -275,7 +275,7 @@ class servidor{
             $conn = $this->conectar();
             $sql = "CALL agendar(?,?,?,?,?,@x)";
             $stmts = $conn->prepare($sql);
-            $stmts->bind_param("issss",$ci,  $matricula, $dia, $hora_inicio, $hora_fin);
+            $stmts->bind_param("issss",$ci, $matricula, $dia, $hora_inicio, $hora_fin);
             if($stmts->execute()){
                 $resultado = $conn->query('SELECT @x as p_out');
                 $x = $resultado->fetch_assoc();
