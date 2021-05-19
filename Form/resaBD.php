@@ -7,6 +7,7 @@ $matricula = $_SESSION['matricula'];
 list($horas_efectuadas, $horas_contratadas) = $server->Contrato($ci);
 $horas_restantes = $horas_contratadas - $horas_efectuadas;
 $h = 0;
+$i = 0;
 if(isset($_POST['arri']) && isset($_POST['diaG']) && isset($_POST['tipo'])) {
     $irra = $_POST['arri'];
     $revers = explode('-', $_POST['diaG']);
@@ -33,7 +34,7 @@ if(isset($_POST['arri']) && isset($_POST['diaG']) && isset($_POST['tipo'])) {
             }
         }
     } else if($_POST['tipo'] == 'opc2') {
-        for($i=0;$i<$horas_restantes;$i++) {
+        while($i<$horas_restantes) {
             $dia = date('Y-m-d', mktime(0, 0, 0, $revers[1], $revers[0]+$i*7, $revers[2]));
             sort($irra, SORT_NATURAL);
             if(date('N', mktime(0, 0, 0, $revers[1], $revers[0]+$h, $revers[2])) !== 6) {
