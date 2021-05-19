@@ -19,7 +19,7 @@
             <div class='conductor'>
                 <h1>Información Personal</h1>
                 <hr>
-                <p><b>Documento: </b>$estado</p>
+                <p><b>Documento: </b>$ci</p>
                 <p><b>Nombre: </b>$nombre</p>
                 <p><b>Apellido: </b>$apellido</p>
                 <p><b>Teléfono: </b>$telefono</p>
@@ -75,7 +75,7 @@
                 </tr>";
             }
             $agendadias = json_encode($dias);
-            $pdf = '"'.$estado.'","'.$nombre.'","'.$apellido.'","'.$telefono.'","'.$mail.'","'.$direccion.'","'.$horas_efectuadas.'","'.$horas_reservadas.'","'.$tipo.'","'.$nombre_C.'","'.$horas_restantes.'"';
+            $pdf = '"'.$nombre.'","'.$apellido.'","'.$telefono.'","'.$mail.'","'.$direccion.'","'.$horas_efectuadas.'","'.$horas_reservadas.'","'.$matricula.'","'.$nombre_C.'","'.$tipo.'","'.$horas_restantes.'"';
             $return .="</table>
             <script>CargarCalendario($agendadias)</script>
             <div id='calendario'></div>
