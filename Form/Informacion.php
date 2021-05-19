@@ -67,7 +67,8 @@
                         }
                     }
                 }
-                $Data = '"'.$dia.'","'.$horai.'","'.$horaf.'","'.$ci.'"';
+                $horas = $horas_efectuadas - 1;
+                $Data = '"'.$dia.'","'.$horai.'","'.$horaf.'","'.$ci.'","'.$horas.'"';
                 $return .="
                     <td>
                         <button onclick='borrar($Data)'>Cancelar</button>

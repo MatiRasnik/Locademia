@@ -16,11 +16,6 @@
                 $infodias[$e] = explode('-', $diasInfo[$e]);
                 
             }
-           /* for($e = 0;$e < count($diasInfo);$e++){
-                for($f = 0;$f < count($diasInfo)-1;$f++){
-                    echo "info:".$infodias[$e][$f]." // \n";
-                }
-            }*/
         }
     }
     if($mes > 12){
@@ -80,20 +75,15 @@
             }else{
                 if($i > $dia || $mes > $mesActual || $año > $añoActual && date('N', mktime(0, 0, 0, $mesActual, $dia, $añoActual)) != 7){
                     if(isset($info)){
-                        $c = 0;
-                        $a = 1;
-                        $b = 2;
                         for($d = 0;$d < count($diasInfo);$d++){
-                            
-                            if($infodias[$b] == $i && $mes == $infodias[$a] && $año == $infodias[$c]){
+                             if($infodias[$d][0] == $año && $mes == $infodias[$d][1] && $i == $infodias[$d][2]){
+                                    
                                 $z = 1;
                                 $d=count($diasInfo)+1;
+                                $f=count($diasInfo)+1;
                             }else{
                                 $z = 0;
                             }
-                            $c =+ 3;
-                            $a =+ 3;
-                            $b =+ 3;
                         }
                         if($z == 1){
                             $calendario .= "<td><a class='diasAgendado' id='$i-$mes-$año'>" . $i . "</a></td>";

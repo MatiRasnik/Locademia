@@ -1,20 +1,12 @@
 var diasAgendados = [];
 var info = 1;
-function borrar(dia,horai,horaf,ci){
+function borrar(dia,horai,horaf,ci,horas){
     $.ajax({
         url: "Borrar.php",
         type: "post",
-        data: {dia:dia,horai:horai,horaf:horaf,ci:ci},
+        data: {dia:dia,horai:horai,horaf:horaf,ci:ci,horas:horas},
         success: function(respuesta) {
-            if(respuesta == 1){
                 window.location.reload()
-            }else{
-                if(respuesta == 2){
-                    alert("no se pudo borrar")
-                }else{
-                    alert("hubo un error")
-                }
-            }
         },
     });
 }

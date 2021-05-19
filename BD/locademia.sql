@@ -35,7 +35,7 @@ CREATE TABLE `agenda` (
   KEY `ci_idx` (`CI`),
   CONSTRAINT `agenda_ibfk_2` FOREIGN KEY (`matricula`) REFERENCES `automoviles` (`matricula`),
   CONSTRAINT `ci` FOREIGN KEY (`CI`) REFERENCES `cliente` (`CI`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `agenda` (
 
 LOCK TABLES `agenda` WRITE;
 /*!40000 ALTER TABLE `agenda` DISABLE KEYS */;
-INSERT INTO `agenda` VALUES (4,96325874,'AAW-8562','2021-05-14','09:00:00','10:00:00');
+INSERT INTO `agenda` VALUES (19,96325874,'AAW-8562','2021-05-25','08:00:00','09:00:00'),(21,96325874,'AAW-8562','2021-05-26','08:00:00','09:00:00'),(23,96325874,'AAW-8562','2021-05-27','08:00:00','09:00:00');
 /*!40000 ALTER TABLE `agenda` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -366,6 +366,25 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `Horas` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Horas`(IN horas int,in ci1 int)
+BEGIN
+	update contrato set horas_efectuadas = horas where CI = ci1;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `InfoAgenda` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -454,4 +473,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-14  9:04:45
+-- Dump completed on 2021-05-19 15:24:25

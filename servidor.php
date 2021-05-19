@@ -291,6 +291,19 @@ class servidor{
             }
             return $resultado;
         }
+        function Horas($horas,$ci){
+            $conn = $this->conectar();
+    
+            $sql = "CALL Horas(?,?)";
+            $stmts = $conn->prepare($sql);
+    
+            $stmts->bind_param("ii", $horas,$ci);
+            if($stmts->execute()){
+                return true;
+            }else{
+                return false;
+            }
+        }
 }
 ?>
  
