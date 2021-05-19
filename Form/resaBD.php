@@ -20,19 +20,21 @@ if(isset($_POST['arri']) && isset($_POST['diaG']) && isset($_POST['tipo'])) {
                     $hora_inicio = date('H:i:s', mktime($irra[$j], 0, 0));
                     $hora_fin = date('H:i:s', mktime($irra[$j]+1, 0, 0));
                     $server->agendar($ci, $matricula, $dia, $hora_inicio, $hora_fin);
+                    $horas_efectuadas++;
                     $i++;
                 }
-                $h++;
             } else if($irra[0] < 13 && $irra[1] < 13) {
                 for($j=0;$j<count($irra);$j++) {
                     $hora_inicio = date('H:i:s', mktime($irra[$j], 0, 0));
                     $hora_fin = date('H:i:s', mktime($irra[$j]+1, 0, 0));
                     $server->agendar($ci, $matricula, $dia, $hora_inicio, $hora_fin);
+                    $horas_efectuadas++;
                     $i++;
                 }
-                $h++;
             }
+            $h++;
         }
+        $server->Horas($h, $ci);
     } else if($_POST['tipo'] == 'opc2') {
         while($i<$horas_restantes) {
             $dia = date('Y-m-d', mktime(0, 0, 0, $revers[1], $revers[0]+$i*7, $revers[2]));
@@ -42,17 +44,21 @@ if(isset($_POST['arri']) && isset($_POST['diaG']) && isset($_POST['tipo'])) {
                     $hora_inicio = date('H:i:s', mktime($irra[$j], 0, 0));
                     $hora_fin = date('H:i:s', mktime($irra[$j]+1, 0, 0));
                     $server->agendar($ci, $matricula, $dia, $hora_inicio, $hora_fin);
+                    $horas_efectuadas++;
+                    $i++;
                 }
             } else if($irra[0] < 13 && $irra[1] < 13) {
                 for($j=0;$j<count($irra);$j++) {
                     $hora_inicio = date('H:i:s', mktime($irra[$j], 0, 0));
                     $hora_fin = date('H:i:s', mktime($irra[$j]+1, 0, 0));
                     $server->agendar($ci, $matricula, $dia, $hora_inicio, $hora_fin);
+                    $horas_efectuadas++;
                     $i++;
                 }
-                $h++;
             }
+            $h++;
         }
+        $server->Horas($h, $ci);
     } else if($_POST['tipo'] == 'opc3') {
         if($horas_restantes > 0) {
             $dia = date('Y-m-d', mktime(0, 0, 0, $revers[1], $revers[0], $revers[2]));
@@ -61,6 +67,7 @@ if(isset($_POST['arri']) && isset($_POST['diaG']) && isset($_POST['tipo'])) {
                 $hora_inicio = date('H:i:s', mktime($irra[$j], 0, 0));
                 $hora_fin = date('H:i:s', mktime($irra[$j]+1, 0, 0));
                 $server->agendar($ci, $matricula, $dia, $hora_inicio, $hora_fin);
+                $horas_efectuadas++;
             }
         }
     } else {
