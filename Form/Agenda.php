@@ -13,8 +13,7 @@
         if($info == 1){
             $infodias = array();
             for($e = 0;$e < count($diasInfo);$e++){
-                $string = $diasInfo[$e];
-                $infodias = explode('-', $string);
+                $infodias = explode('-', $diasInfo[$e]);
             }
         }
     }
@@ -75,7 +74,6 @@
             }else{
                 if($i > $dia || $mes > $mesActual || $año > $añoActual && date('N', mktime(0, 0, 0, $mesActual, $dia, $añoActual)) != 7){
                     if(isset($info)){
-                        $z = 0;
                         $c = 0;
                         $a = 1;
                         $b = 2;
@@ -87,16 +85,15 @@
                             }else{
                                 $z = 0;
                             }
-                            $c = $c + 3;
-                            $a = $a + 3;
-                            $b = $b + 3;
+                            $c =+ 3;
+                            $a =+ 3;
+                            $b =+ 3;
                         }
                         if($z == 1){
                             $calendario .= "<td><a class='diasAgendado' id='$i-$mes-$año'>" . $i . "</a></td>";
                         }else{
                             $calendario .= "<td><a class='dias' id='$i-$mes-$año'>" . $i . "</a></td>";
                         }
-                        $d = 0;
                     }else if(date('N', mktime(0, 0, 0, $mes, $i, $año)) != 6 && date('N', mktime(0, 0, 0, $mes, $i, $año)) != 7 ) {
                         $calendario .="<td><button class='dias' id='$i-$mes-$año' onclick='revisarHoras(this.id, 03)'>" . $i . "</button></td>";
                     } else if(date('N', mktime(0, 0, 0, $mes, $i, $año)) == 6){
