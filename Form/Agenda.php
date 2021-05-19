@@ -16,11 +16,6 @@
                 $infodias[$e] = explode('-', $diasInfo[$e]);
                 
             }
-            for($e = 0;$e < 3;$e++){
-                for($f = 0;$f < 3;$f++){
-                    echo "info:".$infodias[$e][$f]." // \n";
-                }
-            }
         }
     }
     if($mes > 12){
