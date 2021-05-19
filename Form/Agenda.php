@@ -75,7 +75,7 @@
             }else{
                 if($i > $dia || $mes > $mesActual || $año > $añoActual && date('N', mktime(0, 0, 0, $mesActual, $dia, $añoActual)) != 7){
                     if(isset($info)){
-                        for($d = 0;$d < 3;$d++){
+                        for($d = 0;$d < count($diasInfo);$d++){
                              if($infodias[$d][0] == $año && $mes == $infodias[$d][1] && $i == $infodias[$d][2]){
                                     
                                 $z = 1;
