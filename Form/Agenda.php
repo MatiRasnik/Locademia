@@ -13,8 +13,14 @@
         if($info == 1){
             $infodias = array();
             for($e = 0;$e < count($diasInfo);$e++){
-                $infodias = explode('-', $diasInfo[$e]);
+                $infodias[$e] = explode('-', $diasInfo[$e]);
+                
             }
+           /* for($e = 0;$e < count($diasInfo);$e++){
+                for($f = 0;$f < count($diasInfo)-1;$f++){
+                    echo "info:".$infodias[$e][$f]." // \n";
+                }
+            }*/
         }
     }
     if($mes > 12){
