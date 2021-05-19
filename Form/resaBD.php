@@ -34,7 +34,7 @@ if(isset($_POST['arri']) && isset($_POST['diaG']) && isset($_POST['tipo'])) {
             }
             $h++;
         }
-        $server->Horas($h, $ci);
+        $server->Horas($horas_efectuadas, $ci);
     } else if($_POST['tipo'] == 'opc2') {
         while($i<$horas_restantes) {
             $dia = date('Y-m-d', mktime(0, 0, 0, $revers[1], $revers[0]+$i*7, $revers[2]));
@@ -58,7 +58,7 @@ if(isset($_POST['arri']) && isset($_POST['diaG']) && isset($_POST['tipo'])) {
             }
             $h++;
         }
-        $server->Horas($h, $ci);
+        $server->Horas($horas_efectuadas, $ci);
     } else if($_POST['tipo'] == 'opc3') {
         if($horas_restantes > 0) {
             $dia = date('Y-m-d', mktime(0, 0, 0, $revers[1], $revers[0], $revers[2]));
@@ -69,6 +69,7 @@ if(isset($_POST['arri']) && isset($_POST['diaG']) && isset($_POST['tipo'])) {
                 $server->agendar($ci, $matricula, $dia, $hora_inicio, $hora_fin);
                 $horas_efectuadas++;
             }
+            $server->Horas($horas_efectuadas, $ci);
         }
     } else {
         echo 'MANCO 2';
