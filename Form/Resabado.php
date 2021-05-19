@@ -119,6 +119,6 @@ echo "<form>
         <div class='options'>
         <input type='radio' id='opc3' name='opciones' value ='opc3'> 
         <label for='opc3'>Personalizado</label></div></div>  </form>
-        <div class='div3'> <button onclick='ABD()' value='Enviar'>Reservar</button>
+        <div> <button onclick='ABD()'>Reservar</button>
         </div> </div>";
 ?>
