@@ -1,21 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins");
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
   background-color: rgba(255, 255, 255, 0.5);
 }
 ::-webkit-scrollbar-thumb {
-  background: #4874c5; 
+  background: #4874c5;
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #5f97ff; 
+  background: #5f97ff;
 }
 html {
   scroll-behavior: smooth;
 }
-.transition-1{
+.transition-1 {
   position: fixed;
   top: 0;
   left: 0;
@@ -27,7 +27,7 @@ html {
   pointer-events: none;
   transition: 0.1s ease-out;
 }
-.transition-1.is-active{
+.transition-1.is-active {
   opacity: 1;
   pointer-events: all;
 }
@@ -109,19 +109,19 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.vector-wrapper{
+.vector-wrapper {
   position: relative;
   top: 10px;
   width: 100%;
   overflow-x: hidden;
 }
-.vector-wrapper-rotate{
+.vector-wrapper-rotate {
   position: relative;
   top: -5px;
   width: 100%;
   overflow-x: hidden;
 
-  img{
+  img {
     transform: rotate(180deg);
   }
 }
@@ -143,15 +143,15 @@ header {
   width: 100%;
   height: 100vh;
 
-  .error{
+  .error {
     color: white;
     text-align: center;
 
-    h1{
+    h1 {
       font-size: 50px;
       margin: 0;
     }
-    p{
+    p {
       font-size: 20px;
       margin: 0;
     }
@@ -164,7 +164,7 @@ header {
     align-items: center;
     flex-direction: column;
 
-    .imagen-error{
+    .imagen-error {
       width: 300px;
     }
     .Logo {
@@ -228,44 +228,47 @@ header {
     }
   }
 }
-.Info-wrapper,.Agendar-wrapper{
+.Info-wrapper,
+.Agendar-wrapper {
   background-color: white;
-  .info-grid, .Agendar-grid{
+  .info-grid,
+  .Agendar-grid {
     display: grid;
     grid-template-columns: 40% 1fr;
     color: #4874c5;
 
-    .icon-Agendar{
+    .icon-Agendar {
       display: flex;
       justify-content: center;
       align-items: center;
-      i{
+      i {
         font-size: 200px;
       }
     }
 
-    .img-info{
-      img{
+    .img-info {
+      img {
         margin: 20px;
         width: 80%;
         border-radius: 20px;
       }
     }
-    .info-info, .info-Agendar{
+    .info-info,
+    .info-Agendar {
       display: flex;
       margin: 5px 20px;
       justify-content: center;
       flex-direction: column;
 
-      h1{
+      h1 {
         margin: 0;
         font-size: 30px;
       }
-      hr{
+      hr {
         width: 100%;
         border: 1px solid #4874c5;
       }
-      a{
+      a {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -277,7 +280,7 @@ header {
         background-color: #4874c5;
         text-align: center;
       }
-      a:hover{
+      a:hover {
         background-color: #5f97ff;
       }
     }
@@ -288,7 +291,7 @@ header {
   height: 20vh;
   background-color: white;
 
-  .first-wrapper{
+  .first-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -305,7 +308,8 @@ header {
 
   width: 100%;
 
-  .login, .register {
+  .login,
+  .register {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -324,7 +328,7 @@ header {
         width: 300px;
       }
     }
-    .register-input-wrapper{
+    .register-input-wrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
@@ -350,12 +354,13 @@ header {
         color: #0099ff;
         text-decoration: none;
       }
-      .input-wrapper{
-        input{
+      .input-wrapper {
+        input {
           width: 100%;
         }
       }
-      input, button {
+      input,
+      button {
         outline: none;
         text-indent: 10px;
         font-family: Poppins, Arial;
@@ -378,7 +383,8 @@ header {
           width: 100%;
         }
       }
-      input[type="submit"], button {
+      input[type="submit"],
+      button {
         margin: 20px 0;
         width: 100px;
         text-indent: 0px;
@@ -390,29 +396,28 @@ header {
   }
 }
 
-.coche-wrapper{
-  .agenda-wrapper{
-    .agenda-bg2{
-      .agenda-bg{
+.coche-wrapper {
+  .agenda-wrapper {
+    .agenda-bg2 {
+      .agenda-bg {
         margin: 20px 0;
-        .horas{
+        .horas {
           display: flex;
           justify-content: center;
           align-items: center;
           flex-direction: column;
 
-          .div1{
+          .div1 {
             width: 200px;
-            
 
-            .div2{
+            .div2 {
               padding: 20px 0;
               display: flex;
               flex-direction: column;
               align-items: center;
             }
 
-            .div3 input{
+            .botonreservas button {
               background: none;
               border: 1px solid #4874c5;
               border-radius: 10px;
@@ -421,35 +426,35 @@ header {
               color: #4874c5;
               transition: 0.5s;
             }
-            .div3 input:hover{
+            .botonreservas button:hover {
               background: #4874c5;
               color: white;
             }
           }
-          
 
-          h1{
+          h1 {
             margin: 20px 0;
           }
-          .col-grid{
+          .col-grid {
             width: 500px;
             display: grid;
             text-align: center;
             grid-template-columns: 1fr 1fr;
-            .col-flex{
+            .col-flex {
               display: flex;
               justify-content: center;
               align-items: center;
               flex-direction: column;
             }
-        
-            .col1,.col2{
+
+            .col1,
+            .col2 {
               display: flex;
               align-items: center;
               flex-direction: column;
               width: 150px;
 
-              .horario{
+              .horario {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -461,22 +466,21 @@ header {
                 margin: 2px 0;
                 cursor: pointer;
 
-                input[type=checkbox]{
+                input[type="checkbox"] {
                   border: 2px solid #4874c5;
                   width: 20px;
                   height: 20px;
                   border-radius: 50%;
                 }
-                input:checked{
+                input:checked {
                   border-radius: 20px;
                 }
-                label{
+                label {
                   margin-right: 30px;
                 }
-
               }
 
-              .Titulo{
+              .Titulo {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -488,7 +492,7 @@ header {
                 border: 1px solid #4874c5;
                 border-radius: 10px;
 
-                h1{
+                h1 {
                   margin: 0;
                   padding: 0;
                 }
@@ -498,26 +502,25 @@ header {
         }
       }
     }
-
   }
 }
-.agenda-wrapper{
+.agenda-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  .agenda-bg2{
+  .agenda-bg2 {
     background-color: white;
     width: 100%;
     text-align: center;
     color: #4874c5;
 
-    .agenda-bg{
+    .agenda-bg {
       width: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr;
-  
-      .agenda-wrapper2{
+
+      .agenda-wrapper2 {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -526,13 +529,13 @@ header {
     }
   }
 
-  #Agenda{
+  #Agenda {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 25px;
     max-width: 400px;
     min-height: 520px;
     margin: 20px 20px;
-    .año{
+    .año {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -544,21 +547,20 @@ header {
       background-color: #4874c5;
       border-radius: 25px 25px 0 0;
 
-      h2{
+      h2 {
         color: white;
         margin: 0 20px;
       }
-
     }
-    .mes{
+    .mes {
       color: white;
       text-align: center;
       padding: 2px 0;
     }
-    h3{
+    h3 {
       margin: 5px 0;
     }
-    .botonesCal{
+    .botonesCal {
       width: 30px;
       height: 30px;
       font-size: 20px;
@@ -571,19 +573,19 @@ header {
       outline: none;
       transition: 0.5s;
     }
-    #calendar{
+    #calendar {
       transition: 1s;
       width: 100%;
 
-      td{
+      td {
         height: 55px;
         width: 55px;
         text-align: center;
       }
-      tr{
+      tr {
         color: white;
       }
-      .dias{
+      .dias {
         width: 30px;
         height: 30px;
         color: white;
@@ -594,25 +596,25 @@ header {
         border-radius: 50%;
         outline: none;
       }
-      .dias:hover{
+      .dias:hover {
         border: 1px solid white;
       }
-      .dias:focus{
+      .dias:focus {
         background-color: white;
         border: 1px solid white;
         color: #4874c5;
         font-weight: bold;
       }
-      .diaActual{
+      .diaActual {
         background-color: transparent;
         border: 1px solid white;
         font-weight: bold;
       }
-      .diaActual:focus{
+      .diaActual:focus {
         background-color: white;
         color: #4874c5;
       }
-      .diaActual p{
+      .diaActual p {
         width: 20px;
         height: 20px;
         color: #4874c5;
@@ -624,76 +626,77 @@ header {
     }
   }
 }
-.pdf{
+.pdf {
   text-align: left;
 
-  .Titulo{
+  .Titulo {
     color: #4874c5;
   }
-  h2{
+  h2 {
     color: #4874c5;
   }
 }
-.coche-wrapper{
-  .coche-vector{
-    img{
+.coche-wrapper {
+  .coche-vector {
+    img {
       position: relative;
       top: 10px;
     }
   }
-  .info-conductor{
+  .info-conductor {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: white;
-  
-    .conductor-grid{
+
+    .conductor-grid {
       margin: 10px 0;
-      width:1000px;
+      width: 1000px;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-  
-      .conductor{
+
+      .conductor {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         text-align: left;
         margin: 0 40px;
-        hr{
+        hr {
           width: 300px;
           border: 1px solid #4874c5;
           margin: 5px 0;
         }
-        h1{
+        h1 {
           color: #4874c5;
           margin: 5px 0;
         }
-  
-        p,b{
+
+        p,
+        b {
           color: #4874c5;
           margin: 0;
         }
       }
-      .conductor-logo{
+      .conductor-logo {
         display: flex;
         justify-content: center;
         align-items: center;
-        i{
+        i {
           color: #4874c5;
           font-size: 200px;
         }
       }
     }
-    .button-info{
+    .button-info {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
       margin: 50px 0;
 
-      a{
+      a {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -705,7 +708,7 @@ header {
         color: white;
         text-decoration: none;
 
-        i{
+        i {
           color: white;
           font-size: 30px;
           margin: 10px 5px;
@@ -713,33 +716,33 @@ header {
       }
     }
   }
-  .Coche{
+  .Coche {
     color: #4874c5;
     text-align: center;
     background-color: white;
     padding: 20px;
 
-    .Title{
+    .Title {
       font-weight: bold;
       font-size: 50px;
       margin: 0;
       color: #4874c5;
     }
-    h2{
+    h2 {
       color: #4874c5;
     }
   }
-  .coche-wrapper-grid{
+  .coche-wrapper-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 
-    .coche-card-wrapper{
+    .coche-card-wrapper {
       padding: 20px 0;
       display: flex;
       justify-content: center;
       align-items: center;
 
-      .coche-card{
+      .coche-card {
         transition: 0.5s;
         display: flex;
         justify-content: center;
@@ -752,29 +755,29 @@ header {
         background-color: white;
         border-radius: 25px;
 
-        img{
+        img {
           width: 60%;
         }
-        h1{
+        h1 {
           color: #4874c5;
           margin: 0;
           padding: 0;
         }
-        .categoria{
+        .categoria {
           width: auto;
         }
-        hr{
+        hr {
           border: 1px solid #4874c5;
           width: 80%;
         }
-        .coche-button{
+        .coche-button {
           width: 100%;
           height: 100%;
           display: flex;
           justify-content: center;
           align-items: flex-end;
         }
-        button{
+        button {
           margin: 20px 0;
           background-color: #4874c5;
           color: white;
@@ -785,42 +788,41 @@ header {
           outline: none;
           cursor: pointer;
         }
-        button:hover{
+        button:hover {
           background-color: #5f97ff;
         }
-        p{
+        p {
           text-align: left;
           width: 80%;
           color: #4874c5;
         }
       }
-      .coche-card:hover{
+      .coche-card:hover {
         transform: translateY(-10px);
         border: 1px solid #4874c5;
       }
     }
   }
-  .tipocoche{
-
+  .tipocoche {
     transition: 0.5s ease-in-out;
 
-    .tipo-wrapper-grid{
+    .tipo-wrapper-grid {
       min-height: 500px;
       display: grid;
       grid-template-columns: 40% 1fr;
       background-color: white;
 
-      .tipo-wrapper{
+      .tipo-wrapper {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
 
-        h2{
+        h2 {
           margin: 0;
         }
 
-        button{
+        button {
           background-color: #4874c5;
           color: white;
           width: 300px;
@@ -831,18 +833,18 @@ header {
           cursor: pointer;
         }
       }
-      .foto-vehiculo{
+      .foto-vehiculo {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
 
-        img{
+        img {
           width: 80%;
         }
       }
     }
-    select{
+    select {
       width: 300px;
       height: 50px;
 
@@ -855,19 +857,33 @@ header {
       color: #4874c5;
     }
   }
-  #Informacion .info-conductor{
+  #Informacion .info-conductor {
+    .botonpdf {
+      background: none;
+      border: 1px solid #4874c5;
+      border-radius: 10px;
+      padding: 10px;
+      width: 100px;
+      color: #4874c5;
+      transition: 0.5s;
+      margin: 20px;
+    }
+    .botonpdf:hover {
+      background: #4874c5;
+      color: white;
+    }
 
-    #info-usuario{
+    #info-usuario {
       color: #4874c5;
       width: 500px;
       text-align: center;
 
-      th{
+      th {
         font-size: 20px;
         padding: 0 20px;
       }
-      td{
-        button{
+      td {
+        button {
           border: 1px solid #4874c5;
           border-radius: 10px;
           background: none;
@@ -876,125 +892,124 @@ header {
           font-weight: bold;
           transition: 0.5s;
         }
-        button:hover{
+        button:hover {
           background-color: #4874c5;
           color: white;
         }
       }
     }
 
-    #calendario{
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 25px;
-    max-width: 400px;
-    min-height: 520px;
-    margin: 20px 20px;
-    .año{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    #calendario {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 25px;
+      max-width: 400px;
+      min-height: 520px;
+      margin: 20px 20px;
+      .año {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-      height: 50px;
-      font-size: 20px;
-      padding: 5px 0;
-      color: white !important;
-      background-color: #4874c5;
-      border-radius: 25px 25px 0 0;
+        height: 50px;
+        font-size: 20px;
+        padding: 5px 0;
+        color: white !important;
+        background-color: #4874c5;
+        border-radius: 25px 25px 0 0;
 
-      h2{
-        color: white;
-        margin: 0 20px;
+        h2 {
+          color: white;
+          margin: 0 20px;
+        }
       }
-
-    }
-    .mes{
-      color: white;
-      text-align: center;
-      padding: 2px 0;
-    }
-    h3{
-      margin: 5px 0;
-    }
-    .botonesCal{
-      width: 30px;
-      height: 30px;
-      font-size: 20px;
-      margin: 0 20px;
-      background-color: white;
-      border-radius: 50%;
-      color: #4874c5;
-      border: none;
-      cursor: pointer;
-      outline: none;
-      transition: 0.5s;
-    }
-    #calendar{
-      transition: 1s;
-      width: 100%;
-
-      td{
-        height: 55px;
-        width: 55px;
+      .mes {
+        color: white;
         text-align: center;
+        padding: 2px 0;
       }
-      tr{
-        color: white;
+      h3 {
+        margin: 5px 0;
       }
-      .dias{
+      .botonesCal {
         width: 30px;
         height: 30px;
-        color: white;
-        text-align: center;
-        align-items: center;
-        background-color: transparent;
+        font-size: 20px;
+        margin: 0 20px;
+        background-color: white;
+        border-radius: 50%;
+        color: #4874c5;
         border: none;
-        border-radius: 50%;
+        cursor: pointer;
         outline: none;
+        transition: 0.5s;
       }
-      .dias:hover{
-        border: 1px solid white;
-      }
-      .dias:focus{
-        background-color: white;
-        border: 1px solid white;
-        color: #4874c5;
-        font-weight: bold;
-      }
-      .diaActual{
-        background-color: transparent;
-        border: 1px solid white;
-        font-weight: bold;
-      }
-      .diaActual:focus{
-        background-color: white;
-        color: #4874c5;
-      }
-      .diaActual p{
-        width: 20px;
-        height: 20px;
-        color: #4874c5;
-        font-weight: bold;
-        border-radius: 50%;
-        background-color: white;
-        padding: 5px;
+      #calendar {
+        transition: 1s;
+        width: 100%;
+
+        td {
+          height: 55px;
+          width: 55px;
+          text-align: center;
+        }
+        tr {
+          color: white;
+        }
+        .dias {
+          width: 30px;
+          height: 30px;
+          color: white;
+          text-align: center;
+          align-items: center;
+          background-color: transparent;
+          border: none;
+          border-radius: 50%;
+          outline: none;
+        }
+        .dias:hover {
+          border: 1px solid white;
+        }
+        .dias:focus {
+          background-color: white;
+          border: 1px solid white;
+          color: #4874c5;
+          font-weight: bold;
+        }
+        .diaActual {
+          background-color: transparent;
+          border: 1px solid white;
+          font-weight: bold;
+        }
+        .diaActual:focus {
+          background-color: white;
+          color: #4874c5;
+        }
+        .diaActual p {
+          width: 20px;
+          height: 20px;
+          color: #4874c5;
+          font-weight: bold;
+          border-radius: 50%;
+          background-color: white;
+          padding: 5px;
+        }
       }
     }
-   }
   }
 }
-footer{
+footer {
   margin-top: 20px;
-  .footer-vector{
+  .footer-vector {
     position: relative;
     z-index: -1;
     height: 140px;
     overflow-x: hidden;
 
-    img{
+    img {
       min-width: 1000px;
     }
   }
-  .footer-wrapper{
+  .footer-wrapper {
     padding: 40px 70px;
     display: flex;
     justify-content: center;
@@ -1002,57 +1017,56 @@ footer{
     flex-direction: column;
     background-color: white;
 
-    p{
+    p {
       font-size: 13px;
     }
-    .footer-logo{
+    .footer-logo {
       margin: 0 10px;
       max-width: 400px;
     }
-    img{
+    img {
       width: 100%;
     }
 
-    .info{
+    .info {
       text-align: center;
 
-      .direccion{
+      .direccion {
         text-align: left;
-        ul{
+        ul {
           list-style: none;
-          a{
-            cursor:context-menu;
+          a {
+            cursor: context-menu;
             color: black;
             text-decoration: none;
           }
-          a:visited{
+          a:visited {
             color: black;
           }
         }
       }
     }
-    
   }
 }
 
 @media screen and (max-width: 1200px) {
-  .coche-wrapper{
-    .Coche{
-      .coche-wrapper-grid{
+  .coche-wrapper {
+    .Coche {
+      .coche-wrapper-grid {
         grid-template-columns: 1fr;
       }
     }
   }
 }
 @media screen and (max-width: 900px) {
-  .coche-wrapper{
-    .Coche{
-      .tipocoche{
-        .tipo-wrapper-grid{
+  .coche-wrapper {
+    .Coche {
+      .tipocoche {
+        .tipo-wrapper-grid {
           grid-template-columns: 1fr;
 
-          .foto-vehiculo{
-            img{
+          .foto-vehiculo {
+            img {
               width: 80%;
               margin: 40px 0;
             }
@@ -1070,18 +1084,18 @@ footer{
       display: none;
     }
     .logo {
-      img{
+      img {
         width: 300px;
       }
     }
   }
 }
 @media screen and (max-width: 600px) {
-  .Landing-wrapper{
-    .landing-info-wrapper{
-      .Logo{
+  .Landing-wrapper {
+    .landing-info-wrapper {
+      .Logo {
         text-align: center;
-        img{
+        img {
           width: 90%;
         }
       }
@@ -1089,27 +1103,27 @@ footer{
   }
 }
 @media screen and (max-width: 400px) {
-  .Landing-wrapper{
-    .landing-info-wrapper{
+  .Landing-wrapper {
+    .landing-info-wrapper {
       .landing-buttons {
         width: 100%;
         flex-direction: inherit;
         margin: 20px 0;
-    
-        .lan-buttn{
+
+        .lan-buttn {
           width: 300px;
         }
-        .lan-buttn2{
+        .lan-buttn2 {
           width: 300px;
         }
       }
     }
   }
-  .coche-wrapper{
-    .Coche{
-      .coche-wrapper-grid{
-        .coche-card-wrapper{
-          .coche-card{
+  .coche-wrapper {
+    .Coche {
+      .coche-wrapper-grid {
+        .coche-card-wrapper {
+          .coche-card {
             width: 260px;
           }
         }

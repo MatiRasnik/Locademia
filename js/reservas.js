@@ -155,18 +155,13 @@ function horasSabado(hrsel) {
 
 function ABD() {
     var tipo = $('input:radio[name=opciones]:checked').val();
-    console.log("Funciona");
-    console.log("-------------------------");
-    console.log("Dia seleccionado: " + diaG);
-    console.log("Horas: " + arri);
-    console.log("Reserva: " + tipo);
     if(tipo !== undefined){
         $.ajax({
             url: "resaBD.php",
             type: "post",
             data: { diaG:diaG, tipo:tipo, arri:arri },
             success: function() {
-                alert('Sus reservas fueron realizadas');
+                alert('Sus reservas fueron realizadas\n Pase por Información para ver sus reservas');
             }
         })
     }else{
