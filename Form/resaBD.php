@@ -15,7 +15,7 @@ if(isset($_POST['arri']) && isset($_POST['diaG']) && isset($_POST['tipo'])) {
         while($i<$horas_restantes) {
             $dia = date('Y-m-d', mktime(0, 0, 0, $revers[1], $revers[0]+$h, $revers[2]));
             sort($irra, SORT_NATURAL);
-            if(date('N', mktime(0, 0, 0, $revers[1], $revers[0]+$h, $revers[2])) != 6 || date('N', mktime(0, 0, 0, $revers[1], $revers[0]+$h, $revers[2])) != 7) {
+            if(date('N', mktime(0, 0, 0, $revers[1], $revers[0]+$h, $revers[2])) != 6) {
                 for($j=0;$j<count($irra);$j++) {
                     $hora_inicio = date('H:i:s', mktime($irra[$j], 0, 0));
                     $hora_fin = date('H:i:s', mktime($irra[$j]+1, 0, 0));
@@ -23,7 +23,7 @@ if(isset($_POST['arri']) && isset($_POST['diaG']) && isset($_POST['tipo'])) {
                     $horas_efectuadas++;
                     $i++;
                 }
-            } else if(date('N', mktime(0, 0, 0, $revers[1], $revers[0]+$h, $revers[2])) == 6 && $irra[0] < 13 && $irra[1] < 13) {
+            } else if($irra[0] < 13 && $irra[1] < 13) {
                 for($j=0;$j<count($irra);$j++) {
                     $hora_inicio = date('H:i:s', mktime($irra[$j], 0, 0));
                     $hora_fin = date('H:i:s', mktime($irra[$j]+1, 0, 0));
@@ -31,8 +31,6 @@ if(isset($_POST['arri']) && isset($_POST['diaG']) && isset($_POST['tipo'])) {
                     $horas_efectuadas++;
                     $i++;
                 }
-            } else if(date('N', mktime(0, 0, 0, $revers[1], $revers[0]+$h, $revers[2])) == 7) {
-
             }
             $h++;
         }
