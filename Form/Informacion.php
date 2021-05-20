@@ -80,7 +80,7 @@
             $return .="</table>
             <script>CargarCalendario($agendadias)</script>
             <div id='calendario'></div>
-            <button onclick='PDF($pdf)'>Obtener PDF</button>
+            <button class='botonpdf' onclick='PDF($pdf)'>Obtener PDF</button>
             </div>";
     
     }else{
