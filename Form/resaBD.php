@@ -31,8 +31,8 @@ if(isset($_POST['arri']) && isset($_POST['diaG']) && isset($_POST['tipo'])) {
                     $horas_efectuadas++;
                     $i++;
                 }
-                $h++;
             }
+            $h++;
         }
         $server->Horas($horas_efectuadas, $ci);
     } else if($_POST['tipo'] == 'opc2') {
