@@ -80,8 +80,9 @@
             $return .="</table>
             <script>CargarCalendario($agendadias)</script>
             <div id='calendario'></div>
-    </div>
-    <button onclick='PDF($pdf)'>Obtener PDF</button>";
+            <button onclick='PDF($pdf)'>Obtener PDF</button>
+            </div>";
+    
     }else{
         $return .="<div class='conductor'> <h1>No tiene ninguna reserva</h1></div>";
     }
