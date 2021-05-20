@@ -31,6 +31,8 @@ if(isset($_POST['arri']) && isset($_POST['diaG']) && isset($_POST['tipo'])) {
                     $horas_efectuadas++;
                     $i++;
                 }
+            } else if(date('N', mktime(0, 0, 0, $revers[1], $revers[0]+$h, $revers[2])) == 7) {
+
             }
             $h++;
         }
@@ -55,6 +57,8 @@ if(isset($_POST['arri']) && isset($_POST['diaG']) && isset($_POST['tipo'])) {
                     $horas_efectuadas++;
                     $i++;
                 }
+            } else if(date('N', mktime(0, 0, 0, $revers[1], $revers[0]+$h, $revers[2])) == 7) {
+
             }
             $h++;
         }
